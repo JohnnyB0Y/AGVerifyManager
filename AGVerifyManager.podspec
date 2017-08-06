@@ -23,3 +23,5 @@ Pod::Spec.new do |s|
   # User
   s.author             = { "JohnnyB0Y" => "ag860050872@163.com" } # 作者信息
   s.social_media_url   = "https://johnnyb0y.github.io/" # 个人主页
+
+  end
