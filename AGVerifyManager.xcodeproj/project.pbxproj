@@ -1,0 +1,416 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3AF1F0FD1F37329E00902E85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F0FC1F37329E00902E85 /* main.m */; };
+		3AF1F1001F37329E00902E85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F0FF1F37329E00902E85 /* AppDelegate.m */; };
+		3AF1F1031F37329E00902E85 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1021F37329E00902E85 /* ViewController.m */; };
+		3AF1F1061F37329E00902E85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF1F1041F37329E00902E85 /* Main.storyboard */; };
+		3AF1F1081F37329E00902E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF1F1071F37329E00902E85 /* Assets.xcassets */; };
+		3AF1F10B1F37329E00902E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF1F1091F37329E00902E85 /* LaunchScreen.storyboard */; };
+		3AF1F1341F37338500902E85 /* AGBaseVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1141F37338500902E85 /* AGBaseVerifier.m */; };
+		3AF1F1351F37338500902E85 /* AGVerifyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1171F37338500902E85 /* AGVerifyManager.m */; };
+		3AF1F13A1F37338500902E85 /* ATApiCodeVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1241F37338500902E85 /* ATApiCodeVerifier.m */; };
+		3AF1F13B1F37338500902E85 /* ATApiStatusVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1261F37338500902E85 /* ATApiStatusVerifier.m */; };
+		3AF1F13D1F37338500902E85 /* ATIsNullVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F12A1F37338500902E85 /* ATIsNullVerifier.m */; };
+		3AF1F13E1F37338500902E85 /* ATTextLimitVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F12C1F37338500902E85 /* ATTextLimitVerifier.m */; };
+		3AF1F1411F37338500902E85 /* ATUsernameVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1331F37338500902E85 /* ATUsernameVerifier.m */; };
+		3AF1F1451F3742B000902E85 /* ATEmojiVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1441F3742B000902E85 /* ATEmojiVerifier.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3AF1F0F81F37329E00902E85 /* AGVerifyManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGVerifyManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AF1F0FC1F37329E00902E85 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3AF1F0FE1F37329E00902E85 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3AF1F0FF1F37329E00902E85 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3AF1F1011F37329E00902E85 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3AF1F1021F37329E00902E85 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3AF1F1051F37329E00902E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3AF1F1071F37329E00902E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AF1F10A1F37329E00902E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3AF1F10C1F37329E00902E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AF1F1131F37338500902E85 /* AGBaseVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGBaseVerifier.h; sourceTree = "<group>"; };
+		3AF1F1141F37338500902E85 /* AGBaseVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGBaseVerifier.m; sourceTree = "<group>"; };
+		3AF1F1161F37338500902E85 /* AGVerifyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGVerifyManager.h; sourceTree = "<group>"; };
+		3AF1F1171F37338500902E85 /* AGVerifyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGVerifyManager.m; sourceTree = "<group>"; };
+		3AF1F1231F37338500902E85 /* ATApiCodeVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATApiCodeVerifier.h; sourceTree = "<group>"; };
+		3AF1F1241F37338500902E85 /* ATApiCodeVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATApiCodeVerifier.m; sourceTree = "<group>"; };
+		3AF1F1251F37338500902E85 /* ATApiStatusVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATApiStatusVerifier.h; sourceTree = "<group>"; };
+		3AF1F1261F37338500902E85 /* ATApiStatusVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATApiStatusVerifier.m; sourceTree = "<group>"; };
+		3AF1F1291F37338500902E85 /* ATIsNullVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATIsNullVerifier.h; sourceTree = "<group>"; };
+		3AF1F12A1F37338500902E85 /* ATIsNullVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATIsNullVerifier.m; sourceTree = "<group>"; };
+		3AF1F12B1F37338500902E85 /* ATTextLimitVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTextLimitVerifier.h; sourceTree = "<group>"; };
+		3AF1F12C1F37338500902E85 /* ATTextLimitVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTextLimitVerifier.m; sourceTree = "<group>"; };
+		3AF1F1321F37338500902E85 /* ATUsernameVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATUsernameVerifier.h; sourceTree = "<group>"; };
+		3AF1F1331F37338500902E85 /* ATUsernameVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATUsernameVerifier.m; sourceTree = "<group>"; };
+		3AF1F1431F3742B000902E85 /* ATEmojiVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEmojiVerifier.h; sourceTree = "<group>"; };
+		3AF1F1441F3742B000902E85 /* ATEmojiVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEmojiVerifier.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AF1F0F51F37329E00902E85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AF1F0EF1F37329E00902E85 = {
+			isa = PBXGroup;
+			children = (
+				3AF1F0FA1F37329E00902E85 /* AGVerifyManager */,
+				3AF1F0F91F37329E00902E85 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3AF1F0F91F37329E00902E85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AF1F0F81F37329E00902E85 /* AGVerifyManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3AF1F0FA1F37329E00902E85 /* AGVerifyManager */ = {
+			isa = PBXGroup;
+			children = (
+				3AF1F1121F37338500902E85 /* AGVerifier */,
+				3AF1F0FE1F37329E00902E85 /* AppDelegate.h */,
+				3AF1F0FF1F37329E00902E85 /* AppDelegate.m */,
+				3AF1F1011F37329E00902E85 /* ViewController.h */,
+				3AF1F1021F37329E00902E85 /* ViewController.m */,
+				3AF1F1041F37329E00902E85 /* Main.storyboard */,
+				3AF1F1071F37329E00902E85 /* Assets.xcassets */,
+				3AF1F1091F37329E00902E85 /* LaunchScreen.storyboard */,
+				3AF1F10C1F37329E00902E85 /* Info.plist */,
+				3AF1F0FB1F37329E00902E85 /* Supporting Files */,
+			);
+			path = AGVerifyManager;
+			sourceTree = "<group>";
+		};
+		3AF1F0FB1F37329E00902E85 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AF1F0FC1F37329E00902E85 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3AF1F1121F37338500902E85 /* AGVerifier */ = {
+			isa = PBXGroup;
+			children = (
+				3AF1F1131F37338500902E85 /* AGBaseVerifier.h */,
+				3AF1F1141F37338500902E85 /* AGBaseVerifier.m */,
+				3AF1F1421F3733F600902E85 /* Category */,
+				3AF1F1151F37338500902E85 /* AGVerifyManager */,
+				3AF1F1181F37338500902E85 /* Verifier */,
+			);
+			path = AGVerifier;
+			sourceTree = "<group>";
+		};
+		3AF1F1151F37338500902E85 /* AGVerifyManager */ = {
+			isa = PBXGroup;
+			children = (
+				3AF1F1161F37338500902E85 /* AGVerifyManager.h */,
+				3AF1F1171F37338500902E85 /* AGVerifyManager.m */,
+			);
+			path = AGVerifyManager;
+			sourceTree = "<group>";
+		};
+		3AF1F1181F37338500902E85 /* Verifier */ = {
+			isa = PBXGroup;
+			children = (
+				3AF1F1221F37338500902E85 /* Default */,
+				3AF1F12D1F37338500902E85 /* UserInfo */,
+			);
+			path = Verifier;
+			sourceTree = "<group>";
+		};
+		3AF1F1221F37338500902E85 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				3AF1F1231F37338500902E85 /* ATApiCodeVerifier.h */,
+				3AF1F1241F37338500902E85 /* ATApiCodeVerifier.m */,
+				3AF1F1251F37338500902E85 /* ATApiStatusVerifier.h */,
+				3AF1F1261F37338500902E85 /* ATApiStatusVerifier.m */,
+				3AF1F1291F37338500902E85 /* ATIsNullVerifier.h */,
+				3AF1F12A1F37338500902E85 /* ATIsNullVerifier.m */,
+				3AF1F12B1F37338500902E85 /* ATTextLimitVerifier.h */,
+				3AF1F12C1F37338500902E85 /* ATTextLimitVerifier.m */,
+				3AF1F1431F3742B000902E85 /* ATEmojiVerifier.h */,
+				3AF1F1441F3742B000902E85 /* ATEmojiVerifier.m */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		3AF1F12D1F37338500902E85 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				3AF1F1321F37338500902E85 /* ATUsernameVerifier.h */,
+				3AF1F1331F37338500902E85 /* ATUsernameVerifier.m */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		3AF1F1421F3733F600902E85 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3AF1F0F71F37329E00902E85 /* AGVerifyManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AF1F10F1F37329E00902E85 /* Build configuration list for PBXNativeTarget "AGVerifyManager" */;
+			buildPhases = (
+				3AF1F0F41F37329E00902E85 /* Sources */,
+				3AF1F0F51F37329E00902E85 /* Frameworks */,
+				3AF1F0F61F37329E00902E85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AGVerifyManager;
+			productName = AGVerifyManager;
+			productReference = 3AF1F0F81F37329E00902E85 /* AGVerifyManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3AF1F0F01F37329E00902E85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = JohnnyB0Y;
+				TargetAttributes = {
+					3AF1F0F71F37329E00902E85 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = Y4TD9NMHQ7;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3AF1F0F31F37329E00902E85 /* Build configuration list for PBXProject "AGVerifyManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3AF1F0EF1F37329E00902E85;
+			productRefGroup = 3AF1F0F91F37329E00902E85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AF1F0F71F37329E00902E85 /* AGVerifyManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3AF1F0F61F37329E00902E85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF1F10B1F37329E00902E85 /* LaunchScreen.storyboard in Resources */,
+				3AF1F1081F37329E00902E85 /* Assets.xcassets in Resources */,
+				3AF1F1061F37329E00902E85 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3AF1F0F41F37329E00902E85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF1F1031F37329E00902E85 /* ViewController.m in Sources */,
+				3AF1F1001F37329E00902E85 /* AppDelegate.m in Sources */,
+				3AF1F13D1F37338500902E85 /* ATIsNullVerifier.m in Sources */,
+				3AF1F1341F37338500902E85 /* AGBaseVerifier.m in Sources */,
+				3AF1F13A1F37338500902E85 /* ATApiCodeVerifier.m in Sources */,
+				3AF1F1411F37338500902E85 /* ATUsernameVerifier.m in Sources */,
+				3AF1F1451F3742B000902E85 /* ATEmojiVerifier.m in Sources */,
+				3AF1F13E1F37338500902E85 /* ATTextLimitVerifier.m in Sources */,
+				3AF1F13B1F37338500902E85 /* ATApiStatusVerifier.m in Sources */,
+				3AF1F0FD1F37329E00902E85 /* main.m in Sources */,
+				3AF1F1351F37338500902E85 /* AGVerifyManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3AF1F1041F37329E00902E85 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AF1F1051F37329E00902E85 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3AF1F1091F37329E00902E85 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AF1F10A1F37329E00902E85 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3AF1F10D1F37329E00902E85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3AF1F10E1F37329E00902E85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3AF1F1101F37329E00902E85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y4TD9NMHQ7;
+				INFOPLIST_FILE = AGVerifyManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JohnnyB0Y.AGVerifyManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3AF1F1111F37329E00902E85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y4TD9NMHQ7;
+				INFOPLIST_FILE = AGVerifyManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JohnnyB0Y.AGVerifyManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3AF1F0F31F37329E00902E85 /* Build configuration list for PBXProject "AGVerifyManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AF1F10D1F37329E00902E85 /* Debug */,
+				3AF1F10E1F37329E00902E85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AF1F10F1F37329E00902E85 /* Build configuration list for PBXNativeTarget "AGVerifyManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AF1F1101F37329E00902E85 /* Debug */,
+				3AF1F1111F37329E00902E85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3AF1F0F01F37329E00902E85 /* Project object */;
+}
