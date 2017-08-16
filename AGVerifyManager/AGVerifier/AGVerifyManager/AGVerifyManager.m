@@ -32,7 +32,34 @@ AGVerifyManager * ag_verifyManager()
 {
     return ^AGVerifyManager *(id<AGVerifyManagerVerifiable> verifier) {
         // 判断错误
-        AGVerifyError *error = verifier.verify;
+        AGVerifyError *error;
+        if ( [verifier respondsToSelector:@selector(verify)] )
+            error = [verifier verify];
+        
+        if (error) {
+            // 有错
+            _isError = YES;
+            
+            if ( ! self->_firstError ) {
+                self->_firstError = error;
+            }
+            // 打包错误
+            [self.errorsM addObject:error];
+            
+        }
+        return self;
+    };
+}
+
+- (AGVerifyManager *(^)(id<AGVerifyManagerInjectVerifiable>,
+                        id))verifyObj
+{
+    return ^AGVerifyManager *(id<AGVerifyManagerInjectVerifiable> verifier,
+                              id obj) {
+        // 判断错误
+        AGVerifyError *error;
+        if ( [verifier respondsToSelector:@selector(verifyObj)] )
+            error = [verifier verifyObj:obj];
         
         if (error) {
             // 有错
