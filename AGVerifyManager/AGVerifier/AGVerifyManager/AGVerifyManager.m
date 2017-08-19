@@ -58,7 +58,7 @@ AGVerifyManager * ag_verifyManager()
                               id obj) {
         // 判断错误
         AGVerifyError *error;
-        if ( [verifier respondsToSelector:@selector(verifyObj)] )
+        if ( [verifier respondsToSelector:@selector(verifyObj:)] )
             error = [verifier verifyObj:obj];
         
         if (error) {
