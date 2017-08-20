@@ -46,19 +46,17 @@
     [ATTextLimitVerifier verifier:self.nameTextField.text];
     username.minLimit = 2;
     username.maxLimit = 7;
-    
     username.maxLimitMsg =
     [NSString stringWithFormat:@"用户名不能超过%@个字符！", @(username.maxLimit)];
     
     // 判断是否包含 emoji 😈
-    ATEmojiVerifier *emoji =
-    [ATEmojiVerifier verifier:self.nameTextField.text];
+    ATEmojiVerifier *emoji = [ATEmojiVerifier new];
     emoji.errorMsg = @"请输入非表情字符！";
     
     // 开始验证
     [ag_verifyManager()
-     .verify(emoji)
-     .verify(username)
+     .verifyObj(emoji, self.nameTextField.text) // 用法一
+     .verify(username) // 用法二
      verified:^(AGVerifyError *firstError, NSArray<AGVerifyError *> *errors) {
          
          if ( firstError ) {

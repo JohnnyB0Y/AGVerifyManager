@@ -107,9 +107,9 @@
 		3AF1F1121F37338500902E85 /* AGVerifier */ = {
 			isa = PBXGroup;
 			children = (
+				3AF1F1421F3733F600902E85 /* Category */,
 				3AF1F1131F37338500902E85 /* AGBaseVerifier.h */,
 				3AF1F1141F37338500902E85 /* AGBaseVerifier.m */,
-				3AF1F1421F3733F600902E85 /* Category */,
 				3AF1F1151F37338500902E85 /* AGVerifyManager */,
 				3AF1F1181F37338500902E85 /* Verifier */,
 			);

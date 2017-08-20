@@ -13,7 +13,7 @@
 - (AGVerifyError *)verify
 {
     AGVerifyError *error;
-    if (self.verifyString.length == 0) {
+    if ( self.verifyString.length == 0 ) {
         error = [AGVerifyError new];
         error.code = 20001;
         error.msg = @"用户名不能为空！";

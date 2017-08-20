@@ -28,7 +28,7 @@ AGVerifyManager * ag_verifyManager();
 
 
 /** 验证完调用 (无循环引用问题) */
-- (void) verified:(AGVerifyManagerVerifiedBlock)verifiedBlock;
+- (AGVerifyManager *) verified:(AGVerifyManagerVerifiedBlock)verifiedBlock;
 
 @end
 

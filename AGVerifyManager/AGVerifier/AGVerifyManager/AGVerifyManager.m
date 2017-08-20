@@ -7,6 +7,7 @@
 //
 
 #import "AGVerifyManager.h"
+#import <objc/runtime.h>
 
 AGVerifyManager * ag_verifyManager()
 {
@@ -17,9 +18,6 @@ AGVerifyManager * ag_verifyManager()
 
 /** first error */
 @property (nonatomic, strong) AGVerifyError *firstError;
-
-/** 是否出错 */
-@property (nonatomic, assign) BOOL isError;
 
 /** 错误数组 */
 @property (nonatomic, strong) NSMutableArray<AGVerifyError *> *errorsM;
@@ -36,16 +34,12 @@ AGVerifyManager * ag_verifyManager()
         if ( [verifier respondsToSelector:@selector(verify)] )
             error = [verifier verify];
         
-        if (error) {
+        if ( error ) {
             // 有错
-            _isError = YES;
+            _firstError = _firstError ?: error;
             
-            if ( ! self->_firstError ) {
-                self->_firstError = error;
-            }
             // 打包错误
             [self.errorsM addObject:error];
-            
         }
         return self;
     };
@@ -61,30 +55,24 @@ AGVerifyManager * ag_verifyManager()
         if ( [verifier respondsToSelector:@selector(verifyObj:)] )
             error = [verifier verifyObj:obj];
         
-        if (error) {
+        if ( error ) {
             // 有错
-            _isError = YES;
+            _firstError = _firstError ?: error;
             
-            if ( ! self->_firstError ) {
-                self->_firstError = error;
-            }
             // 打包错误
             [self.errorsM addObject:error];
-            
         }
-        
         return self;
     };
 }
 
-- (void)verified:(AGVerifyManagerVerifiedBlock)verifiedBlock
+- (AGVerifyManager *)verified:(AGVerifyManagerVerifiedBlock)verifiedBlock
 {
-    if ( verifiedBlock ) {
-        verifiedBlock(self.firstError, [self.errorsM copy]);
-    }
-    
+    [self debugDescription];
+    verifiedBlock ? verifiedBlock(self.firstError, [self.errorsM copy]) : nil;
     self.firstError = nil;
     self.errorsM = nil;
+    return self;
 }
 
 #pragma mark - ----------- Getter Methods ----------
@@ -101,4 +89,24 @@ AGVerifyManager * ag_verifyManager()
 
 #pragma mark -
 @implementation AGVerifyError
+
+#pragma mark - ----------- Override Methods ----------
+- (NSString *) debugDescription
+{
+    uint count;
+    objc_property_t *properties = class_copyPropertyList([self class], &count);
+    
+    NSMutableDictionary *dictM = [NSMutableDictionary dictionaryWithCapacity:count];
+    for (int i = 0; i<count; i++) {
+        objc_property_t property = properties[i];
+        NSString *name = @(property_getName(property));
+        id value = [self valueForKey:name] ?: @"nil";
+        [dictM setObject:value forKey:name];
+    }
+    
+    free(properties);
+    
+    return [NSString stringWithFormat:@"<%@: %p> -- %@", [self class] , self, dictM];
+}
+
 @end

@@ -18,13 +18,13 @@
         // 字数过少
         error = [AGVerifyError new];
         error.code = 3301;
-        error.msg = self.minLimitMsg ? self.minLimitMsg : [NSString stringWithFormat:@"字数不能少于%@字！", @(self.minLimit)];
+        error.msg = self.minLimitMsg ?: [NSString stringWithFormat:@"字数不能少于%@字！", @(self.minLimit)];
     }
     else if ( [self maxText:self.verifyString limit:self.maxLimit] ) {
         // 字数超出
         error = [AGVerifyError new];
         error.code = 3302;
-        error.msg = self.maxLimitMsg ? self.maxLimitMsg : [NSString stringWithFormat:@"字数不能超过%@字！", @(self.maxLimit)];
+        error.msg = self.maxLimitMsg ?: [NSString stringWithFormat:@"字数不能超过%@字！", @(self.maxLimit)];
     }
     
     return error;
