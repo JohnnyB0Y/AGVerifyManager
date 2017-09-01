@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		265521C4BB20FF8C77193ABB /* libPods-AGVerifyManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA2A7EFDC9069A6A7A3C254 /* libPods-AGVerifyManager.a */; };
 		3AF1F0FD1F37329E00902E85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F0FC1F37329E00902E85 /* main.m */; };
 		3AF1F1001F37329E00902E85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F0FF1F37329E00902E85 /* AppDelegate.m */; };
 		3AF1F1031F37329E00902E85 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1021F37329E00902E85 /* ViewController.m */; };
@@ -17,7 +18,6 @@
 		3AF1F1351F37338500902E85 /* AGVerifyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1171F37338500902E85 /* AGVerifyManager.m */; };
 		3AF1F13A1F37338500902E85 /* ATApiCodeVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1241F37338500902E85 /* ATApiCodeVerifier.m */; };
 		3AF1F13B1F37338500902E85 /* ATApiStatusVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1261F37338500902E85 /* ATApiStatusVerifier.m */; };
-		3AF1F13D1F37338500902E85 /* ATIsNullVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F12A1F37338500902E85 /* ATIsNullVerifier.m */; };
 		3AF1F13E1F37338500902E85 /* ATTextLimitVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F12C1F37338500902E85 /* ATTextLimitVerifier.m */; };
 		3AF1F1411F37338500902E85 /* ATUsernameVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1331F37338500902E85 /* ATUsernameVerifier.m */; };
 		3AF1F1451F3742B000902E85 /* ATEmojiVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1441F3742B000902E85 /* ATEmojiVerifier.m */; };
@@ -42,14 +42,15 @@
 		3AF1F1241F37338500902E85 /* ATApiCodeVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATApiCodeVerifier.m; sourceTree = "<group>"; };
 		3AF1F1251F37338500902E85 /* ATApiStatusVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATApiStatusVerifier.h; sourceTree = "<group>"; };
 		3AF1F1261F37338500902E85 /* ATApiStatusVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATApiStatusVerifier.m; sourceTree = "<group>"; };
-		3AF1F1291F37338500902E85 /* ATIsNullVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATIsNullVerifier.h; sourceTree = "<group>"; };
-		3AF1F12A1F37338500902E85 /* ATIsNullVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATIsNullVerifier.m; sourceTree = "<group>"; };
 		3AF1F12B1F37338500902E85 /* ATTextLimitVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTextLimitVerifier.h; sourceTree = "<group>"; };
 		3AF1F12C1F37338500902E85 /* ATTextLimitVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTextLimitVerifier.m; sourceTree = "<group>"; };
 		3AF1F1321F37338500902E85 /* ATUsernameVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATUsernameVerifier.h; sourceTree = "<group>"; };
 		3AF1F1331F37338500902E85 /* ATUsernameVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATUsernameVerifier.m; sourceTree = "<group>"; };
 		3AF1F1431F3742B000902E85 /* ATEmojiVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATEmojiVerifier.h; sourceTree = "<group>"; };
 		3AF1F1441F3742B000902E85 /* ATEmojiVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATEmojiVerifier.m; sourceTree = "<group>"; };
+		8180C770E35755BA92BF4ACE /* Pods-AGVerifyManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGVerifyManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGVerifyManager/Pods-AGVerifyManager.debug.xcconfig"; sourceTree = "<group>"; };
+		B53379708C31C3371DE27E25 /* Pods-AGVerifyManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGVerifyManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGVerifyManager/Pods-AGVerifyManager.release.xcconfig"; sourceTree = "<group>"; };
+		BBA2A7EFDC9069A6A7A3C254 /* libPods-AGVerifyManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AGVerifyManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +58,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				265521C4BB20FF8C77193ABB /* libPods-AGVerifyManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		002E01D60EEBED674877E9EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBA2A7EFDC9069A6A7A3C254 /* libPods-AGVerifyManager.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3AF1F0EF1F37329E00902E85 = {
 			isa = PBXGroup;
 			children = (
 				3AF1F0FA1F37329E00902E85 /* AGVerifyManager */,
 				3AF1F0F91F37329E00902E85 /* Products */,
+				BBFEE7081718D62D53ACFAA3 /* Pods */,
+				002E01D60EEBED674877E9EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,8 +153,6 @@
 				3AF1F1241F37338500902E85 /* ATApiCodeVerifier.m */,
 				3AF1F1251F37338500902E85 /* ATApiStatusVerifier.h */,
 				3AF1F1261F37338500902E85 /* ATApiStatusVerifier.m */,
-				3AF1F1291F37338500902E85 /* ATIsNullVerifier.h */,
-				3AF1F12A1F37338500902E85 /* ATIsNullVerifier.m */,
 				3AF1F12B1F37338500902E85 /* ATTextLimitVerifier.h */,
 				3AF1F12C1F37338500902E85 /* ATTextLimitVerifier.m */,
 				3AF1F1431F3742B000902E85 /* ATEmojiVerifier.h */,
@@ -167,6 +177,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		BBFEE7081718D62D53ACFAA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8180C770E35755BA92BF4ACE /* Pods-AGVerifyManager.debug.xcconfig */,
+				B53379708C31C3371DE27E25 /* Pods-AGVerifyManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,9 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AF1F10F1F37329E00902E85 /* Build configuration list for PBXNativeTarget "AGVerifyManager" */;
 			buildPhases = (
+				2C8B40799F8FFB11106D8C61 /* [CP] Check Pods Manifest.lock */,
 				3AF1F0F41F37329E00902E85 /* Sources */,
 				3AF1F0F51F37329E00902E85 /* Frameworks */,
 				3AF1F0F61F37329E00902E85 /* Resources */,
+				C539D3134DEC958D7CADD93D /* [CP] Embed Pods Frameworks */,
+				B3F4C049BB908D817433A570 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +256,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C8B40799F8FFB11106D8C61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B3F4C049BB908D817433A570 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AGVerifyManager/Pods-AGVerifyManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C539D3134DEC958D7CADD93D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AGVerifyManager/Pods-AGVerifyManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3AF1F0F41F37329E00902E85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -241,7 +311,6 @@
 			files = (
 				3AF1F1031F37329E00902E85 /* ViewController.m in Sources */,
 				3AF1F1001F37329E00902E85 /* AppDelegate.m in Sources */,
-				3AF1F13D1F37338500902E85 /* ATIsNullVerifier.m in Sources */,
 				3AF1F1341F37338500902E85 /* AGBaseVerifier.m in Sources */,
 				3AF1F13A1F37338500902E85 /* ATApiCodeVerifier.m in Sources */,
 				3AF1F1411F37338500902E85 /* ATUsernameVerifier.m in Sources */,
@@ -367,6 +436,7 @@
 		};
 		3AF1F1101F37329E00902E85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8180C770E35755BA92BF4ACE /* Pods-AGVerifyManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y4TD9NMHQ7;
@@ -379,6 +449,7 @@
 		};
 		3AF1F1111F37329E00902E85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B53379708C31C3371DE27E25 /* Pods-AGVerifyManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y4TD9NMHQ7;

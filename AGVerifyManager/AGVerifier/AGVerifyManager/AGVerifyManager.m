@@ -9,11 +9,6 @@
 #import "AGVerifyManager.h"
 #import <objc/runtime.h>
 
-AGVerifyManager * ag_verifyManager()
-{
-    return [AGVerifyManager new];
-}
-
 @interface AGVerifyManager ()
 
 /** first error */
@@ -68,7 +63,6 @@ AGVerifyManager * ag_verifyManager()
 
 - (AGVerifyManager *)verified:(AGVerifyManagerVerifiedBlock)verifiedBlock
 {
-    [self debugDescription];
     verifiedBlock ? verifiedBlock(self.firstError, [self.errorsM copy]) : nil;
     self.firstError = nil;
     self.errorsM = nil;
@@ -110,3 +104,9 @@ AGVerifyManager * ag_verifyManager()
 }
 
 @end
+
+AGVerifyManager * ag_verifyManager()
+{
+    return [AGVerifyManager new];
+}
+
