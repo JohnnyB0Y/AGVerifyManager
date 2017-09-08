@@ -22,15 +22,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak, readonly, nullable) AGVMSection *firstSection;
 @property (nonatomic, weak, readonly, nullable) AGVMSection *lastSection;
 
-#pragma mark - 快速创建 vmm
+#pragma mark - fast create vmm
 /**
- 快速创建vmm
+ fast create vmm
 
  @param capacity sectionArrM 每次增量拷贝的内存大小
  @return vmm
  */
 + (instancetype) ag_VMManagerWithItemCapacity:(NSUInteger)capacity;
-
+- (instancetype) initWithItemCapacity:(NSUInteger)capacity NS_DESIGNATED_INITIALIZER;
 
 #pragma mark - 自己拼装数据 （不用担心循环引用问题）
 /**
@@ -113,11 +113,16 @@ atIndexedSubscript:(NSUInteger)idx;
 /** 遍历所有 section 的 header、footer vm */
 - (void) ag_enumerateSectionHeaderFooterVMsUsingBlock:(void (NS_NOESCAPE ^)(AGViewModel *vm, NSIndexPath *indexPath, BOOL *stop))block;
 
+
+// 不使用
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+
 @end
 
 
 #pragma mark - 快捷函数
-/** 快速创建 AGVMManager 实例 */
+/** fast create AGVMManager instance */
 AGVMManager * ag_VMManager(NSUInteger capacity);
 
 

@@ -35,12 +35,13 @@
 {
     AGViewModel *vm =
     [AGViewModel ag_viewModelWithModel:commonVM.bindingModel
-                                     capacity:capacity];
+                              capacity:capacity];
     package ? package(vm.bindingModel) : nil;
     return vm;
 }
 
-- (AGViewModel *) ag_package:(NS_NOESCAPE AGVMPackageDataBlock)package capacity:(NSUInteger)capacity
+- (AGViewModel *) ag_package:(NS_NOESCAPE AGVMPackageDataBlock)package
+                    capacity:(NSUInteger)capacity
 {
     return [self ag_package:package commonVM:nil capacity:capacity];
 }
@@ -84,6 +85,7 @@
                             returnClass:[self _returnClassName:obj]
                          definitionStrM:definitionStrM
                             takeOutStrM:takeOutStrM];
+                
                 [self _printDefinitionStrM:definitionStrM takeOutStrM:takeOutStrM];
                 
                 
@@ -143,6 +145,7 @@
 {
     printf("%s\n", [definitionStrM UTF8String]);
     [self _printString:@"✨" row:1];
+    
     printf("%s\n", [takeOutStrM UTF8String]);
     [self _printString:@"🍌" row:2];
 }

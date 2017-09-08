@@ -6,14 +6,53 @@
 //  Copyright © 2017年 JohnnyB0Y. All rights reserved.
 //
 
-
 #ifndef AGVMProtocol_h
 #define AGVMProtocol_h
 
 #import <UIKit/UIKit.h>
 @class AGViewModel, AGVMSection;
+@protocol AGVMIncludable;
+
 
 NS_ASSUME_NONNULL_BEGIN
+
+#pragma mark - ------------- typedef block --------------
+#pragma mark viewModel block
+typedef void(^AGVMConfigDataBlock)
+(
+    AGViewModel *vm,
+    UIView<AGVMIncludable> *bv,
+    NSMutableDictionary *bm
+);
+
+
+typedef void(^AGVMUpdateModelBlock)
+(
+    NSMutableDictionary *bm
+);
+
+
+typedef void (^AGVMNotificationBlock)
+(
+    AGViewModel *vm,
+    NSString *key,
+    NSDictionary<NSKeyValueChangeKey, id> *change
+);
+
+
+#pragma mark viewModelProcess block
+typedef void(^AGVMPackageSectionBlock)
+(
+    AGVMSection *vms
+);
+
+
+#pragma mark viewModelPackage block
+typedef void (^AGVMPackageDataBlock)
+(
+    NSMutableDictionary *package
+);
+
 
 #pragma mark - ------------- ViewModel 相关协议 --------------
 #pragma mark BaseReusable Protocol
@@ -78,7 +117,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark AGVMPackagable
 @protocol AGVMPackagable <NSObject>
-- (AGViewModel *) ag_packageData:(nullable NSDictionary *)data forObject:(nullable id)obj;
+- (AGViewModel *) ag_packageData:(NSDictionary *)dict forObject:(nullable id)obj;
 @end
 
 
@@ -89,9 +128,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) AGViewModel *viewModel;
 
 @optional
-/** bindingView 对 view model 做处理 */
-- (void) ag_viewModelProcess:(AGViewModel *)vm;
-
 /**
  计算返回 bindingView 的 size
  
@@ -120,25 +156,142 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+#pragma mark - AGVMObserverRegistratio
+@protocol AGVMObserverRegistratio <NSObject>
+#pragma mark readd observer
+/**
+ 重新添加观察者 并 移除旧的观察者，观察 bindingModel 键-值变化
+ 
+ @param observer 观察者
+ @param key 观察的键
+ @param block 回调 Block
+ */
+- (void) ag_readdObserver:(NSObject *)observer
+                   forKey:(NSString *)key
+                    block:(AGVMNotificationBlock)block;
 
-#pragma mark - ------------- typedef block --------------
-#pragma mark viewModel block
-typedef void(^AGVMConfigDataBlock)(AGViewModel *vm,
-                                   UIView<AGVMIncludable> *bv,
-                                   NSMutableDictionary *bm);
+/**
+ 重新添加观察者 并 移除旧的观察者，观察 bindingModel 键-值变化
+ 
+ @param observer 观察者
+ @param keys 观察的一组键
+ @param block 回调 Block
+ */
+- (void) ag_readdObserver:(NSObject *)observer
+                   forKeys:(NSArray<NSString *> *)keys
+                    block:(AGVMNotificationBlock)block;
 
-typedef void(^AGVMUpdateModelBlock)(NSMutableDictionary *bm);
+/**
+ 重新添加观察者 并 移除旧的观察者，观察 bindingModel 键-值变化
+ 
+ @param observer 观察者
+ @param key 观察的键
+ @param options 同KVO
+ @param block 回调 Block
+ */
+- (void) ag_readdObserver:(NSObject *)observer
+                   forKey:(NSString *)key
+                  options:(NSKeyValueObservingOptions)options
+                    block:(AGVMNotificationBlock)block;
+
+/**
+ 重新添加观察者 并 移除旧的观察者，观察 bindingModel 键-值变化
+ 
+ @param observer 观察者
+ @param keys 观察的一组键
+ @param options 同KVO
+ @param block 回调 Block
+ */
+- (void) ag_readdObserver:(NSObject *)observer
+                  forKeys:(NSArray<NSString *> *)keys
+                  options:(NSKeyValueObservingOptions)options
+                    block:(AGVMNotificationBlock)block;
+
+#pragma mark add observer
+/**
+ 观察 bindingModel 键-值变化
+
+ @param observer 观察者
+ @param key 观察的键
+ @param block 回调 Block
+ */
+- (void) ag_addObserver:(NSObject *)observer
+                 forKey:(NSString *)key
+                  block:(AGVMNotificationBlock)block;
+
+/**
+ 观察 bindingModel 键-值变化
+ 
+ @param observer 观察者
+ @param keys 观察的一组键
+ @param block 回调 Block
+ */
+- (void) ag_addObserver:(NSObject *)observer
+                forKeys:(NSArray<NSString *> *)keys
+                  block:(AGVMNotificationBlock)block;
+
+/**
+ 观察 bindingModel 键-值变化
+ 
+ @param observer 观察者
+ @param key 观察的键
+ @param options 同KVO
+ @param block 回调 Block
+ */
+- (void) ag_addObserver:(NSObject *)observer
+                 forKey:(NSString *)key
+                options:(NSKeyValueObservingOptions)options
+                  block:(AGVMNotificationBlock)block;
+
+/**
+ 观察 bindingModel 键-值变化
+ 
+ @param observer 观察者
+ @param keys 观察的一组键
+ @param options 同KVO
+ @param block 回调 Block
+ */
+- (void) ag_addObserver:(NSObject *)observer
+                forKeys:(NSArray<NSString *> *)keys
+                options:(NSKeyValueObservingOptions)options
+                  block:(AGVMNotificationBlock)block;
+
+#pragma mark remove observer
+/**
+ 停止该观察者监听 bindingModel 对应 key 的键值变化
+
+ @param observer 观察者
+ @param key 停止观察的键
+ */
+- (void) ag_removeObserver:(NSObject *)observer
+                    forKey:(NSString *)key;
+
+/**
+ 停止该观察者监听 bindingModel 对应 一组key 的键值变化
+ 
+ @param observer 观察者
+ @param keys 停止观察的一组键
+ */
+- (void) ag_removeObserver:(NSObject *)observer
+                   forKeys:(NSArray<NSString *> *)keys;
 
 
-#pragma mark viewModelProcess block
-typedef void(^AGVMPackageSectionBlock)(AGVMSection *vms);
+/**
+ 停止该观察者监听 bindingModel 的键值变化
+
+ @param observer 观察者
+ */
+- (void) ag_removeObserver:(NSObject *)observer;
 
 
-#pragma mark viewModelPackage block
-typedef void (^AGVMPackageDataBlock)(NSMutableDictionary *package);
+/**
+ 停止所有观察者监听 bindingModel 的键值变化
+ */
+- (void) ag_removeAllObservers;
 
+@end
 
-#pragma mark - ------------- typedef block --------------
+#pragma mark - ------------- typedef enum --------------
 typedef NS_ENUM(NSUInteger, AGVMStatus) {
     /** 无状态 */
     AGVMStatusNone = 0,

@@ -18,16 +18,23 @@
 @implementation AGVMSection
 
 /**
- 快速创建vms
+ fast create vms
  
  @param capacity itemArrM 每次增量拷贝的内存大小
  @return vms
  */
 + (instancetype) ag_VMSectionWithItemCapacity:(NSUInteger)capacity
 {
-    AGVMSection *vms = [self new];
-    vms->_itemArrM = ag_mutableArray(capacity);
-    return vms;
+    return [[self alloc] initWithItemCapacity:capacity];
+}
+
+- (instancetype) initWithItemCapacity:(NSUInteger)capacity
+{
+    self = [super init];
+    if (self) {
+        _itemArrM = ag_mutableArray(capacity);
+    }
+    return self;
 }
 
 #pragma mark - ---------- Public Methods ----------
@@ -222,12 +229,12 @@
 }
 
 #pragma mark 更新
-- (AGVMSection *) ag_updateItemPackage:(AGVMPackageDataBlock)package
+- (AGVMSection *) ag_updateItemInBlock:(NS_NOESCAPE AGVMUpdateModelBlock)block
                                atIndex:(NSUInteger)index
 {
-    if ( package ) {
+    if ( block ) {
         AGViewModel *vm = self[index];
-        vm ? package(vm.bindingModel) : NSLog(@"你要更新的 View Model 不存在！");
+        vm ? block(vm.bindingModel) : NSLog(@"你要更新的 View Model 不存在！");
     }
     return self;
 }
@@ -357,7 +364,7 @@
 
 @end
 
-/** 快速创建 AGVMSection 实例 */
+/** fast create AGVMSection instance */
 AGVMSection * ag_VMSection(NSUInteger capacity)
 {
     return [AGVMSection ag_VMSectionWithItemCapacity:capacity];

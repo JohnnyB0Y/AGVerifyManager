@@ -28,13 +28,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak, readonly, nullable) AGViewModel *lastViewModel;
 
 /**
- 快速创建vms
+ fast create vms
  
  @param capacity itemArrM 每次增量拷贝的内存大小
  @return vms
  */
 + (instancetype) ag_VMSectionWithItemCapacity:(NSUInteger)capacity;
-
+- (instancetype) initWithItemCapacity:(NSUInteger)capacity NS_DESIGNATED_INITIALIZER;
 
 #pragma mark - 通过 packager 拼装数据
 /** 通过 packager 拼装组头数据 */
@@ -125,7 +125,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (AGVMSection *) ag_removeAllItems;
 
 #pragma mark 更新
-- (AGVMSection *) ag_updateItemPackage:(NS_NOESCAPE AGVMPackageDataBlock)package
+- (AGVMSection *) ag_updateItemInBlock:(NS_NOESCAPE AGVMUpdateModelBlock)block
                                atIndex:(NSUInteger)index;
 
 - (void) setObject:(AGViewModel *)vm
@@ -159,9 +159,14 @@ atIndexedSubscript:(NSUInteger)idx;
 /** 遍历 header、footer vm */
 - (AGVMSection *) ag_enumerateHeaderFooterVMsUsingBlock:(void (NS_NOESCAPE ^)(AGViewModel *vm, NSUInteger idx, BOOL *stop))block;
 
+
+// 不使用
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+
 @end
 
-/** 快速创建 AGVMSection 实例 */
+/** fast create AGVMSection instance */
 AGVMSection * ag_VMSection(NSUInteger capacity);
 
 

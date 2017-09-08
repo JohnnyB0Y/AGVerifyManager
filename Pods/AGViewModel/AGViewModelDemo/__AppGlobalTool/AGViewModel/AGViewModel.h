@@ -12,22 +12,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - 快捷函数
-/** 快速创建 AGViewModel 实例 */
-AGViewModel * ag_viewModel(NSDictionary * _Nullable bindingModel);
-/** 快速创建可变字典函数 */
-NSMutableDictionary * ag_mutableDict(NSUInteger capacity);
-/** 快速创建可变数组函数 */
-NSMutableArray * ag_mutableArray(NSUInteger capacity);
-/** 快速创建可变数组函数, 包含 Null 对象 */
-NSMutableArray * ag_mutableNullArray(NSUInteger capacity);
-
-
 #pragma mark - interface
-@interface AGViewModel : NSObject
+@interface AGViewModel : NSObject <AGVMObserverRegistratio>
 
-@property (nonatomic, weak,     readonly, nullable) UIView<AGVMIncludable> *bindingView;
-@property (nonatomic, strong,   readonly) NSMutableDictionary *bindingModel;
+@property (nonatomic, weak,   readonly, nullable) UIView<AGVMIncludable> *bindingView;
+@property (nonatomic, strong, readonly) NSMutableDictionary *bindingModel;
+
 /** 状态 - 可作为控制器跳转操作标识 */
 @property (nonatomic, assign) AGVMStatus status;
 @property (nonatomic, weak, nullable) id<AGVMDelegate> delegate;
@@ -38,7 +28,7 @@ NSMutableArray * ag_mutableNullArray(NSUInteger capacity);
 - (void) ag_setBindingView:(UIView<AGVMIncludable> *)bindingView
            configDataBlock:(nullable AGVMConfigDataBlock)configDataBlock;
 
-/** 默认更新绑定视图 （ 其实就是调用 bindingView 的 @selector(setViewModel:) 方法 ） */
+/** 默认更新绑定视图（ 其实就是调用 bindingView 的 @selector(setViewModel:) 方法 ）*/
 - (void) ag_setBindingView:(nullable UIView<AGVMIncludable> *)bindingView;
 
 #pragma mark 设置绑定代理
@@ -53,9 +43,6 @@ NSMutableArray * ag_mutableNullArray(NSUInteger capacity);
 
 /** 当 bindingView 为空时，直接传进去计算 size */
 - (CGSize) ag_sizeOfBindingView:(UIView<AGVMIncludable> *)bv;
-
-/** bindingView 对 view model 做处理 */
-- (void) ag_viewModelProcess;
 
 
 #pragma mark 通知代理根据信息或类型做某事（ 让 view 传递信息给 controller ）
@@ -84,6 +71,7 @@ NSMutableArray * ag_mutableNullArray(NSUInteger capacity);
  @return viewModel 对象
  */
 + (instancetype) ag_viewModelWithModel:(nullable NSDictionary *)bindingModel;
+- (instancetype) initWithModel:(NSMutableDictionary *)bindingModel NS_DESIGNATED_INITIALIZER;
 
 
 #pragma mark 辅助方法
@@ -92,14 +80,29 @@ NSMutableArray * ag_mutableNullArray(NSUInteger capacity);
 
 /** 更新数据 并 刷新视图 */
 - (void) ag_refreshViewByUpdateModelInBlock:(nullable NS_NOESCAPE AGVMUpdateModelBlock)block;
-- (void) setObject:(id)obj forKeyedSubscript:(NSString *)key;
+- (void) setObject:(nullable id)obj forKeyedSubscript:(NSString *)key;
 
 /** 合并 bindingModel */
 - (void) ag_mergeModelFromViewModel:(AGViewModel *)vm;
 - (void) ag_mergeModelFromDictionary:(NSDictionary *)dict;
 
+
+
+// 不使用
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+
 @end
 
+#pragma mark - 快捷函数
+/** fast create AGViewModel instance */
+AGViewModel * ag_viewModel(NSDictionary * _Nullable bindingModel);
+/** fast create 可变字典函数 */
+NSMutableDictionary * ag_mutableDict(NSUInteger capacity);
+/** fast create 可变数组函数 */
+NSMutableArray * ag_mutableArray(NSUInteger capacity);
+/** fast create 可变数组函数, 包含 Null 对象 */
+NSMutableArray * ag_mutableNullArray(NSUInteger capacity);
 
 NS_ASSUME_NONNULL_END
 

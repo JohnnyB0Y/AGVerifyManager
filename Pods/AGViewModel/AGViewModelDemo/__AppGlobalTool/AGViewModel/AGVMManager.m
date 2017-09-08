@@ -20,16 +20,23 @@
 
 #pragma mark - ----------- Life Cycle ----------
 /**
- 快速创建vmm
+ fast create vmm
  
  @param capacity itemArr 的 capacity
  @return vmm
  */
 + (instancetype) ag_VMManagerWithItemCapacity:(NSUInteger)capacity
 {
-    AGVMManager *vmm = [self new];
-    vmm->_sectionArrM = ag_mutableArray(capacity);
-    return vmm;
+    return [[self alloc] initWithItemCapacity:capacity];
+}
+
+- (instancetype)initWithItemCapacity:(NSUInteger)capacity
+{
+    self = [super init];
+    if (self) {
+        _sectionArrM = ag_mutableArray(capacity);
+    }
+    return self;
 }
 
 #pragma mark - ---------- Public Methods ----------
@@ -251,7 +258,7 @@
 @end
 
 
-/** 快速创建 AGVMManager 实例 */
+/** fast create AGVMManager instance */
 AGVMManager * ag_VMManager(NSUInteger capacity)
 {
     return [AGVMManager ag_VMManagerWithItemCapacity:capacity];

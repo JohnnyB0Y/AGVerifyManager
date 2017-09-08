@@ -70,10 +70,10 @@ static NSString * const kAGVMViewW = @"kAGVMViewW";
 /** 宽高比 👉NSNumber👈 */
 static NSString * const kAGVMViewAspectRatio = @"kAGVMViewAspectRatio";
 
-/** 视图内边距 */
+/** 视图内边距 UIEdgeInsets 👉NSString👈 */
 static NSString * const kAGVMViewEdgeInsets = @"kAGVMViewEdgeInsets";
 
-/** 视图外边距 */
+/** 视图外边距 UIEdgeInsets 👉NSString👈 */
 static NSString * const kAGVMViewEdgeMargin = @"kAGVMViewEdgeMargin";
 
 

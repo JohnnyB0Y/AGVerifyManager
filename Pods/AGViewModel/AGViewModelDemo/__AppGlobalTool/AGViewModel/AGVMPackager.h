@@ -54,9 +54,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) ag_resolveStaticKeyFromObject:(id)object
                             moduleName:(NSString *)moduleName;
 
+
+// 不使用
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+
 @end
 
-#pragma mark - 快速函数
+#pragma mark - fast funtion
 /** 全局 vm packager */
 AGVMPackager * ag_sharedVMPackager();
 
