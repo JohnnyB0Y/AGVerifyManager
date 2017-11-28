@@ -40,25 +40,51 @@
     };
 }
 
-- (AGVerifyManager *(^)(id<AGVerifyManagerInjectVerifiable>,
-                        id))verifyObj
+- (AGVerifyManager * _Nonnull (^)(id<AGVerifyManagerInjectVerifiable> _Nonnull,
+								  id _Nonnull))verify_Obj
 {
-    return ^AGVerifyManager *(id<AGVerifyManagerInjectVerifiable> verifier,
-                              id obj) {
-        // 判断错误
-        AGVerifyError *error;
-        if ( [verifier respondsToSelector:@selector(verifyObj:)] )
-            error = [verifier verifyObj:obj];
-        
-        if ( error ) {
-            // 有错
-            _firstError = _firstError ?: error;
-            
-            // 打包错误
-            [self.errorsM addObject:error];
-        }
-        return self;
-    };
+	return ^AGVerifyManager *(id<AGVerifyManagerInjectVerifiable> verifier,
+							  id obj) {
+		// 判断错误
+		AGVerifyError *error;
+		if ( [verifier respondsToSelector:@selector(verifyObj:)] )
+			error = [verifier verifyObj:obj];
+		
+		if ( error ) {
+			// 有错
+			_firstError = _firstError ?: error;
+			
+			// 打包错误
+			[self.errorsM addObject:error];
+		}
+		return self;
+	};
+}
+
+- (AGVerifyManager * _Nonnull (^)(id<AGVerifyManagerInjectVerifiable> _Nonnull,
+								  id _Nonnull,
+								  NSString * _Nullable))verify_Obj_Msg
+{
+	return ^AGVerifyManager *(id<AGVerifyManagerInjectVerifiable> verifier,
+							  id obj,
+							  NSString *msg) {
+		
+		// 判断错误
+		AGVerifyError *error;
+		if ( [verifier respondsToSelector:@selector(verifyObj:)] )
+			error = [verifier verifyObj:obj];
+		
+		if ( error ) {
+			// 有错
+			error.msg = msg ?: error.msg;
+			_firstError = _firstError ?: error;
+			
+			// 打包错误
+			[self.errorsM addObject:error];
+		}
+		return self;
+		
+	};
 }
 
 - (AGVerifyManager *)verified:(AGVerifyManagerVerifiedBlock)verifiedBlock

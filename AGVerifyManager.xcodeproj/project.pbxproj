@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		265521C4BB20FF8C77193ABB /* libPods-AGVerifyManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA2A7EFDC9069A6A7A3C254 /* libPods-AGVerifyManager.a */; };
+		3AE410DE1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE410DD1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m */; };
 		3AF1F0FD1F37329E00902E85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F0FC1F37329E00902E85 /* main.m */; };
 		3AF1F1001F37329E00902E85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F0FF1F37329E00902E85 /* AppDelegate.m */; };
 		3AF1F1031F37329E00902E85 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1021F37329E00902E85 /* ViewController.m */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AE410DC1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATWhiteSpaceVerifier.h; sourceTree = "<group>"; };
+		3AE410DD1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATWhiteSpaceVerifier.m; sourceTree = "<group>"; };
 		3AF1F0F81F37329E00902E85 /* AGVerifyManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGVerifyManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF1F0FC1F37329E00902E85 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3AF1F0FE1F37329E00902E85 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				3AF1F12C1F37338500902E85 /* ATTextLimitVerifier.m */,
 				3AF1F1431F3742B000902E85 /* ATEmojiVerifier.h */,
 				3AF1F1441F3742B000902E85 /* ATEmojiVerifier.m */,
+				3AE410DC1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.h */,
+				3AE410DD1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m */,
 			);
 			path = Default;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				3AF1F1031F37329E00902E85 /* ViewController.m in Sources */,
 				3AF1F1001F37329E00902E85 /* AppDelegate.m in Sources */,
 				3AF1F1341F37338500902E85 /* AGBaseVerifier.m in Sources */,
+				3AE410DE1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m in Sources */,
 				3AF1F13A1F37338500902E85 /* ATApiCodeVerifier.m in Sources */,
 				3AF1F1411F37338500902E85 /* ATUsernameVerifier.m in Sources */,
 				3AF1F1451F3742B000902E85 /* ATEmojiVerifier.m in Sources */,

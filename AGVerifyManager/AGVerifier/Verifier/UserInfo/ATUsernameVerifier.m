@@ -12,19 +12,31 @@
 
 - (AGVerifyError *)verify
 {
-    AGVerifyError *error;
-    if ( self.verifyString.length == 0 ) {
-        error = [AGVerifyError new];
-        error.code = 20001;
-        error.msg = @"用户名不能为空！";
-    }
-    else if ( self.verifyString.length > 10 ) {
-        error = [AGVerifyError new];
-        error.code = 20002;
-        error.msg = @"用户名不能超过10个字符！";
-    }
-    
-    return error;
+    return [self verifyObj:self.verifyString];
+}
+
+- (AGVerifyError *)verifyObj:(NSString *)obj
+{
+	AGVerifyError *error = [AGVerifyError new];
+	if ( obj && ![obj isKindOfClass:[NSString class]] ) {
+		error.code = 400;
+		error.msg = @"输入内容格式错误！";
+		return error;
+	}
+	
+	if ( obj.length == 0 ) {
+		error.code = 20001;
+		error.msg = @"用户名不能为空！";
+	}
+	else if ( obj.length > 10 ) {
+		error.code = 20002;
+		error.msg = @"用户名不能超过10个字符！";
+	}
+	else {
+		error = nil;
+	}
+	
+	return error;
 }
 
 @end

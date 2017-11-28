@@ -10,6 +10,7 @@
 #import "AGVerifyManager.h"
 #import "ATTextLimitVerifier.h"
 #import "ATEmojiVerifier.h"
+#import "ATWhiteSpaceVerifier.h"
 #import <AGViewModel/AGVMKit.h>
 
 //
@@ -47,26 +48,41 @@ static NSString * const kViewControllerNameText;
 }
 
 - (IBAction)verifyBtnClick:(UIButton *)sender {
-    // 1. 判断用户输入
+	
+	/**
+	 - 创建遵守<AGVerifyManagerVerifiable>或<AGVerifyManagerInjectVerifiable>协议的验证器类
+	 - 实现<AGVerifyManagerVerifiable>或<AGVerifyManagerInjectVerifiable>协议方法
+	 - 具体可参考 Demo
+	 - 下面是使用过程
+	 */
+	
+    // 1. 判断用户输入文字限制
     ATTextLimitVerifier *username =
     [ATTextLimitVerifier verifier:self.nameTextField.text];
     username.minLimit = 2;
     username.maxLimit = 7;
     username.maxLimitMsg =
-    [NSString stringWithFormat:@"用户名不能超过%@个字符！", @(username.maxLimit)];
+    [NSString stringWithFormat:@"文字不能超过%@个字符！", @(username.maxLimit)];
     
-    // 2. 判断是否包含 emoji 😈
+    // 2. 判断文字是否包含 emoji 😈
     ATEmojiVerifier *emoji = [ATEmojiVerifier new];
     emoji.errorMsg = @"请输入非表情字符！";
-    
-    // 3. 开始验证
+	
+	// 3. 判断文字是否包含空格
+	ATWhiteSpaceVerifier *whiteSpaceVerifier = [ATWhiteSpaceVerifier new];
+	
+    // 4. 开始验证
     [ag_verifyManager()
-     .verifyObj(emoji, self.nameTextField.text) // 用法一
-     .verify(username) // 用法二
-     .verifyObj(self, self.nameTextField) // 文本框闪烁
+	 
+	 .verify(username) // 用法一
+     .verify_Obj(emoji, self.nameTextField.text) // 用法二
+	 .verify_Obj_Msg(whiteSpaceVerifier, self.nameTextField.text, @"文字不能包含空格！") // 用法三
+     .verify_Obj(self, self.nameTextField) // 文本框闪烁
+	 
      verified:^(AGVerifyError * _Nullable firstError, NSArray<AGVerifyError *> * _Nullable errors) {
          if ( firstError ) {
              // 验证不通过
+			 self.resultLabel.textColor = [UIColor redColor];
              self.resultLabel.text = firstError.msg;
              
              // 文本框闪烁
@@ -95,6 +111,7 @@ static NSString * const kViewControllerNameText;
          }
          else {
              // TODO
+			 self.resultLabel.textColor = [UIColor greenColor];
              self.resultLabel.text = @"验证通过！";
              self.nameTextField.backgroundColor = [UIColor whiteColor];
          }

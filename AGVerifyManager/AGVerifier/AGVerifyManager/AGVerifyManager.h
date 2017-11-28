@@ -24,7 +24,14 @@ typedef void(^AGVerifyManagerVerifiedBlock)(AGVerifyError * _Nullable firstError
 
 
 /** 验证数据，数据直接参数传入 */
-- (AGVerifyManager * (^)(id<AGVerifyManagerInjectVerifiable> verifier, id obj)) verifyObj;
+- (AGVerifyManager * (^)(id<AGVerifyManagerInjectVerifiable> verifier,
+						 id obj)) verify_Obj;
+
+
+/** 验证数据，直接传入验证器、数据、错误提示信息 */
+- (AGVerifyManager * (^)(id<AGVerifyManagerInjectVerifiable> verifier,
+						 id obj,
+						 NSString * _Nullable msg)) verify_Obj_Msg;
 
 
 /** 验证完调用 (无循环引用问题) */
