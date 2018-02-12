@@ -17,6 +17,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - ------------- typedef block --------------
+#pragma mark quick block
+typedef void (^AGVMTargetVCBlock)
+(
+     UIViewController * _Nullable vc,
+     AGViewModel * _Nullable vm
+);
+
+
 #pragma mark viewModel block
 typedef void(^AGVMConfigDataBlock)
 (
@@ -40,12 +48,48 @@ typedef void (^AGVMNotificationBlock)
 );
 
 
-#pragma mark viewModelProcess block
+typedef void (^AGVMSafeSetCompletionBlock)
+(
+	 AGViewModel *vm,
+	 _Nullable id value, // 数据
+	 BOOL safe // 数据是否类型安全
+);
+
+
+typedef _Nullable id (^AGVMSafeGetCompletionBlock)
+(
+	 AGViewModel *vm,
+	 _Nullable id value, // 数据
+	 BOOL safe // 数据是否类型安全
+);
+
+
+typedef NSNumber * _Nullable (^AGVMSafeGetNumberCompletionBlock)
+(
+	 AGViewModel *vm,
+	 _Nullable id value, // 数据
+	 BOOL safe // 数据是否类型安全
+);
+
+#pragma mark JSON transform block
+typedef id _Nullable (^AGVMJSONTransformBlock)
+(
+ _Nullable id obj, // 数据对象
+ BOOL *useDefault // 是否跳过block处理，使用默认处理方式：*useDefault = YES;
+ );
+
+#pragma mark viewModelManager block
 typedef void(^AGVMPackageSectionBlock)
 (
     AGVMSection *vms
 );
 
+typedef void(^AGVMPackageSectionsBlock)
+(
+    AGVMSection *vms,
+    id obj,
+    NSUInteger idx
+);
 
 #pragma mark viewModelPackage block
 typedef void (^AGVMPackageDataBlock)
@@ -53,6 +97,17 @@ typedef void (^AGVMPackageDataBlock)
     NSMutableDictionary *package
 );
 
+typedef void (^AGVMPackageDatasBlock)
+(
+    NSMutableDictionary *package,
+    id obj,
+    NSUInteger idx
+);
+
+#pragma mark map、filter、reduce
+typedef void (^AGVMMapBlock)(AGViewModel *vm);
+typedef BOOL (^AGVMFilterBlock)(AGViewModel *vm);
+typedef void (^AGVMReduceBlock)(AGViewModel *vm, NSUInteger idx);
 
 #pragma mark - ------------- ViewModel 相关协议 --------------
 #pragma mark BaseReusable Protocol
@@ -101,16 +156,19 @@ typedef void (^AGVMPackageDataBlock)
 @protocol AGTableHeaderFooterViewReusable <AGBaseReusable>
 @required
 + (void) ag_registerHeaderFooterViewBy:(UITableView *)tableView;
-+ (__kindof UITableViewHeaderFooterView *) ag_dequeueHeaderFooterView;
++ (__kindof UITableViewHeaderFooterView *) ag_dequeueHeaderFooterViewBy:(UITableView *)tableView;
 
 @end
 
 #pragma mark ViewController Protocol
 @protocol AGViewControllerProtocol <NSObject>
 @required
-+ (__kindof UIViewController *) ag_viewControllerWithViewModel:(nullable AGViewModel *)vm;
+- (instancetype) initWithViewModel:(nullable AGViewModel *)vm;
 
 @optional
++ (instancetype) alloc;
+- (instancetype) init NS_UNAVAILABLE;
++ (instancetype) new NS_UNAVAILABLE;
 
 @end
 
@@ -143,21 +201,23 @@ typedef void (^AGVMPackageDataBlock)
 @protocol AGVMDelegate <NSObject>
 
 /**
- 通过 viewModel 的 @selector(ag_callDelegateToDoForInfo:) 方法通知 controller 做事。
- 通过 viewModel 的 @selector(ag_callDelegateToDoForViewModel:) 方法通知 controller 做事。
- 通过 viewModel 的 @selector(ag_callDelegateToDoForAction:) 方法通知 controller 做事。
+ 通过 viewModel 的 @selector(ag_callDelegateToDoForInfo:)          方法通知 delegate 做事。
+ 通过 viewModel 的 @selector(ag_callDelegateToDoForViewModel:)     方法通知 delegate 做事。
+ 通过 viewModel 的 @selector(ag_callDelegateToDoForAction:)        方法通知 delegate 做事。
+ 通过 viewModel 的 @selector(ag_callDelegateToDoForAction:info:)   方法通知 delegate 做事。
  */
 
 @optional
 - (void) ag_viewModel:(AGViewModel *)vm callDelegateToDoForInfo:(nullable NSDictionary *)info;
 - (void) ag_viewModel:(AGViewModel *)vm callDelegateToDoForViewModel:(nullable AGViewModel *)info;
 - (void) ag_viewModel:(AGViewModel *)vm callDelegateToDoForAction:(nullable SEL)action;
+- (void) ag_viewModel:(AGViewModel *)vm callDelegateToDoForAction:(nullable SEL)action info:(nullable AGViewModel *)info;
 
 @end
 
 
-#pragma mark - AGVMObserverRegistratio
-@protocol AGVMObserverRegistratio <NSObject>
+#pragma mark - AGVMObserverRegistration
+@protocol AGVMObserverRegistration <NSObject>
 #pragma mark readd observer
 /**
  重新添加观察者 并 移除旧的观察者，观察 bindingModel 键-值变化
@@ -291,22 +351,345 @@ typedef void (^AGVMPackageDataBlock)
 
 @end
 
-#pragma mark - ------------- typedef enum --------------
-typedef NS_ENUM(NSUInteger, AGVMStatus) {
-    /** 无状态 */
-    AGVMStatusNone = 0,
-    /** 刷新状态 */
-    AGVMStatusReload,
-    /** 选中状态 */
-    AGVMStatusSelected,
-    /** 禁用状态 */
-    AGVMStatusDisable,
-    /** 删除状态 */
-    AGVMStatusDelete,
-    /** 新增状态 */
-    AGVMStatusAdd,
-};
 
+#pragma mark - AGVMSafeAccessible
+@protocol AGVMSafeAccessible <NSObject>
+#pragma mark safe number
+/**
+ 安全设置 NSNumber对象
+ 
+ @param key 字典键
+ @return NSNumber 或nil
+ */
+- (nullable id) ag_safeSetNumber:(nullable id)value
+                          forKey:(NSString *)key;
+/**
+ 安全获取 NSNumber对象
+ 
+ @param key 字典键
+ @return NSNumber 或nil
+ */
+- (nullable NSNumber *) ag_safeNumberForKey:(NSString *)key;
+/**
+ 安全设置 NSNumber对象
+
+ @param value 设置的值
+ @param key 设置的字典键
+ @param block 完成后对结果进行处理的block
+ @return NSNumber 或nil
+ */
+- (nullable id) ag_safeSetNumber:(nullable id)value
+                          forKey:(NSString *)key
+                      completion:(nullable NS_NOESCAPE AGVMSafeSetCompletionBlock)block;
+/**
+ 安全获取 NSNumber对象
+
+ @param key 字典键
+ @param block 完成后对结果进行处理的block
+ @return NSNumber 或用户返回对象
+ */
+- (nullable NSNumber *) ag_safeNumberForKey:(NSString *)key
+                                 completion:(nullable NS_NOESCAPE AGVMSafeGetCompletionBlock)block;
+
+
+#pragma mark safe string
+/**
+ 安全设置 NSString对象
+ 
+ @param key 字典键
+ @return NSString 或nil
+ */
+- (nullable id) ag_safeSetString:(nullable id)value
+                          forKey:(NSString *)key;
+/**
+ 安全获取 NSString对象
+ 
+ @param key 字典键
+ @return NSString 或nil
+ */
+- (nullable NSString *) ag_safeStringForKey:(NSString *)key;
+
+/**
+ 安全设置 NSString对象
+
+ @param value 设置的值
+ @param key 设置的字典键
+ @param block 完成后对结果进行处理的block
+ @return NSString 或nil
+ */
+- (nullable id) ag_safeSetString:(nullable id)value
+                          forKey:(NSString *)key
+                      completion:(nullable NS_NOESCAPE AGVMSafeSetCompletionBlock)block;
+
+/**
+ 安全获取 NSString对象
+
+ @param key 字典键
+ @param block 完成后对结果进行处理的block
+ @return NSString 或用户返回对象
+ */
+- (nullable NSString *) ag_safeStringForKey:(NSString *)key
+                                 completion:(nullable NS_NOESCAPE AGVMSafeGetCompletionBlock)block;
+
+/**
+ 安全获取 数字字符串对象（NSNumber 自动转化为 NSString）
+ 
+ @param key 字典键
+ @return NSString 或nil
+ */
+- (NSString *) ag_safeNumberStringForKey:(NSString *)key;
+
+
+/**
+ 安全获取 数字字符串对象（NSNumber 自动转化为 NSString）
+
+ @param key 字典键
+ @param block 完成后对结果进行处理的block
+ @return NSString 或用户返回对象
+ */
+- (NSString *) ag_safeNumberStringForKey:(NSString *)key
+                              completion:(nullable NS_NOESCAPE AGVMSafeGetCompletionBlock)block;
+
+
+#pragma mark safe array
+/**
+ 安全设置 NSArray对象
+ 
+ @param key 字典键
+ @return NSArray 或nil
+ */
+- (nullable id) ag_safeSetArray:(nullable id)value
+                         forKey:(NSString *)key;
+/**
+ 安全获取 NSArray对象
+ 
+ @param key 字典键
+ @return NSArray 或nil
+ */
+- (nullable NSArray *) ag_safeArrayForKey:(NSString *)key;
+
+/**
+ 安全设置 NSArray对象
+ 
+ @param value 设置的值
+ @param key 设置的字典键
+ @param block 完成后对结果进行处理的block
+ @return NSArray 或nil
+ */
+- (nullable id) ag_safeSetArray:(nullable id)value
+                         forKey:(NSString *)key
+                     completion:(nullable NS_NOESCAPE AGVMSafeSetCompletionBlock)block;
+
+/**
+ 安全获取 NSArray对象
+ 
+ @param key 字典键
+ @param block 完成后对结果进行处理的block
+ @return NSArray 或用户返回对象
+ */
+- (nullable NSArray *) ag_safeArrayForKey:(NSString *)key
+                               completion:(nullable NS_NOESCAPE AGVMSafeGetCompletionBlock)block;
+
+
+#pragma mark safe dictionary
+/**
+ 安全设置 NSDictionary对象
+ 
+ @param key 字典键
+ @return NSDictionary 或nil
+ */
+- (nullable id) ag_safeSetDictionary:(nullable id)value
+                              forKey:(NSString *)key;
+/**
+ 安全获取 NSDictionary对象
+ 
+ @param key 字典键
+ @return NSDictionary 或nil
+ */
+- (nullable NSDictionary *) ag_safeDictionaryForKey:(NSString *)key;
+
+/**
+ 安全设置 NSDictionary对象
+ 
+ @param value 设置的值
+ @param key 设置的字典键
+ @param block 完成后对结果进行处理的block
+ @return NSDictionary 或nil
+ */
+- (nullable id) ag_safeSetDictionary:(nullable id)value
+                              forKey:(NSString *)key
+                          completion:(nullable NS_NOESCAPE AGVMSafeSetCompletionBlock)block;
+
+/**
+ 安全获取 NSDictionary对象
+ 
+ @param key 字典键
+ @param block 完成后对结果进行处理的block
+ @return NSDictionary 或用户返回对象
+ */
+- (nullable NSDictionary *) ag_safeDictionaryForKey:(NSString *)key
+                                         completion:(nullable NS_NOESCAPE AGVMSafeGetCompletionBlock)block;
+
+
+#pragma mark safe url
+/**
+ 安全获取 NSURL对象
+
+ @param key 字典键
+ @return NSURL 或nil
+ */
+- (nullable NSURL *) ag_safeURLForKey:(NSString *)key;
+/**
+ 安全获取 NSURL对象
+
+ @param key 字典键
+ @param block 完成后对结果进行处理的block
+ @return NSURL 或用户返回的对象
+ */
+- (nullable NSURL *) ag_safeURLForKey:(NSString *)key
+                           completion:(nullable NS_NOESCAPE AGVMSafeGetCompletionBlock)block;
+
+
+#pragma mark safe value type
+/**
+ 安全获取 double类型数据
+ 
+ @param key 字典键
+ @return double类型数据
+ */
+- (double) ag_safeDoubleValueForKey:(NSString *)key;
+/**
+ 安全获取 double类型数据
+ 
+ @param key 字典键
+ @param block 完成后对结果进行处理的block
+ @return double类型数据
+ */
+- (double) ag_safeDoubleValueForKey:(NSString *)key
+                         completion:(nullable NS_NOESCAPE AGVMSafeGetNumberCompletionBlock)block;
+
+
+/**
+ 安全获取 float类型数据
+ 
+ @param key 字典键
+ @return float类型数据
+ */
+- (float) ag_safeFloatValueForKey:(NSString *)key;
+/**
+ 安全获取 float类型数据
+ 
+ @param key 字典键
+ @param block 完成后对结果进行处理的block
+ @return float类型数据
+ */
+- (float) ag_safeFloatValueForKey:(NSString *)key
+                       completion:(nullable NS_NOESCAPE AGVMSafeGetNumberCompletionBlock)block;
+
+
+/**
+ 安全获取 int类型数据
+ 
+ @param key 字典键
+ @return int类型数据
+ */
+- (int) ag_safeIntValueForKey:(NSString *)key;
+/**
+ 安全获取 int类型数据
+ 
+ @param key 字典键
+ @param block 完成后对结果进行处理的block
+ @return int类型数据
+ */
+- (int) ag_safeIntValueForKey:(NSString *)key
+                   completion:(nullable NS_NOESCAPE AGVMSafeGetNumberCompletionBlock)block;
+
+
+/**
+ 安全获取 NSInteger类型数据
+ 
+ @param key 字典键
+ @return NSInteger类型数据
+ */
+- (NSInteger) ag_safeIntegerValueForKey:(NSString *)key;
+/**
+ 安全获取 NSInteger类型数据
+ 
+ @param key 字典键
+ @param block 完成后对结果进行处理的block
+ @return NSInteger类型数据
+ */
+- (NSInteger) ag_safeIntegerValueForKey:(NSString *)key
+                             completion:(nullable NS_NOESCAPE AGVMSafeGetNumberCompletionBlock)block;
+
+
+/**
+ 安全获取 long long类型数据
+ 
+ @param key 字典键
+ @return long long类型数据
+ */
+- (long long) ag_safeLongLongValueForKey:(NSString *)key;
+/**
+ 安全获取 long long类型数据
+ 
+ @param key 字典键
+ @param block 完成后对结果进行处理的block
+ @return long long类型数据
+ */
+- (long long) ag_safeLongLongValueForKey:(NSString *)key
+                              completion:(nullable NS_NOESCAPE AGVMSafeGetNumberCompletionBlock)block;
+
+
+/**
+ 安全获取 BOOL类型数据
+ 
+ @param key 字典键
+ @return BOOL类型数据
+ */
+- (BOOL) ag_safeBoolValueForKey:(NSString *)key;
+/**
+ 安全获取 BOOL类型数据
+ 
+ @param key 字典键
+ @param block 完成后对结果进行处理的block
+ @return BOOL类型数据
+ */
+- (BOOL) ag_safeBoolValueForKey:(NSString *)key
+                     completion:(nullable NS_NOESCAPE AGVMSafeGetNumberCompletionBlock)block;
+
+
+@end
+
+
+#pragma mark - AGVMJSONTransformable
+@protocol AGVMJSONTransformable <NSObject>
+/**
+ 转成字符串 - 可替换自定义key - 可自行处理特殊类型（NSString、NSNumber、NSURL、实现NSFastEnumeration或AGVMJSONTransformable协议对象、{其他类型自行处理}）
+ 
+ @param vm 需要替换key的VM，格式 {原Key:新Key}
+ @param block 自行处理Block（通过写入 useDefault 来控制采用 返回处理结果 还是 默认处理结果）
+ @return JSON字符串
+ */
+- (nullable NSString *) ag_toJSONStringWithExchangeKey:(nullable AGViewModel *)vm
+                                       customTransform:(nullable NS_NOESCAPE AGVMJSONTransformBlock)block;
+
+/**
+ 转成字符串 - 可自行处理特殊类型（NSString、NSNumber、NSURL、实现NSFastEnumeration或AGVMJSONTransformable协议对象、{其他类型自行处理}）
+ 
+ @param block 自行处理Block（通过写入 useDefault 来控制采用 返回处理结果 还是 默认处理结果）
+ @return JSON字符串
+ */
+
+- (nullable NSString *) ag_toJSONStringWithCustomTransform:(nullable NS_NOESCAPE AGVMJSONTransformBlock)block;
+/**
+ 转成字符串（NSString、NSNumber、NSURL、实现NSFastEnumeration或AGVMJSONTransformable协议对象、{其他类型自行处理}）
+ 
+ @return JSON字符串
+ */
+- (nullable NSString *) ag_toJSONString;
+
+@end
 
 #endif /* AGVMProtocol_h */
 

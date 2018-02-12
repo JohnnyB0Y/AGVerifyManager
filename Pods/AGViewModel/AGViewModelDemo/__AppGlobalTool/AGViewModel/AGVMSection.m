@@ -7,6 +7,7 @@
 //  一组 View Model 数据
 
 #import "AGVMSection.h"
+#import "AGVMFunction.h"
 #import <objc/runtime.h>
 
 @interface AGVMSection ()
@@ -15,15 +16,17 @@
 
 @end
 
-@implementation AGVMSection
+@implementation AGVMSection {
+    NSUInteger _capacity;
+}
 
 /**
- fast create vms
+ Quickly create vms
  
  @param capacity itemArrM 每次增量拷贝的内存大小
  @return vms
  */
-+ (instancetype) ag_VMSectionWithItemCapacity:(NSUInteger)capacity
++ (instancetype) newWithItemCapacity:(NSUInteger)capacity
 {
     return [[self alloc] initWithItemCapacity:capacity];
 }
@@ -32,6 +35,7 @@
 {
     self = [super init];
     if (self) {
+        _capacity = capacity;
         _itemArrM = ag_mutableArray(capacity);
     }
     return self;
@@ -46,6 +50,24 @@
 - (AGViewModel *) ag_packageItemData:(AGVMPackageDataBlock)package
 {
     return [self ag_packageItemData:package capacity:6];
+}
+
+- (NSArray<AGViewModel *> *) ag_packageItems:(NSArray *)items
+                                     inBlock:(AGVMPackageDatasBlock)block
+{
+    return [self ag_packageItems:items inBlock:block capacity:items.count];
+}
+
+- (NSArray<AGViewModel *> *) ag_packageItems:(NSArray *)items
+                                     inBlock:(AGVMPackageDatasBlock)block
+                                    capacity:(NSUInteger)capacity
+{
+    NSArray *arr = [ag_sharedVMPackager() ag_packageItems:items
+                                                  mergeVM:_itemMergeVM
+                                                  inBlock:block
+                                                 capacity:capacity];
+    [self ag_addItemsFromArray:arr];
+    return arr;
 }
 
 - (AGViewModel *) ag_packageFooterData:(AGVMPackageDataBlock)package
@@ -69,7 +91,7 @@
                             capacity:(NSUInteger)capacity
 {
     AGViewModel *vm =
-    [ag_sharedVMPackager() ag_package:package commonVM:_itemCommonVM capacity:capacity];
+    [ag_sharedVMPackager() ag_package:package mergeVM:_itemMergeVM capacity:capacity];
     if (vm) [self.itemArrM addObject:vm];
     return vm;
 }
@@ -89,16 +111,16 @@
 }
 
 /** 拼装 itemArr 中 viewModel 的共同字典数据 */
-- (AGViewModel *) ag_packageItemCommonData:(AGVMPackageDataBlock)package
-                                  capacity:(NSUInteger)capacity
+- (AGViewModel *) ag_packageItemMergeData:(AGVMPackageDataBlock)package
+                                 capacity:(NSUInteger)capacity
 {
-    _itemCommonVM = [ag_sharedVMPackager() ag_package:package capacity:capacity];
-    return _itemCommonVM;
+    _itemMergeVM = [ag_sharedVMPackager() ag_package:package capacity:capacity];
+    return _itemMergeVM;
 }
 
-- (AGViewModel *) ag_packageItemCommonData:(AGVMPackageDataBlock)package
+- (AGViewModel *) ag_packageItemMergeData:(AGVMPackageDataBlock)package
 {
-    return [self ag_packageItemCommonData:package capacity:6];
+    return [self ag_packageItemMergeData:package capacity:6];
 }
 
 #pragma mark AGVMPackagable
@@ -107,6 +129,7 @@
                               packager:(id<AGVMPackagable>)packager
                              forObject:(id)obj
 {
+	NSAssert([data isKindOfClass:[NSDictionary class]], @"ag_packageHeaderData: data 为 nil 或 类型错误！");
     if ( [packager respondsToSelector:@selector(ag_packageData:forObject:)] ) {
         _headerVM = [packager ag_packageData:data forObject:(id)obj];
     }
@@ -124,6 +147,7 @@
                             packager:(id<AGVMPackagable>)packager
                            forObject:(id)obj
 {
+	NSAssert([data isKindOfClass:[NSDictionary class]], @"ag_packageItemData: data 为 nil 或 类型错误！");
     AGViewModel *vm;
     if ( [packager respondsToSelector:@selector(ag_packageData:forObject:)] ) {
         vm = [packager ag_packageData:data forObject:(id)obj];
@@ -143,6 +167,7 @@
                               packager:(id<AGVMPackagable>)packager
                              forObject:(id)obj
 {
+	NSAssert([data isKindOfClass:[NSDictionary class]], @"ag_packageFooterData: data 为 nil 或 类型错误！");
     if ( [packager respondsToSelector:@selector(ag_packageData:forObject:)] ) {
         _footerVM = [packager ag_packageData:data forObject:(id)obj];
     }
@@ -153,6 +178,31 @@
                              packager:(id<AGVMPackagable>)packager
 {
     return [self ag_packageFooterData:data packager:packager forObject:nil];
+}
+
+#pragma mark - NSCopying
+- (id)copyWithZone:(nullable NSZone *)zone
+{
+    AGVMSection *vms = [[self.class allocWithZone:zone] initWithItemCapacity:_capacity];
+    vms->_commonVM = [_commonVM copy];
+    vms->_headerVM = [_headerVM copy];
+    vms->_footerVM = [_footerVM copy];
+    vms->_itemMergeVM = [_itemMergeVM copy];
+    [vms ag_addItemsFromSection:self];
+    return vms;
+}
+
+- (id)mutableCopyWithZone:(NSZone *)zone
+{
+    AGVMSection *vms = [[self.class allocWithZone:zone] initWithItemCapacity:_capacity];
+    vms->_commonVM = [_commonVM mutableCopy];
+    vms->_headerVM = [_headerVM mutableCopy];
+    vms->_footerVM = [_footerVM mutableCopy];
+    vms->_itemMergeVM = [_itemMergeVM mutableCopy];
+    [self ag_enumerateItemsUsingBlock:^(AGViewModel * _Nonnull vm, NSUInteger idx, BOOL * _Nonnull stop) {
+        [vms ag_addItem:[vm mutableCopy]];
+    }];
+    return vms;
 }
 
 #pragma mark - 增删改查
@@ -229,12 +279,34 @@
 }
 
 #pragma mark 更新
-- (AGVMSection *) ag_updateItemInBlock:(NS_NOESCAPE AGVMUpdateModelBlock)block
+- (AGVMSection *) ag_updateItemInBlock:(AGVMUpdateModelBlock)block
                                atIndex:(NSUInteger)index
 {
     if ( block ) {
         AGViewModel *vm = self[index];
         vm ? block(vm.bindingModel) : NSLog(@"你要更新的 View Model 不存在！");
+    }
+    return self;
+}
+
+- (AGVMSection *) ag_refreshItemByUpdateModelInBlock:(NS_NOESCAPE AGVMUpdateModelBlock)block
+                                             atIndex:(NSUInteger)index
+{
+    NSAssert(block, @"block nonnull.");
+    if ( block ) {
+        AGViewModel *vm = self[index];
+        vm ? [vm ag_refreshUIByUpdateModelInBlock:block] : nil;
+    }
+    return self;
+}
+
+- (AGVMSection *) ag_refreshItemsByUpdateModelInBlock:(AGVMUpdateModelBlock)block
+{
+    NSAssert(block, @"block nonnull.");
+    if ( block ) {
+        [self ag_enumerateItemsUsingBlock:^(AGViewModel * _Nonnull vm, NSUInteger idx, BOOL * _Nonnull stop) {
+            [vm ag_refreshUIByUpdateModelInBlock:block];
+        }];
     }
     return self;
 }
@@ -258,6 +330,24 @@
     return self;
 }
 
+- (AGVMSection *) ag_removeItem:(AGViewModel *)vm
+{
+    [self.itemArrM removeObject:vm];
+    return self;
+}
+
+- (AGVMSection *) ag_removeItemsFromArray:(NSArray<AGViewModel *> *)vmArr
+{
+    [self.itemArrM removeObjectsInArray:vmArr];
+    return self;
+}
+
+- (AGVMSection *) ag_removeItemsFromSection:(AGVMSection *)vms
+{
+    [self ag_removeItemsFromArray:vms.itemArrM];
+    return self;
+}
+
 #pragma mark 选中
 - (AGViewModel *) objectAtIndexedSubscript:(NSUInteger)idx
 {
@@ -278,11 +368,24 @@
 #pragma mark 合并
 - (AGVMSection *) ag_mergeFromSection:(AGVMSection *)vms
 {
+    if ( vms.headerVM ) {
+        _headerVM = _headerVM ?: ag_viewModel(nil);
+    }
+    if ( vms.footerVM ) {
+        _footerVM = _footerVM ?: ag_viewModel(nil);
+    }
+    if ( vms.commonVM ) {
+        _commonVM = _commonVM ?: ag_viewModel(nil);
+    }
+    if ( vms.itemMergeVM ) {
+        _itemMergeVM = _itemMergeVM ?: ag_viewModel(nil);
+    }
     // 合并所有数据
     [self.headerVM ag_mergeModelFromViewModel:vms.headerVM];
     [self.footerVM ag_mergeModelFromViewModel:vms.footerVM];
     [self.commonVM ag_mergeModelFromViewModel:vms.commonVM];
-    [self.itemCommonVM ag_mergeModelFromViewModel:vms.itemCommonVM];
+    [self.itemMergeVM ag_mergeModelFromViewModel:vms.itemMergeVM];
+    
     [self ag_addItemsFromSection:vms];
     
     return self;
@@ -325,6 +428,43 @@
     return self;
 }
 
+#pragma mark - map、filter、reduce
+- (AGVMSection *) map:(AGVMMapBlock)block
+{
+	if ( ! block ) return self;
+	AGVMSection *vms = ag_VMSection(self.count);
+	[self.itemArrM enumerateObjectsUsingBlock:^(AGViewModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		if ( [obj isKindOfClass:[AGViewModel class]] ) {
+			AGViewModel *newVM = [obj mutableCopy];
+			block(newVM);
+			[vms ag_addItem:newVM];
+		}
+	}];
+	return vms;
+}
+
+- (AGVMSection *) filter:(AGVMFilterBlock)block
+{
+	if ( ! block ) return self;
+	AGVMSection *vms = ag_VMSection(self.count);
+	[self.itemArrM enumerateObjectsUsingBlock:^(AGViewModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		if ( [obj isKindOfClass:[AGViewModel class]] && block(obj) ) {
+			[vms ag_addItem:[obj mutableCopy]];
+		}
+	}];
+	return vms;
+}
+
+- (void) reduce:(AGVMReduceBlock)block
+{
+	if ( ! block ) return;
+	[self.itemArrM enumerateObjectsUsingBlock:^(AGViewModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		if ( [obj isKindOfClass:[AGViewModel class]] ) {
+			block(obj, idx);
+		}
+	}];
+}
+
 #pragma mark - ---------- Private Methods ----------
 
 
@@ -339,7 +479,17 @@
     return [self.itemArrM firstObject];
 }
 
+- (AGViewModel *)fvm
+{
+    return [self.itemArrM firstObject];
+}
+
 - (AGViewModel *)lastViewModel
+{
+    return [self.itemArrM lastObject];
+}
+
+- (AGViewModel *)lvm
 {
     return [self.itemArrM lastObject];
 }
@@ -364,10 +514,35 @@
 
 @end
 
-/** fast create AGVMSection instance */
+
+@implementation AGVMSection (AGVMJSONTransformable)
+- (NSString *) ag_toJSONStringWithExchangeKey:(AGViewModel *)vm
+                              customTransform:(AGVMJSONTransformBlock)block
+{
+    NSMutableDictionary *dictM = ag_mutableDict(4);
+    dictM[kAGVMCommonVM] = _commonVM;
+    dictM[kAGVMHeaderVM] = _headerVM;
+    dictM[kAGVMArray] = _itemArrM;
+    dictM[kAGVMFooterVM] = _footerVM;
+    return ag_JSONStringWithDict(dictM, vm, block);
+}
+
+- (NSString *)ag_toJSONStringWithCustomTransform:(AGVMJSONTransformBlock)block
+{
+    return [self ag_toJSONStringWithExchangeKey:nil customTransform:block];
+}
+
+- (NSString *)ag_toJSONString
+{
+    return [self ag_toJSONStringWithCustomTransform:nil];
+}
+
+@end
+
+/** Quickly create AGVMSection instance */
 AGVMSection * ag_VMSection(NSUInteger capacity)
 {
-    return [AGVMSection ag_VMSectionWithItemCapacity:capacity];
+    return [AGVMSection newWithItemCapacity:capacity];
 }
 
 

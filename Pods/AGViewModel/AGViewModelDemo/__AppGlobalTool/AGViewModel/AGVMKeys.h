@@ -35,11 +35,31 @@ static NSString * const kAGVMSection = @"kAGVMSection";
 /** 携带的AGVMManager 👉AGVMManager👈  */
 static NSString * const kAGVMManager = @"kAGVMManager";
 
+/** 携带的公共VM 👉AGViewModel👈 */
+static NSString * const kAGVMCommonVM = @"kAGVMCommonVM";
+/** 携带的头部VM 👉AGViewModel👈 */
+static NSString * const kAGVMHeaderVM = @"kAGVMHeaderVM";
+/** 携带的尾部VM 👉AGViewModel👈 */
+static NSString * const kAGVMFooterVM = @"kAGVMFooterVM";
 
-#pragma mark - 类型描述相关
+#pragma mark - 类型、状态描述相关
 /** View Model 的类型 👉NSString👈 */
 static NSString * const kAGVMType = @"kAGVMType";
 
+/** 是否选中？ 👉NSNumber👈 */
+static NSString * const kAGVMSelected = @"kAGVMSelected";
+
+/** 是否禁用？ 👉NSNumber👈 */
+static NSString * const kAGVMDisabled = @"kAGVMDisabled";
+
+/** 是否删除？ 👉NSNumber👈 */
+static NSString * const kAGVMDeleted = @"kAGVMDeleted";
+
+/** 是否刷新？ 👉NSNumber👈 */
+static NSString * const kAGVMReloaded = @"kAGVMReloaded";
+
+/** 是否添加？ 👉NSNumber👈 */
+static NSString * const kAGVMAdded = @"kAGVMAdded";
 
 #pragma mark - 跳转的控制器相关
 /** 目标跳转控制器 - 👉Class👈 */
@@ -50,6 +70,9 @@ static NSString * const kAGVMTargetVCTitle = @"kAGVMTargetVCTitle";
 
 /** 目标跳转控制器 - 类型 👉NSString👈 */
 static NSString * const kAGVMTargetVCType = @"kAGVMTargetVCType";
+
+/** 目标跳转控制器 - 执行的代码块 👉Block👈 */
+static NSString * const kAGVMTargetVCBlock = @"kAGVMTargetVCBlock";
 
 
 #pragma mark - 显示的视图相关
@@ -76,6 +99,11 @@ static NSString * const kAGVMViewEdgeInsets = @"kAGVMViewEdgeInsets";
 /** 视图外边距 UIEdgeInsets 👉NSString👈 */
 static NSString * const kAGVMViewEdgeMargin = @"kAGVMViewEdgeMargin";
 
+#pragma mark 颜色
+/** view 背景色 👉UIColor👈 */
+static NSString * const kAGVMViewBGColor = @"kAGVMViewBGColor";
+/** view 显示类型 👉NSNumber👈 */
+static NSString * const kAGVMViewDisplayType = @"kAGVMViewDisplayType";
 
 #endif /* AGVMKeys_h */
 

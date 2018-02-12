@@ -13,13 +13,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - interface
-@interface AGViewModel : NSObject <AGVMObserverRegistratio>
+@interface AGViewModel : NSObject <NSCopying, NSMutableCopying>
 
 @property (nonatomic, weak,   readonly, nullable) UIView<AGVMIncludable> *bindingView;
 @property (nonatomic, strong, readonly) NSMutableDictionary *bindingModel;
 
-/** 状态 - 可作为控制器跳转操作标识 */
-@property (nonatomic, assign) AGVMStatus status;
 @property (nonatomic, weak, nullable) id<AGVMDelegate> delegate;
 @property (nonatomic, copy, nullable) NSIndexPath *indexPath;
 
@@ -44,11 +42,15 @@ NS_ASSUME_NONNULL_BEGIN
 /** 当 bindingView 为空时，直接传进去计算 size */
 - (CGSize) ag_sizeOfBindingView:(UIView<AGVMIncludable> *)bv;
 
+/** 预先计算 size */
+- (void) ag_precomputedSizeOfBindingView:(UIView<AGVMIncludable> *)bv;
 
-#pragma mark 通知代理根据信息或类型做某事（ 让 view 传递信息给 controller ）
+
+#pragma mark 通知 delegate 根据信息或类型做某事（ 让 view 传递信息给 controller ）
 - (void) ag_callDelegateToDoForInfo:(nullable NSDictionary *)info;
 - (void) ag_callDelegateToDoForViewModel:(nullable AGViewModel *)info;
 - (void) ag_callDelegateToDoForAction:(nullable SEL)action;
+- (void) ag_callDelegateToDoForAction:(nullable SEL)action info:(nullable AGViewModel *)info;
 
 
 #pragma mark 快速初始化实例
@@ -60,17 +62,17 @@ NS_ASSUME_NONNULL_BEGIN
  @param capacity 数据字典每次增量拷贝的内存大小
  @return viewModel 对象
  */
-+ (instancetype) ag_viewModelWithModel:(nullable NSDictionary *)bindingModel
-                              capacity:(NSUInteger)capacity;
++ (instancetype) newWithModel:(nullable NSDictionary *)bindingModel
+                     capacity:(NSUInteger)capacity;
 
 /**
  通过拷贝数据字典快速初始化 viewModel 实例
- 如果 bindingModel 为 nil 创建 capacity 为 6 的内部数据字典
+ 如果 bindingModel 为 nil, 创建 capacity 为 6 的内部数据字典
 
  @param bindingModel 数据字典
  @return viewModel 对象
  */
-+ (instancetype) ag_viewModelWithModel:(nullable NSDictionary *)bindingModel;
++ (instancetype) newWithModel:(nullable NSDictionary *)bindingModel;
 - (instancetype) initWithModel:(NSMutableDictionary *)bindingModel NS_DESIGNATED_INITIALIZER;
 
 
@@ -79,30 +81,38 @@ NS_ASSUME_NONNULL_BEGIN
 - (id) objectForKeyedSubscript:(NSString *)key;
 
 /** 更新数据 并 刷新视图 */
-- (void) ag_refreshViewByUpdateModelInBlock:(nullable NS_NOESCAPE AGVMUpdateModelBlock)block;
+- (void) ag_refreshUIByUpdateModelInBlock:(nullable NS_NOESCAPE AGVMUpdateModelBlock)block;
 - (void) setObject:(nullable id)obj forKeyedSubscript:(NSString *)key;
 
-/** 合并 bindingModel */
+/**
+ 合并包含 keys 的模型数据
+
+ @param dict 待合并的字典
+ @param keys 要合并数据的keys
+ */
+- (void) ag_mergeModelFromDictionary:(NSDictionary *)dict byKeys:(NSArray<NSString *> *)keys;
+- (void) ag_mergeModelFromViewModel:(AGViewModel *)vm byKeys:(NSArray<NSString *> *)keys;
+
 - (void) ag_mergeModelFromViewModel:(AGViewModel *)vm;
 - (void) ag_mergeModelFromDictionary:(NSDictionary *)dict;
 
 
-
-// 不使用
-- (instancetype)init NS_UNAVAILABLE;
-+ (instancetype)new NS_UNAVAILABLE;
+- (instancetype) init NS_UNAVAILABLE;
++ (instancetype) new NS_UNAVAILABLE;
 
 @end
 
-#pragma mark - 快捷函数
-/** fast create AGViewModel instance */
-AGViewModel * ag_viewModel(NSDictionary * _Nullable bindingModel);
-/** fast create 可变字典函数 */
-NSMutableDictionary * ag_mutableDict(NSUInteger capacity);
-/** fast create 可变数组函数 */
-NSMutableArray * ag_mutableArray(NSUInteger capacity);
-/** fast create 可变数组函数, 包含 Null 对象 */
-NSMutableArray * ag_mutableNullArray(NSUInteger capacity);
+#pragma mark - 安全存取
+@interface AGViewModel (AGVMSafeAccessible) <AGVMSafeAccessible>
+@end
+
+#pragma mark - 键值观察
+@interface AGViewModel (AGVMObserverRegistration) <AGVMObserverRegistration>
+@end
+
+#pragma mark - 数据转换
+@interface AGViewModel (AGVMJSONTransformable) <AGVMJSONTransformable>
+@end
 
 NS_ASSUME_NONNULL_END
 

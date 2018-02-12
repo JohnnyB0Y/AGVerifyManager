@@ -7,6 +7,7 @@
 //  viewModel 生产者
 
 #import "AGVMManager.h"
+#import "AGVMFunction.h"
 #import <objc/runtime.h>
 
 @interface AGVMManager ()
@@ -16,16 +17,18 @@
 @end
 
 
-@implementation AGVMManager
+@implementation AGVMManager {
+    NSUInteger _capacity;
+}
 
 #pragma mark - ----------- Life Cycle ----------
 /**
- fast create vmm
+ Quickly create vmm
  
  @param capacity itemArr 的 capacity
  @return vmm
  */
-+ (instancetype) ag_VMManagerWithItemCapacity:(NSUInteger)capacity
++ (instancetype) newWithItemCapacity:(NSUInteger)capacity
 {
     return [[self alloc] initWithItemCapacity:capacity];
 }
@@ -34,6 +37,7 @@
 {
     self = [super init];
     if (self) {
+        _capacity = capacity;
         _sectionArrM = ag_mutableArray(capacity);
     }
     return self;
@@ -62,11 +66,51 @@
     return vms;
 }
 
+- (NSArray<AGVMSection *> *) ag_packageSections:(NSArray *)sections
+                                        inBlock:(AGVMPackageSectionsBlock)block
+{
+    return [self ag_packageSections:sections inBlock:block capacity:sections.count];
+}
+
+- (NSArray<AGVMSection *> *) ag_packageSections:(NSArray *)sections
+                                        inBlock:(AGVMPackageSectionsBlock)block
+                                       capacity:(NSUInteger)capacity
+{
+    NSMutableArray *arrM = ag_mutableArray(sections.count);
+    [sections enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        AGVMSection *vms = ag_VMSection(capacity);
+        block ? block(vms, obj, idx) : nil;
+        [arrM addObject:vms];
+    }];
+    [self ag_addSectionsFromArray:arrM];
+    
+    return [arrM copy];
+}
+
+#pragma mark - NSCopying
+- (id)copyWithZone:(nullable NSZone *)zone
+{
+    AGVMManager *vmm = [[self.class allocWithZone:zone] initWithItemCapacity:_capacity];
+    vmm->_commonVM = [_commonVM copy];
+    [vmm ag_addSectionsFromManager:self];
+    return vmm;
+}
+
+- (id)mutableCopyWithZone:(NSZone *)zone
+{
+    AGVMManager *vmm = [[self.class allocWithZone:zone] initWithItemCapacity:_capacity];
+    vmm->_commonVM = [_commonVM mutableCopy];
+    [self ag_enumerateSectionsUsingBlock:^(AGVMSection * _Nonnull vms, NSUInteger idx, BOOL * _Nonnull stop) {
+        [vmm ag_addSection:[vms mutableCopy]];
+    }];
+    return vmm;
+}
+
 #pragma mark - 修改数据
 #pragma mark 添加
 - (void) ag_addSection:(AGVMSection *)section
 {
-    if ( section ) [self.sectionArrM addObject:section];
+    section ? [self.sectionArrM addObject:section] : nil;
 }
 
 - (void) ag_addSectionsFromArray:(NSArray<AGVMSection *> *)sections;
@@ -74,9 +118,14 @@
     sections.count > 0 ? [self.sectionArrM addObjectsFromArray:sections] : nil;
 }
 
+- (void) ag_addSectionsFromManager:(AGVMManager *)vmm
+{
+    [self ag_addSectionsFromArray:vmm.sectionArrM];
+}
+
 #pragma mark 插入
-- (void) ag_insertSectionsFromVMManager:(AGVMManager *)vmm
-                                atIndex:(NSUInteger)index
+- (void) ag_insertSectionsFromManager:(AGVMManager *)vmm
+                              atIndex:(NSUInteger)index
 {
     [self ag_insertSectionsFromArray:vmm.sectionArrM atIndex:index];
 }
@@ -135,8 +184,11 @@
 
 #pragma mark 合并
 /** 合并 commonVM、sectionArrM */
-- (void) ag_mergeFromVMManager:(AGVMManager *)vmm
+- (void) ag_mergeFromManager:(AGVMManager *)vmm
 {
+    if ( vmm.commonVM ) {
+        _commonVM = _commonVM ?: ag_viewModel(nil);
+    }
     [self.commonVM ag_mergeModelFromViewModel:vmm.commonVM];
     [self ag_addSectionsFromArray:vmm.sectionArrM];
 }
@@ -232,7 +284,17 @@
     return [self.sectionArrM firstObject];
 }
 
+- (AGVMSection *)fs
+{
+    return [self.sectionArrM firstObject];
+}
+
 - (AGVMSection *)lastSection
+{
+    return [self.sectionArrM lastObject];
+}
+
+- (AGVMSection *)ls
 {
     return [self.sectionArrM lastObject];
 }
@@ -258,10 +320,32 @@
 @end
 
 
-/** fast create AGVMManager instance */
+@implementation AGVMManager (AGVMJSONTransformable)
+- (NSString *) ag_toJSONStringWithExchangeKey:(AGViewModel *)vm
+                              customTransform:(AGVMJSONTransformBlock)block
+{
+    NSMutableDictionary *dictM = ag_mutableDict(2);
+    dictM[kAGVMCommonVM] = _commonVM;
+    dictM[kAGVMArray] = _sectionArrM;
+    return ag_JSONStringWithDict(dictM, vm, block);
+}
+
+- (NSString *)ag_toJSONStringWithCustomTransform:(AGVMJSONTransformBlock)block
+{
+    return [self ag_toJSONStringWithExchangeKey:nil customTransform:block];
+}
+
+- (NSString *)ag_toJSONString
+{
+    return [self ag_toJSONStringWithCustomTransform:nil];
+}
+
+@end
+
+/** Quickly create AGVMManager instance */
 AGVMManager * ag_VMManager(NSUInteger capacity)
 {
-    return [AGVMManager ag_VMManagerWithItemCapacity:capacity];
+    return [AGVMManager newWithItemCapacity:capacity];
 }
 
 

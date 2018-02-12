@@ -1,1 +1,1 @@
-../../../AGViewModel/AGViewModelDemo/__AppGlobalTool/AGViewModel/NSString+AGCalculate.h
+../../../AGViewModel/AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/NSString+AGCalculate.h

@@ -12,28 +12,30 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AGVMSection : NSObject
-
-@property (nonatomic, strong, readonly, nullable) AGViewModel *commonVM;
+@interface AGVMSection : NSObject <NSCopying, NSMutableCopying>
+/** common vm */
+@property (nonatomic, strong, readonly, nullable, getter=cvm) AGViewModel *commonVM;
 
 @property (nonatomic, strong, readonly, nullable) AGViewModel *headerVM;
 @property (nonatomic, strong, readonly, nullable) AGViewModel *footerVM;
 
-/** itemArr 中 viewModel 的共同数据模型 */
-@property (nonatomic, strong, readonly, nullable) AGViewModel *itemCommonVM;
+/** 会合并到 itemArr中的每个viewModel */
+@property (nonatomic, strong, readonly, nullable) AGViewModel *itemMergeVM;
 @property (nonatomic, strong, readonly, nullable) NSMutableArray<AGViewModel *> *itemArrM;
 @property (nonatomic, assign, readonly) NSUInteger count;
 
-@property (nonatomic, weak, readonly, nullable) AGViewModel *firstViewModel;
-@property (nonatomic, weak, readonly, nullable) AGViewModel *lastViewModel;
+/** first item vm */
+@property (nonatomic, weak, readonly, nullable, getter=fvm) AGViewModel *firstViewModel;
+/** last item vm */
+@property (nonatomic, weak, readonly, nullable, getter=lvm) AGViewModel *lastViewModel;
 
 /**
- fast create vms
+ Quickly create vms
  
  @param capacity itemArrM 每次增量拷贝的内存大小
  @return vms
  */
-+ (instancetype) ag_VMSectionWithItemCapacity:(NSUInteger)capacity;
++ (instancetype) newWithItemCapacity:(NSUInteger)capacity;
 - (instancetype) initWithItemCapacity:(NSUInteger)capacity NS_DESIGNATED_INITIALIZER;
 
 #pragma mark - 通过 packager 拼装数据
@@ -68,9 +70,9 @@ NS_ASSUME_NONNULL_BEGIN
  @param capacity 数据字典每次增量拷贝的内存大小
  */
 
-/** 拼装 itemArr 中 viewModel 的共同数据模型 */
-- (AGViewModel *) ag_packageItemCommonData:(nullable NS_NOESCAPE AGVMPackageDataBlock)package
-                                  capacity:(NSUInteger)capacity;
+/** 拼装 itemArr 中每个 viewModel 的合并数据模型 */
+- (AGViewModel *) ag_packageItemMergeData:(nullable NS_NOESCAPE AGVMPackageDataBlock)package
+                                 capacity:(NSUInteger)capacity;
 
 /** 拼装组头数据 */
 - (AGViewModel *) ag_packageHeaderData:(nullable NS_NOESCAPE AGVMPackageDataBlock)package
@@ -79,6 +81,13 @@ NS_ASSUME_NONNULL_BEGIN
 /** 拼装 item 数据 */
 - (AGViewModel *) ag_packageItemData:(nullable NS_NOESCAPE AGVMPackageDataBlock)package
                             capacity:(NSUInteger)capacity;
+
+- (NSArray<AGViewModel *> *) ag_packageItems:(NSArray *)items
+                                     inBlock:(AGVMPackageDatasBlock)block;
+
+- (NSArray<AGViewModel *> *) ag_packageItems:(nullable NSArray *)items
+                                     inBlock:(nullable NS_NOESCAPE AGVMPackageDatasBlock)block
+                                    capacity:(NSUInteger)capacity;
 
 /** 拼装组尾数据 */
 - (AGViewModel *) ag_packageFooterData:(nullable NS_NOESCAPE AGVMPackageDataBlock)package
@@ -93,24 +102,24 @@ NS_ASSUME_NONNULL_BEGIN
 - (AGViewModel *) ag_packageItemData:(nullable NS_NOESCAPE AGVMPackageDataBlock)package;
 - (AGViewModel *) ag_packageFooterData:(nullable NS_NOESCAPE AGVMPackageDataBlock)package;
 - (AGViewModel *) ag_packageCommonData:(nullable NS_NOESCAPE AGVMPackageDataBlock)package;
-- (AGViewModel *) ag_packageItemCommonData:(nullable NS_NOESCAPE AGVMPackageDataBlock)package;
+- (AGViewModel *) ag_packageItemMergeData:(nullable NS_NOESCAPE AGVMPackageDataBlock)package;
 
 
 #pragma mark - 增删改查
 #pragma mark 新增
+- (AGVMSection *) ag_addItem:(AGViewModel *)item;
 - (AGVMSection *) ag_addItemsFromSection:(AGVMSection *)vms;
 - (AGVMSection *) ag_addItemsFromArray:(NSArray<AGViewModel *> *)vmArr;
-- (AGVMSection *) ag_addItem:(AGViewModel *)item;
 
 #pragma mark 插入
+- (AGVMSection *) ag_insertItem:(AGViewModel *)item
+                        atIndex:(NSUInteger)index;
+
 - (AGVMSection *) ag_insertItemsFromSection:(AGVMSection *)vms
                                     atIndex:(NSUInteger)index;
 
 - (AGVMSection *) ag_insertItemsFromArray:(NSArray<AGViewModel *> *)vmArr
                                   atIndex:(NSUInteger)index;
-
-- (AGVMSection *) ag_insertItem:(AGViewModel *)item
-                        atIndex:(NSUInteger)index;
 
 - (AGVMSection *) ag_insertItemPackage:(NS_NOESCAPE AGVMPackageDataBlock)package
                                atIndex:(NSUInteger)index;
@@ -120,13 +129,21 @@ NS_ASSUME_NONNULL_BEGIN
                               capacity:(NSUInteger)capacity;
 
 #pragma mark 移除
-- (AGVMSection *) ag_removeItemAtIndex:(NSUInteger)index;
-- (AGVMSection *) ag_removeLastObject;
 - (AGVMSection *) ag_removeAllItems;
+- (AGVMSection *) ag_removeLastObject;
+- (AGVMSection *) ag_removeItem:(AGViewModel *)vm; //
+- (AGVMSection *) ag_removeItemAtIndex:(NSUInteger)index;
+- (AGVMSection *) ag_removeItemsFromSection:(AGVMSection *)vms; //
+- (AGVMSection *) ag_removeItemsFromArray:(NSArray<AGViewModel *> *)vmArr; //
 
 #pragma mark 更新
 - (AGVMSection *) ag_updateItemInBlock:(NS_NOESCAPE AGVMUpdateModelBlock)block
                                atIndex:(NSUInteger)index;
+
+- (AGVMSection *) ag_refreshItemByUpdateModelInBlock:(NS_NOESCAPE AGVMUpdateModelBlock)block
+                                             atIndex:(NSUInteger)index;
+
+- (AGVMSection *) ag_refreshItemsByUpdateModelInBlock:(NS_NOESCAPE AGVMUpdateModelBlock)block;
 
 - (void) setObject:(AGViewModel *)vm
 atIndexedSubscript:(NSUInteger)idx;
@@ -143,7 +160,7 @@ atIndexedSubscript:(NSUInteger)idx;
 - (nullable NSArray *) ag_findValueInItemArrWithKey:(NSString *)key;
 
 #pragma mark 合并
-/** 合并 headerVM、 footerVM、 commonVM、itemCommonVM、itemArr */
+/** 合并 headerVM、 footerVM、 commonVM、itemMergeVM、itemArr */
 - (AGVMSection *) ag_mergeFromSection:(AGVMSection *)vms;
 
 #pragma mark 交换
@@ -160,14 +177,22 @@ atIndexedSubscript:(NSUInteger)idx;
 - (AGVMSection *) ag_enumerateHeaderFooterVMsUsingBlock:(void (NS_NOESCAPE ^)(AGViewModel *vm, NSUInteger idx, BOOL *stop))block;
 
 
-// 不使用
-- (instancetype)init NS_UNAVAILABLE;
-+ (instancetype)new NS_UNAVAILABLE;
+#pragma mark - map、filter、reduce
+- (AGVMSection *) map:(NS_NOESCAPE AGVMMapBlock)block;
+- (AGVMSection *) filter:(NS_NOESCAPE AGVMFilterBlock)block;
+- (void) reduce:(NS_NOESCAPE AGVMReduceBlock)block;
+
+
+// ...
+- (instancetype) init NS_UNAVAILABLE;
++ (instancetype) new NS_UNAVAILABLE;
 
 @end
 
-/** fast create AGVMSection instance */
-AGVMSection * ag_VMSection(NSUInteger capacity);
 
+#pragma mark - 数据转换
+@interface AGVMSection (AGVMJSONTransformable) <AGVMJSONTransformable>
+
+@end
 
 NS_ASSUME_NONNULL_END
