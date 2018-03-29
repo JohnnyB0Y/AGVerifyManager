@@ -23,8 +23,10 @@
 #pragma mark - ---------- Public Methods ----------
 - (AGVerifyManagerVerifyBlock)verify
 {
-    // (无循环引用问题)
+    // 无循环引用问题, 此处只是为了解决警告问题。
+    __weak typeof(self) weakSelf = self;
     return ^AGVerifyManager *(id<AGVerifyManagerVerifiable> verifier) {
+        __strong typeof(weakSelf) self = weakSelf;
         // 判断错误
         AGVerifyError *error;
         if ( [verifier respondsToSelector:@selector(verify)] )
@@ -32,7 +34,7 @@
         
         if ( error ) {
             // 有错
-            _firstError = _firstError ?: error;
+            self.firstError = self.firstError ?: error;
             
             // 打包错误
             [self.errorsM addObject:error];
@@ -43,9 +45,11 @@
 
 - (AGVerifyManagerVerifyObjBlock)verify_Obj
 {
-    // (无循环引用问题)
+    // 无循环引用问题, 此处只是为了解决警告问题。
+    __weak typeof(self) weakSelf = self;
 	return ^AGVerifyManager *(id<AGVerifyManagerInjectVerifiable> verifier,
 							  id obj) {
+        __strong typeof(weakSelf) self = weakSelf;
 		// 判断错误
 		AGVerifyError *error;
 		if ( [verifier respondsToSelector:@selector(verifyObj:)] )
@@ -53,7 +57,7 @@
 		
 		if ( error ) {
 			// 有错
-			_firstError = _firstError ?: error;
+			self.firstError = self.firstError ?: error;
 			
 			// 打包错误
 			[self.errorsM addObject:error];
@@ -64,11 +68,12 @@
 
 - (AGVerifyManagerVerifyObjMsgBlock)verify_Obj_Msg
 {
-    // (无循环引用问题)
+    // 无循环引用问题, 此处只是为了解决警告问题。
+    __weak typeof(self) weakSelf = self;
 	return ^AGVerifyManager *(id<AGVerifyManagerInjectVerifiable> verifier,
 							  id obj,
 							  NSString *msg) {
-		
+		__strong typeof(weakSelf) self = weakSelf;
 		// 判断错误
 		AGVerifyError *error;
 		if ( [verifier respondsToSelector:@selector(verifyObj:)] )
@@ -77,7 +82,7 @@
 		if ( error ) {
 			// 有错
 			error.msg = msg ?: error.msg;
-			_firstError = _firstError ?: error;
+			self.firstError = self.firstError ?: error;
 			
 			// 打包错误
 			[self.errorsM addObject:error];
