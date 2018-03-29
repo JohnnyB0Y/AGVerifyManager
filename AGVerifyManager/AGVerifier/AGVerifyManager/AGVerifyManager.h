@@ -16,22 +16,26 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void(^AGVerifyManagerVerifiedBlock)(AGVerifyError * _Nullable firstError,
                                             NSArray<AGVerifyError *> * _Nullable errors);
 
+typedef AGVerifyManager* _Nonnull (^AGVerifyManagerVerifyBlock)(id<AGVerifyManagerVerifiable> verifier);
+
+typedef AGVerifyManager* _Nonnull (^AGVerifyManagerVerifyObjBlock)(id<AGVerifyManagerInjectVerifiable> verifier,
+                                                                   id obj);
+
+typedef AGVerifyManager* _Nonnull (^AGVerifyManagerVerifyObjMsgBlock)(id<AGVerifyManagerInjectVerifiable> verifier,
+                                                                      id obj,
+                                                                      NSString * _Nullable msg);
+
 #pragma mark - AGVerifyManager
 @interface AGVerifyManager : NSObject
 
 /** 验证数据，数据由验证器携带 */
-- (AGVerifyManager * (^)(id<AGVerifyManagerVerifiable> verifier)) verify;
-
+- (AGVerifyManagerVerifyBlock) verify;
 
 /** 验证数据，数据直接参数传入 */
-- (AGVerifyManager * (^)(id<AGVerifyManagerInjectVerifiable> verifier,
-						 id obj)) verify_Obj;
-
+- (AGVerifyManagerVerifyObjBlock) verify_Obj;
 
 /** 验证数据，直接传入验证器、数据、错误提示信息 */
-- (AGVerifyManager * (^)(id<AGVerifyManagerInjectVerifiable> verifier,
-						 id obj,
-						 NSString * _Nullable msg)) verify_Obj_Msg;
+- (AGVerifyManagerVerifyObjMsgBlock) verify_Obj_Msg;
 
 
 /** 验证完调用 (无循环引用问题) */
@@ -76,7 +80,7 @@ typedef void(^AGVerifyManagerVerifiedBlock)(AGVerifyError * _Nullable firstError
 @end
 
 // 快捷构建方法
-AGVerifyManager * ag_verifyManager();
+AGVerifyManager * ag_verifyManager(void);
 
 NS_ASSUME_NONNULL_END
 

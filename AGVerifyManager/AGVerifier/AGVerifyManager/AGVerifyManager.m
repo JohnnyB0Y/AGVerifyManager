@@ -21,8 +21,9 @@
 
 @implementation AGVerifyManager
 #pragma mark - ---------- Public Methods ----------
-- (AGVerifyManager *(^)(id<AGVerifyManagerVerifiable>))verify
+- (AGVerifyManagerVerifyBlock)verify
 {
+    // (无循环引用问题)
     return ^AGVerifyManager *(id<AGVerifyManagerVerifiable> verifier) {
         // 判断错误
         AGVerifyError *error;
@@ -40,9 +41,9 @@
     };
 }
 
-- (AGVerifyManager * _Nonnull (^)(id<AGVerifyManagerInjectVerifiable> _Nonnull,
-								  id _Nonnull))verify_Obj
+- (AGVerifyManagerVerifyObjBlock)verify_Obj
 {
+    // (无循环引用问题)
 	return ^AGVerifyManager *(id<AGVerifyManagerInjectVerifiable> verifier,
 							  id obj) {
 		// 判断错误
@@ -61,10 +62,9 @@
 	};
 }
 
-- (AGVerifyManager * _Nonnull (^)(id<AGVerifyManagerInjectVerifiable> _Nonnull,
-								  id _Nonnull,
-								  NSString * _Nullable))verify_Obj_Msg
+- (AGVerifyManagerVerifyObjMsgBlock)verify_Obj_Msg
 {
+    // (无循环引用问题)
 	return ^AGVerifyManager *(id<AGVerifyManagerInjectVerifiable> verifier,
 							  id obj,
 							  NSString *msg) {
@@ -131,7 +131,7 @@
 
 @end
 
-AGVerifyManager * ag_verifyManager()
+AGVerifyManager * ag_verifyManager(void)
 {
     return [AGVerifyManager new];
 }

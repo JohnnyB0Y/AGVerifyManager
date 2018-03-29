@@ -57,16 +57,16 @@ static NSString * const kViewControllerNameText;
 	 */
 	
     // 1. 判断用户输入文字限制
-    ATTextLimitVerifier *username =
+    ATTextLimitVerifier *usernameVerifier =
     [ATTextLimitVerifier verifier:self.nameTextField.text];
-    username.minLimit = 2;
-    username.maxLimit = 7;
-    username.maxLimitMsg =
-    [NSString stringWithFormat:@"文字不能超过%@个字符！", @(username.maxLimit)];
+    usernameVerifier.minLimit = 2;
+    usernameVerifier.maxLimit = 7;
+    usernameVerifier.maxLimitMsg =
+    [NSString stringWithFormat:@"文字不能超过%@个字符！", @(usernameVerifier.maxLimit)];
     
     // 2. 判断文字是否包含 emoji 😈
-    ATEmojiVerifier *emoji = [ATEmojiVerifier new];
-    emoji.errorMsg = @"请输入非表情字符！";
+    ATEmojiVerifier *emojiVerifier = [ATEmojiVerifier new];
+    emojiVerifier.errorMsg = @"请输入非表情字符！";
 	
 	// 3. 判断文字是否包含空格
 	ATWhiteSpaceVerifier *whiteSpaceVerifier = [ATWhiteSpaceVerifier new];
@@ -74,8 +74,8 @@ static NSString * const kViewControllerNameText;
     // 4. 开始验证
     [ag_verifyManager()
 	 
-	 .verify(username) // 用法一
-     .verify_Obj(emoji, self.nameTextField.text) // 用法二
+	 .verify(usernameVerifier) // 用法一
+     .verify_Obj(emojiVerifier, self.nameTextField.text) // 用法二
 	 .verify_Obj_Msg(whiteSpaceVerifier, self.nameTextField.text, @"文字不能包含空格！") // 用法三
      .verify_Obj(self, self.nameTextField) // 文本框闪烁
 	 
