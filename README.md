@@ -41,15 +41,15 @@ end
     // 4. 开始验证
     [ag_verifyManager()
 	 
-	 .verify(usernameVerifier) // 用法一
+     .verify(usernameVerifier) // 用法一
      .verify_Obj(emojiVerifier, self.nameTextField.text) // 用法二
-	 .verify_Obj_Msg(whiteSpaceVerifier, self.nameTextField.text, @"文字不能包含空格！") // 用法三
+     .verify_Obj_Msg(whiteSpaceVerifier, self.nameTextField.text, @"文字不能包含空格！") // 用法三
      .verify_Obj(self, self.nameTextField) // 文本框闪烁
 	 
      verified:^(AGVerifyError * _Nullable firstError, NSArray<AGVerifyError *> * _Nullable errors) {
          if ( firstError ) {
              // 验证不通过
-			 self.resultLabel.textColor = [UIColor redColor];
+	     self.resultLabel.textColor = [UIColor redColor];
              self.resultLabel.text = firstError.msg;
              
              // 文本框闪烁
@@ -78,7 +78,7 @@ end
          }
          else {
              // TODO
-			 self.resultLabel.textColor = [UIColor greenColor];
+	     self.resultLabel.textColor = [UIColor greenColor];
              self.resultLabel.text = @"验证通过！";
              self.nameTextField.backgroundColor = [UIColor whiteColor];
          }
