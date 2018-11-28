@@ -10,12 +10,7 @@
 
 @implementation ATUsernameVerifier
 
-- (AGVerifyError *)verify
-{
-    return [self verifyObj:self.verifyString];
-}
-
-- (AGVerifyError *)verifyObj:(NSString *)obj
+- (AGVerifyError *)ag_verifyObj:(NSString *)obj
 {
 	AGVerifyError *error = [AGVerifyError new];
 	if ( obj && ![obj isKindOfClass:[NSString class]] ) {

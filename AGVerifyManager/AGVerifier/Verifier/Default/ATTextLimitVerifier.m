@@ -10,10 +10,10 @@
 
 @implementation ATTextLimitVerifier
 
-- (AGVerifyError *)verify
+- (AGVerifyError *)ag_verifyObj:(id)obj
 {
     AGVerifyError *error;
-    
+    self.verifyString = obj;
     if ( [self minText:self.verifyString limit:self.minLimit] ) {
         // 字数过少
         error = [AGVerifyError new];

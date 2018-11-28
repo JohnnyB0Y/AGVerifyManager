@@ -10,7 +10,7 @@
 
 @implementation ATWhiteSpaceVerifier
 
-- (AGVerifyError *)verifyObj:(NSString *)obj
+- (AGVerifyError *)ag_verifyObj:(NSString *)obj
 {
 	AGVerifyError *error = [AGVerifyError new];
 	if ( obj && ![obj isKindOfClass:[NSString class]] ) {

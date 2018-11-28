@@ -10,9 +10,9 @@
 
 @implementation ATApiStatusVerifier
 
-- (AGVerifyError *)verify
+- (AGVerifyError *)ag_verifyObj:(id)obj
 {
-    NSInteger status = self.verifyString.integerValue;
+    NSInteger status = [obj integerValue];
     AGVerifyError *error;
     if ( status == 0 ) {
         error = [AGVerifyError new];

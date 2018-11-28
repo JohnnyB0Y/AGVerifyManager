@@ -30,9 +30,12 @@ NSString * ag_JSONTransformStringWithObject(id obj, AGVMJSONTransformBlock block
 
 - (NSArray<AGViewModel *> *) ag_packageItems:(NSArray *)items
                                      mergeVM:(AGViewModel *)mergeVM
-                                     inBlock:(AGVMPackageDatasBlock)block
-                                    capacity:(NSUInteger)capacity
+                                     inBlock:(__attribute__((noescape)) AGVMPackageDatasBlock)block
+                                    capacity:(NSInteger)capacity
 {
+    if ( items == nil ) return nil;
+    NSAssert([items isKindOfClass:[NSArray class]], @"传入的 items 类型错误！");
+    
     NSMutableArray *arrM = ag_mutableArray(items.count);
     [items enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
@@ -56,7 +59,7 @@ NSString * ag_JSONTransformStringWithObject(id obj, AGVMJSONTransformBlock block
  */
 - (AGViewModel *) ag_package:(NS_NOESCAPE AGVMPackageDataBlock)package
                      mergeVM:(AGViewModel *)mergeVM
-                    capacity:(NSUInteger)capacity
+                    capacity:(NSInteger)capacity
 {
     AGViewModel *vm =
     [AGViewModel newWithModel:mergeVM.bindingModel
@@ -66,7 +69,7 @@ NSString * ag_JSONTransformStringWithObject(id obj, AGVMJSONTransformBlock block
 }
 
 - (AGViewModel *) ag_package:(NS_NOESCAPE AGVMPackageDataBlock)package
-                    capacity:(NSUInteger)capacity
+                    capacity:(NSInteger)capacity
 {
     return [self ag_package:package mergeVM:nil capacity:capacity];
 }
@@ -174,7 +177,7 @@ NSString * ag_JSONTransformStringWithObject(id obj, AGVMJSONTransformBlock block
     
     [takeOutStrM appendFormat:@"\n%@\n",takeOutStr];
     // ...
-    NSString *assignStr = [NSString stringWithFormat:@"%@ *%@ = _viewModel[%@];", returnClass, key, newKey];
+    NSString *assignStr = [NSString stringWithFormat:@"%@ *%@ = viewModel[%@];", returnClass, key, newKey];
     
     [assignStrM appendFormat:@"\n%@\n", assignStr];
 }

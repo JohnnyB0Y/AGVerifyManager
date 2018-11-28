@@ -12,7 +12,7 @@
 
 - (CGSize) ag_sizeOfFont:(UIFont *)font maxSize:(CGSize)maxS
 {
-    if ( self.length <= 0) return CGSizeZero;
+    if ( self.length <= 0 ) return CGSizeZero;
     
     CGSize textS = [self boundingRectWithSize:maxS
                                       options:(NSStringDrawingTruncatesLastVisibleLine |
@@ -31,20 +31,5 @@
     return [self ag_sizeOfFont:font maxSize:maxS];
 }
 
-- (CGSize) ag_sizeCalculateInBlock:(AGSizeCalculateBlock)block
-{
-    if ( self.length <= 0 ) return CGSizeZero;
-    
-    UIScreen *screen = [UIScreen mainScreen];
-    CGSize maxS = CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX);
-    return block(self, screen.bounds.size, maxS);
-}
-
-
 @end
-
-NSString * ag_stringFromIntegerValue(NSInteger integer)
-{
-    return [NSString stringWithFormat:@"%@", @(integer)];
-}
 

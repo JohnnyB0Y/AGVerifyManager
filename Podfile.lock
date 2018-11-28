@@ -1,12 +1,16 @@
 PODS:
-  - AGViewModel (0.4.7)
+  - AGViewModel (0.5.3)
 
 DEPENDENCIES:
   - AGViewModel
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AGViewModel
+
 SPEC CHECKSUMS:
-  AGViewModel: 425e6a4397b24f7d88518449e863451a878e030f
+  AGViewModel: b5d1e4bd88ba9844817d767e7a731be46b65eb48
 
 PODFILE CHECKSUM: 43066f80a0106c307ae1f02e574b1c3e52872273
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

@@ -7,45 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0474515DD3E16CEA39C63632A677E825 /* UICollectionViewCell+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5355B718796C3972DA5AFEF685E35C /* UICollectionViewCell+AGViewModel.m */; };
-		086DCB1E381BAC47F51A8E5D30A931D6 /* AGVMNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2045BC71259E53BE2046008FF039 /* AGVMNotifier.m */; };
-		297B362D117447062C5713A06BD1E887 /* AGVMPackager.h in Headers */ = {isa = PBXBuildFile; fileRef = F8BBB27C518F4B7AB5578A41A68F436D /* AGVMPackager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B331B4AA0764401E5D77306DCF5D3A1 /* UITableViewHeaderFooterView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 01A0010369D68B7ECE6A07B448666988 /* UITableViewHeaderFooterView+AGViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2E0ECD97DDA36D27455563BA6B434F8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		432F4508EB553EADF8B2CF9C9C26D05D /* Pods-AGVerifyManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3BAB7BEA9A4C0F9647E4CC9C0C257B /* Pods-AGVerifyManager-dummy.m */; };
-		5D46D504FC53174EDADBD2AA74086460 /* UITableViewCell+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9385574B2E639875E32F5F8C83DB7B /* UITableViewCell+AGViewModel.m */; };
-		6174098DE5E4316D7979659D314418A5 /* AGVMSection.m in Sources */ = {isa = PBXBuildFile; fileRef = E5850B76F9DE0BACBE99572C3E1DC52E /* AGVMSection.m */; };
-		6297036E054AC7E6F9853EC1532D1EF7 /* AGVMNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3094692DC41712F8334E9764458BF0 /* AGVMNotifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6BEF7130480167E34D34C059B9444BA1 /* AGVMKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 6403B1BA918E579C4960465ADA53DEA8 /* AGVMKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C6B89CCEA6760A7A15E36E5A64F0975 /* AGVMSection.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D792DB4D88478F21376B06F1322D30 /* AGVMSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E4486DE705DDA9108073630732F4BC1 /* UICollectionViewCell+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C43356EAD116C79FD319540FCFF6C36B /* UICollectionViewCell+AGViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		759BE20E1ED3A84914CC5E22DC20D952 /* AGVMProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3878BC4375D1C8640F9E84631C2039D4 /* AGVMProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7BA772EDC7379B198AD7C058A668D10A /* AGVMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CC9C6838F1245BB239EB7845D677EF02 /* AGVMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		820262ED5BF8E2F0490ED79402D49B3F /* NSString+AGCalculate.h in Headers */ = {isa = PBXBuildFile; fileRef = 163AA47964490911471E41EC1BD7B50A /* NSString+AGCalculate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8416F314C21FD4FA692DD5F79DE46ADE /* AGVMManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D607BD950F64F511957E2125673A4AC /* AGVMManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		88B89BE8D0F6AA34EB61E10A458C7B48 /* UITableViewCell+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = DAAA7786D6D28B1B4E1D2A4515CE7BD3 /* UITableViewCell+AGViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		999B35B0CC09B02BF72DF53BA5BF775B /* NSString+AGCalculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 427167DB519D0ED3CD6785DE7D1221E7 /* NSString+AGCalculate.m */; };
-		9E8CDCD0C5DA9BEFA779C5ECA4628913 /* AGViewModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9470A93A7824B1C0DA3ACBF03603EE /* AGViewModel-dummy.m */; };
-		9F55496EAB08D431C8531BBCA28FBD1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		A2E5C5CEB2F0B434B29873AA202BEE51 /* UIView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4254F0F2FE6CBF14A79025A2DF5FB369 /* UIView+AGViewModel.m */; };
-		A895C410D99D26DD7BBB6D2282A62E40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		B0F16217E78439C2072C2C60FFC6E87B /* UIView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C5AF52B8C268FA57333F3A314E31997 /* UIView+AGViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7B392E0B372D5F35A20D7C3521588CC /* UITableViewHeaderFooterView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA88A5A2DDB064FC3FDDE54D16BFAB1 /* UITableViewHeaderFooterView+AGViewModel.m */; };
-		BABEC8B72158085B6DA4F46D3E8898CD /* AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B96421967A165BBFDA550F1D58A782 /* AGViewModel.m */; };
-		C27001ADCEBC268EFE2356088073484A /* AGVMFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DC6F2F9EE171551B387E428C228132A /* AGVMFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CB2235D6846A1270295B92FAA8651A5D /* AGVMPackager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BF1A339FD7568B937CB22AC0B13314 /* AGVMPackager.m */; };
-		DDDDF6DDF9A8AE2E421479ED917BC12C /* AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E5A93EA8104BFDF04F2BC978F9B4CD /* AGViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1D324ACD573224073A2B73DEA78DC8C /* AGVMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2675C65AA224BEF1B0EC314F8FD44DF8 /* AGVMManager.m */; };
-		FBD45F560B5AE5E0F1088EA147332182 /* UICollectionReusableView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B310989EF358E93B6E84A276B2ACB5 /* UICollectionReusableView+AGViewModel.m */; };
-		FF14633A98490187002A8609056C5DCE /* UICollectionReusableView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BBCF5352DF093CABDD5DA9894467D864 /* UICollectionReusableView+AGViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B653ECD22BA3C905CF1604B7225793B /* AGVMManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D607BD950F64F511957E2125673A4AC /* AGVMManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		12898A83DCB278F123633C863A02F53C /* UITableViewHeaderFooterView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA88A5A2DDB064FC3FDDE54D16BFAB1 /* UITableViewHeaderFooterView+AGViewModel.m */; };
+		1530A1A17D7B22F68D836C02810216FB /* AGVMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2675C65AA224BEF1B0EC314F8FD44DF8 /* AGVMManager.m */; };
+		1611FF5D6BE433F961DDADAF7E51F264 /* UICollectionViewCell+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5355B718796C3972DA5AFEF685E35C /* UICollectionViewCell+AGViewModel.m */; };
+		20F0DA0E2B9E7327B917C09513788371 /* AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E5A93EA8104BFDF04F2BC978F9B4CD /* AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2C265BAD5DE4604926FE9E1C2F984992 /* NSString+AGCalculate.h in Headers */ = {isa = PBXBuildFile; fileRef = 163AA47964490911471E41EC1BD7B50A /* NSString+AGCalculate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		324FA06E0956CDA1F2DF74DAB646D63B /* NSString+AGCalculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 427167DB519D0ED3CD6785DE7D1221E7 /* NSString+AGCalculate.m */; };
+		340673D71253D788B0F86D806F090E3C /* UIView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4254F0F2FE6CBF14A79025A2DF5FB369 /* UIView+AGViewModel.m */; };
+		406833B916A3A2F82F9ED49A1F6DB565 /* AGVMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CC9C6838F1245BB239EB7845D677EF02 /* AGVMKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		41B2696A666280ADECCCEC14FFAFFEB0 /* UITableViewHeaderFooterView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 01A0010369D68B7ECE6A07B448666988 /* UITableViewHeaderFooterView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		55E5A0BD38E9A6948D6D84B553A3E70B /* UICollectionReusableView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BBCF5352DF093CABDD5DA9894467D864 /* UICollectionReusableView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6EB6DCF07EC59195AADA295B9ACC94E6 /* AGVMNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3094692DC41712F8334E9764458BF0 /* AGVMNotifier.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		732912D0DE0D307C32364ACDBF130673 /* AGViewModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9470A93A7824B1C0DA3ACBF03603EE /* AGViewModel-dummy.m */; };
+		77418D68A89E5BEC709CE0BC2A83C096 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
+		77D6DA87568C07A50AB0F51DF96F5FEB /* AGVMSection.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D792DB4D88478F21376B06F1322D30 /* AGVMSection.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7B183A027F7FB4C93804B236C6E019F9 /* UIView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C5AF52B8C268FA57333F3A314E31997 /* UIView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		80527C83E8F3E77D4DDBAC3A31AEDDE3 /* AGVMKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 6403B1BA918E579C4960465ADA53DEA8 /* AGVMKeys.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9A6C7E9E6414321828EB46D53F5C9F06 /* AGVMPackager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BF1A339FD7568B937CB22AC0B13314 /* AGVMPackager.m */; };
+		ADD7059A6C75CBCB46F457BC34D9DA4B /* AGVMPackager.h in Headers */ = {isa = PBXBuildFile; fileRef = F8BBB27C518F4B7AB5578A41A68F436D /* AGVMPackager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B01523104B28BCBB5EA84F3573F58BDE /* AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B96421967A165BBFDA550F1D58A782 /* AGViewModel.m */; };
+		B0258BEC60CB306EFC61838751FB164E /* Pods-AGVerifyManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3BAB7BEA9A4C0F9647E4CC9C0C257B /* Pods-AGVerifyManager-dummy.m */; };
+		BE0F25319F1A75F941C0457A46029DD0 /* UITableViewCell+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9385574B2E639875E32F5F8C83DB7B /* UITableViewCell+AGViewModel.m */; };
+		CB59644454940BD67101E1024CF05480 /* UITableViewCell+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = DAAA7786D6D28B1B4E1D2A4515CE7BD3 /* UITableViewCell+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CCBD3201936968538B100DD9535E4AC6 /* AGVMNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A2045BC71259E53BE2046008FF039 /* AGVMNotifier.m */; };
+		D084BC1200176F156EF3D55AE414FD6B /* UICollectionViewCell+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C43356EAD116C79FD319540FCFF6C36B /* UICollectionViewCell+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D298ABD616BFD46F0FB0A6F5CC6E4AC5 /* AGVMSection.m in Sources */ = {isa = PBXBuildFile; fileRef = E5850B76F9DE0BACBE99572C3E1DC52E /* AGVMSection.m */; };
+		D658B9789999508F8EA48D1E3AD1293F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
+		EB97C5D391EE4E292C841E65A5E6C685 /* AGVMProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3878BC4375D1C8640F9E84631C2039D4 /* AGVMProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F6C131D3047A3CD381724C8F7D363E7B /* UICollectionReusableView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B310989EF358E93B6E84A276B2ACB5 /* UICollectionReusableView+AGViewModel.m */; };
+		F7CCDFDB40A551CA1EF19CC712E151A9 /* AGVMFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DC6F2F9EE171551B387E428C228132A /* AGVMFunction.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		280B90AE044CBBE2F49C454DFFFC75C6 /* PBXContainerItemProxy */ = {
+		D672701668DC43CAA4EB48169ED506D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3B7F77838FEB1ADA5656C5AFE91146D0;
+			remoteGlobalIDString = E22C4CF94CBFFE896431D47B52B00084;
 			remoteInfo = AGViewModel;
 		};
 /* End PBXContainerItemProxy section */
@@ -68,22 +67,22 @@
 		6403B1BA918E579C4960465ADA53DEA8 /* AGVMKeys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMKeys.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMKeys.h; sourceTree = "<group>"; };
 		65DB81A1CFA84FB554CF79EEEC8C8899 /* Pods-AGVerifyManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AGVerifyManager.debug.xcconfig"; sourceTree = "<group>"; };
 		8DC6F2F9EE171551B387E428C228132A /* AGVMFunction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMFunction.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMFunction.h; sourceTree = "<group>"; };
+		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9BB42B3AB064F7684DD52CA7B20C5F68 /* Pods-AGVerifyManager-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AGVerifyManager-acknowledgements.plist"; sourceTree = "<group>"; };
 		9D3094692DC41712F8334E9764458BF0 /* AGVMNotifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMNotifier.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMNotifier.h; sourceTree = "<group>"; };
 		9D607BD950F64F511957E2125673A4AC /* AGVMManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMManager.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMManager.h; sourceTree = "<group>"; };
 		A46FF8CD011CF480CC2361D844910DA5 /* Pods-AGVerifyManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AGVerifyManager.release.xcconfig"; sourceTree = "<group>"; };
 		B3D792DB4D88478F21376B06F1322D30 /* AGVMSection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMSection.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMSection.h; sourceTree = "<group>"; };
-		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B8CA9A07EAC4D830CC0FD02B323C09D2 /* libPods-AGVerifyManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AGVerifyManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA88A5A2DDB064FC3FDDE54D16BFAB1 /* UITableViewHeaderFooterView+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewHeaderFooterView+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableViewHeaderFooterView+AGViewModel.m"; sourceTree = "<group>"; };
 		BBCF5352DF093CABDD5DA9894467D864 /* UICollectionReusableView+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionReusableView+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionReusableView+AGViewModel.h"; sourceTree = "<group>"; };
+		BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C2FE8CF1E7B3B05BACDC9C4DD3F04517 /* Pods-AGVerifyManager-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AGVerifyManager-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C43356EAD116C79FD319540FCFF6C36B /* UICollectionViewCell+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionViewCell+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionViewCell+AGViewModel.h"; sourceTree = "<group>"; };
 		CC9C6838F1245BB239EB7845D677EF02 /* AGVMKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMKit.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMKit.h; sourceTree = "<group>"; };
 		D0D85DEF0DE16F09655F0AA1CB82FDAF /* Pods-AGVerifyManager-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AGVerifyManager-frameworks.sh"; sourceTree = "<group>"; };
 		D7E2A62D73E5CB1C5F1979E06A1C00F5 /* libAGViewModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAGViewModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DAAA7786D6D28B1B4E1D2A4515CE7BD3 /* UITableViewCell+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableViewCell+AGViewModel.h"; sourceTree = "<group>"; };
 		DC9385574B2E639875E32F5F8C83DB7B /* UITableViewCell+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableViewCell+AGViewModel.m"; sourceTree = "<group>"; };
 		DD5355B718796C3972DA5AFEF685E35C /* UICollectionViewCell+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionViewCell+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionViewCell+AGViewModel.m"; sourceTree = "<group>"; };
@@ -95,20 +94,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		28D65BEDAB3C7630C80C38AE28DCD2C1 /* Frameworks */ = {
+		98A3C1E8F0CF60222EB1DF851D6FF20A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E0ECD97DDA36D27455563BA6B434F8F /* Foundation.framework in Frameworks */,
-				9F55496EAB08D431C8531BBCA28FBD1C /* UIKit.framework in Frameworks */,
+				77418D68A89E5BEC709CE0BC2A83C096 /* Foundation.framework in Frameworks */,
+				D658B9789999508F8EA48D1E3AD1293F /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D49DDD6BEBC604FEB6449D7CE85AA71 /* Frameworks */ = {
+		F2E0C21E9631E416812067ADDEFA9CF3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A895C410D99D26DD7BBB6D2282A62E40 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +119,15 @@
 				37A93CAE3B7ADDF7EBABE344D1827623 /* AGViewModel */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				908E902E026C5C22904CF9014A5604AD /* Foundation.framework */,
+				BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		37A93CAE3B7ADDF7EBABE344D1827623 /* AGViewModel */ = {
@@ -175,18 +182,9 @@
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+				10DEDCB394BAA0C7FEDEBE330207B074 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
-				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		706D8DDDCE3D8B9A9B84BC722C5FDB39 /* Products */ = {
@@ -231,38 +229,63 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		30305653ABCFF38483F473A5C0C1E738 /* Headers */ = {
+		1B3D039AF7BF8ED0426D8365890332B6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDDDF6DDF9A8AE2E421479ED917BC12C /* AGViewModel.h in Headers */,
-				C27001ADCEBC268EFE2356088073484A /* AGVMFunction.h in Headers */,
-				6BEF7130480167E34D34C059B9444BA1 /* AGVMKeys.h in Headers */,
-				7BA772EDC7379B198AD7C058A668D10A /* AGVMKit.h in Headers */,
-				8416F314C21FD4FA692DD5F79DE46ADE /* AGVMManager.h in Headers */,
-				6297036E054AC7E6F9853EC1532D1EF7 /* AGVMNotifier.h in Headers */,
-				297B362D117447062C5713A06BD1E887 /* AGVMPackager.h in Headers */,
-				759BE20E1ED3A84914CC5E22DC20D952 /* AGVMProtocol.h in Headers */,
-				6C6B89CCEA6760A7A15E36E5A64F0975 /* AGVMSection.h in Headers */,
-				820262ED5BF8E2F0490ED79402D49B3F /* NSString+AGCalculate.h in Headers */,
-				FF14633A98490187002A8609056C5DCE /* UICollectionReusableView+AGViewModel.h in Headers */,
-				6E4486DE705DDA9108073630732F4BC1 /* UICollectionViewCell+AGViewModel.h in Headers */,
-				88B89BE8D0F6AA34EB61E10A458C7B48 /* UITableViewCell+AGViewModel.h in Headers */,
-				2B331B4AA0764401E5D77306DCF5D3A1 /* UITableViewHeaderFooterView+AGViewModel.h in Headers */,
-				B0F16217E78439C2072C2C60FFC6E87B /* UIView+AGViewModel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		610CF6B69E78DFA9FC334DBB6935A346 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20F0DA0E2B9E7327B917C09513788371 /* AGViewModel.h in Headers */,
+				F7CCDFDB40A551CA1EF19CC712E151A9 /* AGVMFunction.h in Headers */,
+				80527C83E8F3E77D4DDBAC3A31AEDDE3 /* AGVMKeys.h in Headers */,
+				406833B916A3A2F82F9ED49A1F6DB565 /* AGVMKit.h in Headers */,
+				0B653ECD22BA3C905CF1604B7225793B /* AGVMManager.h in Headers */,
+				6EB6DCF07EC59195AADA295B9ACC94E6 /* AGVMNotifier.h in Headers */,
+				ADD7059A6C75CBCB46F457BC34D9DA4B /* AGVMPackager.h in Headers */,
+				EB97C5D391EE4E292C841E65A5E6C685 /* AGVMProtocol.h in Headers */,
+				77D6DA87568C07A50AB0F51DF96F5FEB /* AGVMSection.h in Headers */,
+				2C265BAD5DE4604926FE9E1C2F984992 /* NSString+AGCalculate.h in Headers */,
+				55E5A0BD38E9A6948D6D84B553A3E70B /* UICollectionReusableView+AGViewModel.h in Headers */,
+				D084BC1200176F156EF3D55AE414FD6B /* UICollectionViewCell+AGViewModel.h in Headers */,
+				CB59644454940BD67101E1024CF05480 /* UITableViewCell+AGViewModel.h in Headers */,
+				41B2696A666280ADECCCEC14FFAFFEB0 /* UITableViewHeaderFooterView+AGViewModel.h in Headers */,
+				7B183A027F7FB4C93804B236C6E019F9 /* UIView+AGViewModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3B7F77838FEB1ADA5656C5AFE91146D0 /* AGViewModel */ = {
+		352DB45301405809AB45CD3741A8D047 /* Pods-AGVerifyManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0A3BEFB71FDF0314224A25F6EA59EBA /* Build configuration list for PBXNativeTarget "AGViewModel" */;
+			buildConfigurationList = 5F09E8A15EC48CAE87C247461E7F3626 /* Build configuration list for PBXNativeTarget "Pods-AGVerifyManager" */;
 			buildPhases = (
-				D622E0DCD0380A475E9E791B1E74E086 /* Sources */,
-				28D65BEDAB3C7630C80C38AE28DCD2C1 /* Frameworks */,
-				30305653ABCFF38483F473A5C0C1E738 /* Headers */,
+				1B3D039AF7BF8ED0426D8365890332B6 /* Headers */,
+				03FF2D22304D0F7D951862EAE7FC64F4 /* Sources */,
+				F2E0C21E9631E416812067ADDEFA9CF3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FA9DDD11D89F0E9B478ACE130C17CB2 /* PBXTargetDependency */,
+			);
+			name = "Pods-AGVerifyManager";
+			productName = "Pods-AGVerifyManager";
+			productReference = B8CA9A07EAC4D830CC0FD02B323C09D2 /* libPods-AGVerifyManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E22C4CF94CBFFE896431D47B52B00084 /* AGViewModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B40F323F9C91EA5F65857391195C75CB /* Build configuration list for PBXNativeTarget "AGViewModel" */;
+			buildPhases = (
+				610CF6B69E78DFA9FC334DBB6935A346 /* Headers */,
+				E5354DCBD3AA00344A8634357BB01297 /* Sources */,
+				98A3C1E8F0CF60222EB1DF851D6FF20A /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,31 +296,14 @@
 			productReference = D7E2A62D73E5CB1C5F1979E06A1C00F5 /* libAGViewModel.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		F47F2A03547CEC5C8C248C4B978E341F /* Pods-AGVerifyManager */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8DB5BC5E8E8A8BCA74A416C3FDD075A1 /* Build configuration list for PBXNativeTarget "Pods-AGVerifyManager" */;
-			buildPhases = (
-				E1E3049E49DBD7EDD9EDCF20478A528F /* Sources */,
-				3D49DDD6BEBC604FEB6449D7CE85AA71 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4CA4BDFEF942C884DF7DE1A335018CAF /* PBXTargetDependency */,
-			);
-			name = "Pods-AGVerifyManager";
-			productName = "Pods-AGVerifyManager";
-			productReference = B8CA9A07EAC4D830CC0FD02B323C09D2 /* libPods-AGVerifyManager.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 1010;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -311,74 +317,53 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B7F77838FEB1ADA5656C5AFE91146D0 /* AGViewModel */,
-				F47F2A03547CEC5C8C248C4B978E341F /* Pods-AGVerifyManager */,
+				E22C4CF94CBFFE896431D47B52B00084 /* AGViewModel */,
+				352DB45301405809AB45CD3741A8D047 /* Pods-AGVerifyManager */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D622E0DCD0380A475E9E791B1E74E086 /* Sources */ = {
+		03FF2D22304D0F7D951862EAE7FC64F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E8CDCD0C5DA9BEFA779C5ECA4628913 /* AGViewModel-dummy.m in Sources */,
-				BABEC8B72158085B6DA4F46D3E8898CD /* AGViewModel.m in Sources */,
-				F1D324ACD573224073A2B73DEA78DC8C /* AGVMManager.m in Sources */,
-				086DCB1E381BAC47F51A8E5D30A931D6 /* AGVMNotifier.m in Sources */,
-				CB2235D6846A1270295B92FAA8651A5D /* AGVMPackager.m in Sources */,
-				6174098DE5E4316D7979659D314418A5 /* AGVMSection.m in Sources */,
-				999B35B0CC09B02BF72DF53BA5BF775B /* NSString+AGCalculate.m in Sources */,
-				FBD45F560B5AE5E0F1088EA147332182 /* UICollectionReusableView+AGViewModel.m in Sources */,
-				0474515DD3E16CEA39C63632A677E825 /* UICollectionViewCell+AGViewModel.m in Sources */,
-				5D46D504FC53174EDADBD2AA74086460 /* UITableViewCell+AGViewModel.m in Sources */,
-				B7B392E0B372D5F35A20D7C3521588CC /* UITableViewHeaderFooterView+AGViewModel.m in Sources */,
-				A2E5C5CEB2F0B434B29873AA202BEE51 /* UIView+AGViewModel.m in Sources */,
+				B0258BEC60CB306EFC61838751FB164E /* Pods-AGVerifyManager-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1E3049E49DBD7EDD9EDCF20478A528F /* Sources */ = {
+		E5354DCBD3AA00344A8634357BB01297 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				432F4508EB553EADF8B2CF9C9C26D05D /* Pods-AGVerifyManager-dummy.m in Sources */,
+				732912D0DE0D307C32364ACDBF130673 /* AGViewModel-dummy.m in Sources */,
+				B01523104B28BCBB5EA84F3573F58BDE /* AGViewModel.m in Sources */,
+				1530A1A17D7B22F68D836C02810216FB /* AGVMManager.m in Sources */,
+				CCBD3201936968538B100DD9535E4AC6 /* AGVMNotifier.m in Sources */,
+				9A6C7E9E6414321828EB46D53F5C9F06 /* AGVMPackager.m in Sources */,
+				D298ABD616BFD46F0FB0A6F5CC6E4AC5 /* AGVMSection.m in Sources */,
+				324FA06E0956CDA1F2DF74DAB646D63B /* NSString+AGCalculate.m in Sources */,
+				F6C131D3047A3CD381724C8F7D363E7B /* UICollectionReusableView+AGViewModel.m in Sources */,
+				1611FF5D6BE433F961DDADAF7E51F264 /* UICollectionViewCell+AGViewModel.m in Sources */,
+				BE0F25319F1A75F941C0457A46029DD0 /* UITableViewCell+AGViewModel.m in Sources */,
+				12898A83DCB278F123633C863A02F53C /* UITableViewHeaderFooterView+AGViewModel.m in Sources */,
+				340673D71253D788B0F86D806F090E3C /* UIView+AGViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4CA4BDFEF942C884DF7DE1A335018CAF /* PBXTargetDependency */ = {
+		8FA9DDD11D89F0E9B478ACE130C17CB2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AGViewModel;
-			target = 3B7F77838FEB1ADA5656C5AFE91146D0 /* AGViewModel */;
-			targetProxy = 280B90AE044CBBE2F49C454DFFFC75C6 /* PBXContainerItemProxy */;
+			target = E22C4CF94CBFFE896431D47B52B00084 /* AGViewModel */;
+			targetProxy = D672701668DC43CAA4EB48169ED506D5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2D2CFB8152F2330143B7519540FEF727 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A46FF8CD011CF480CC2361D844910DA5 /* Pods-AGVerifyManager.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		920E86791C6BA83AEB856F790EF27590 /* Debug */ = {
+		60CC9AC68CDAB1302F65EAAACFB39A7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 57DCE2F3FB9F79CBE5619C5F1B3D8DE4 /* AGViewModel.xcconfig */;
 			buildSettings = {
@@ -391,6 +376,8 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = AGViewModel;
+				PRODUCT_NAME = AGViewModel;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -399,29 +386,7 @@
 			};
 			name = Debug;
 		};
-		AC5DBF1FD27A5EB2C5356652BB8FCBC7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57DCE2F3FB9F79CBE5619C5F1B3D8DE4 /* AGViewModel.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/AGViewModel/AGViewModel-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */ = {
+		96434B6C8FF320C976A10DAD7174A4BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -431,10 +396,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -442,6 +409,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -450,6 +418,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -469,34 +438,14 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		C00868D616253A3041813617645D2FA2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65DB81A1CFA84FB554CF79EEEC8C8899 /* Pods-AGVerifyManager.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */ = {
+		D11C82AF2204B41B80412B8DC9C1D652 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -506,10 +455,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -517,6 +468,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -525,6 +477,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -546,15 +499,82 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
+		};
+		D8F38BEDCACAE34D80B0403B1A9CC750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A46FF8CD011CF480CC2361D844910DA5 /* Pods-AGVerifyManager.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E730822CAB9436985BDCB3204911BCE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65DB81A1CFA84FB554CF79EEEC8C8899 /* Pods-AGVerifyManager.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FEB84D117BDA9ED0A88211AF9158F94B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57DCE2F3FB9F79CBE5619C5F1B3D8DE4 /* AGViewModel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/AGViewModel/AGViewModel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = AGViewModel;
+				PRODUCT_NAME = AGViewModel;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -562,26 +582,26 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */,
-				B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */,
+				D11C82AF2204B41B80412B8DC9C1D652 /* Debug */,
+				96434B6C8FF320C976A10DAD7174A4BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8DB5BC5E8E8A8BCA74A416C3FDD075A1 /* Build configuration list for PBXNativeTarget "Pods-AGVerifyManager" */ = {
+		5F09E8A15EC48CAE87C247461E7F3626 /* Build configuration list for PBXNativeTarget "Pods-AGVerifyManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C00868D616253A3041813617645D2FA2 /* Debug */,
-				2D2CFB8152F2330143B7519540FEF727 /* Release */,
+				E730822CAB9436985BDCB3204911BCE8 /* Debug */,
+				D8F38BEDCACAE34D80B0403B1A9CC750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0A3BEFB71FDF0314224A25F6EA59EBA /* Build configuration list for PBXNativeTarget "AGViewModel" */ = {
+		B40F323F9C91EA5F65857391195C75CB /* Build configuration list for PBXNativeTarget "AGViewModel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				920E86791C6BA83AEB856F790EF27590 /* Debug */,
-				AC5DBF1FD27A5EB2C5356652BB8FCBC7 /* Release */,
+				60CC9AC68CDAB1302F65EAAACFB39A7B /* Debug */,
+				FEB84D117BDA9ED0A88211AF9158F94B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

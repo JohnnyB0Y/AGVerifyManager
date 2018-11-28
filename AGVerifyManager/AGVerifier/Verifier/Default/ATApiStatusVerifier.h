@@ -8,7 +8,7 @@
 
 #import "AGBaseVerifier.h"
 
-@interface ATApiStatusVerifier : AGBaseVerifier
+@interface ATApiStatusVerifier : NSObject
 <AGVerifyManagerVerifiable>
 
 

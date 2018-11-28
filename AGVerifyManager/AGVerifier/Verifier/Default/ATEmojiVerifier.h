@@ -8,6 +8,6 @@
 
 #import "AGBaseVerifier.h"
 
-@interface ATEmojiVerifier : AGBaseVerifier <AGVerifyManagerInjectVerifiable>
+@interface ATEmojiVerifier : AGBaseVerifier <AGVerifyManagerVerifiable>
 
 @end

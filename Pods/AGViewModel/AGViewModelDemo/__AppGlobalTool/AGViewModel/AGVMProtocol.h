@@ -50,7 +50,6 @@ typedef void (^AGVMNotificationBlock)
 
 typedef void (^AGVMSafeSetCompletionBlock)
 (
-	 AGViewModel *vm,
 	 _Nullable id value, // 数据
 	 BOOL safe // 数据是否类型安全
 );
@@ -58,7 +57,6 @@ typedef void (^AGVMSafeSetCompletionBlock)
 
 typedef _Nullable id (^AGVMSafeGetCompletionBlock)
 (
-	 AGViewModel *vm,
 	 _Nullable id value, // 数据
 	 BOOL safe // 数据是否类型安全
 );
@@ -66,7 +64,6 @@ typedef _Nullable id (^AGVMSafeGetCompletionBlock)
 
 typedef NSNumber * _Nullable (^AGVMSafeGetNumberCompletionBlock)
 (
-	 AGViewModel *vm,
 	 _Nullable id value, // 数据
 	 BOOL safe // 数据是否类型安全
 );
@@ -74,8 +71,8 @@ typedef NSNumber * _Nullable (^AGVMSafeGetNumberCompletionBlock)
 #pragma mark JSON transform block
 typedef id _Nullable (^AGVMJSONTransformBlock)
 (
- _Nullable id obj, // 数据对象
- BOOL *useDefault // 是否跳过block处理，使用默认处理方式：*useDefault = YES;
+	 _Nullable id obj, // 数据对象
+	 BOOL *useDefault // 是否跳过block处理，使用默认处理方式：*useDefault = YES;
  );
 
 #pragma mark viewModelManager block
@@ -88,7 +85,7 @@ typedef void(^AGVMPackageSectionsBlock)
 (
     AGVMSection *vms,
     id obj,
-    NSUInteger idx
+    NSInteger idx
 );
 
 #pragma mark viewModelPackage block
@@ -101,13 +98,13 @@ typedef void (^AGVMPackageDatasBlock)
 (
     NSMutableDictionary *package,
     id obj,
-    NSUInteger idx
+    NSInteger idx
 );
 
 #pragma mark map、filter、reduce
 typedef void (^AGVMMapBlock)(AGViewModel *vm);
 typedef BOOL (^AGVMFilterBlock)(AGViewModel *vm);
-typedef void (^AGVMReduceBlock)(AGViewModel *vm, NSUInteger idx);
+typedef void (^AGVMReduceBlock)(AGViewModel *vm, NSInteger idx);
 
 #pragma mark - ------------- ViewModel 相关协议 --------------
 #pragma mark BaseReusable Protocol
@@ -163,7 +160,7 @@ typedef void (^AGVMReduceBlock)(AGViewModel *vm, NSUInteger idx);
 #pragma mark ViewController Protocol
 @protocol AGViewControllerProtocol <NSObject>
 @required
-- (instancetype) initWithViewModel:(nullable AGViewModel *)vm;
++ (instancetype) newWithViewModel:(nullable AGViewModel *)vm;
 
 @optional
 + (instancetype) alloc;
@@ -238,7 +235,7 @@ typedef void (^AGVMReduceBlock)(AGViewModel *vm, NSUInteger idx);
  @param block 回调 Block
  */
 - (void) ag_readdObserver:(NSObject *)observer
-                   forKeys:(NSArray<NSString *> *)keys
+				  forKeys:(NSArray<NSString *> *)keys
                     block:(AGVMNotificationBlock)block;
 
 /**

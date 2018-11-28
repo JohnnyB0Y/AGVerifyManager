@@ -10,14 +10,15 @@
 #import "AGViewModel.h"
 #import "AGVMProtocol.h"
 
-@interface UIView (AGViewModel) <AGVMIncludable>
+@interface UIView (AGViewModel)
+<AGVMIncludable>
 
 - (void) setViewModel:(AGViewModel *)viewModel NS_REQUIRES_SUPER;
 
 /** 是否能从nil文件创建视图 */
 + (BOOL) canAwakeFromNib;
 
-/** 从 nib 创建实例,没有 nib时返回 nil */
+/** 从 nib 创建实例,没有nib 时返回 nil */
 + (instancetype) ag_createFromNib;
 
 @end

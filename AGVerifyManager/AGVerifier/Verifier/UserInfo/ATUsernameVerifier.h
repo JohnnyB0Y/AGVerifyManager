@@ -9,6 +9,6 @@
 #import "AGBaseVerifier.h"
 
 @interface ATUsernameVerifier : AGBaseVerifier
-<AGVerifyManagerVerifiable, AGVerifyManagerInjectVerifiable>
+<AGVerifyManagerVerifiable>
 
 @end

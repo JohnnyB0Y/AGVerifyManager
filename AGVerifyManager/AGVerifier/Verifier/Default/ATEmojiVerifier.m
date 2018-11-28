@@ -10,7 +10,7 @@
 
 @implementation ATEmojiVerifier
 
-- (AGVerifyError *)verifyObj:(id)obj
+- (AGVerifyError *)ag_verifyObj:(id)obj
 {
     AGVerifyError *error;
     if ( [obj isKindOfClass:[NSString class]] ) {

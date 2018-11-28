@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 
 @interface AGVerifyManager ()
+<AGVerifyManagerVerifying>
 
 /** first error */
 @property (nonatomic, strong) AGVerifyError *firstError;
@@ -17,43 +18,27 @@
 /** 错误数组 */
 @property (nonatomic, strong) NSMutableArray<AGVerifyError *> *errorsM;
 
+/** 执行验证器的 Block */
+@property (nonatomic, copy) AGVerifyManagerVerifyingBlock verifyBlock;
+
+/** 验证完成调用的 Block */
+@property (nonatomic, copy) AGVerifyManagerCompletionBlock completionBlock;
+
 @end
 
 @implementation AGVerifyManager
 #pragma mark - ---------- Public Methods ----------
-- (AGVerifyManagerVerifyBlock)verify
+- (AGVerifyManagerVerifyObjBlock)verifyObj
 {
-    // 无循环引用问题, 此处只是为了解决警告问题。
     __weak typeof(self) weakSelf = self;
-    return ^AGVerifyManager *(id<AGVerifyManagerVerifiable> verifier) {
-        __strong typeof(weakSelf) self = weakSelf;
-        // 判断错误
-        AGVerifyError *error;
-        if ( [verifier respondsToSelector:@selector(verify)] )
-            error = [verifier verify];
-        
-        if ( error ) {
-            // 有错
-            self.firstError = self.firstError ?: error;
-            
-            // 打包错误
-            [self.errorsM addObject:error];
-        }
-        return self;
-    };
-}
-
-- (AGVerifyManagerVerifyObjBlock)verify_Obj
-{
-    // 无循环引用问题, 此处只是为了解决警告问题。
-    __weak typeof(self) weakSelf = self;
-	return ^AGVerifyManager *(id<AGVerifyManagerInjectVerifiable> verifier,
+	return ^AGVerifyManager *(id<AGVerifyManagerVerifiable> verifier,
 							  id obj) {
+        
         __strong typeof(weakSelf) self = weakSelf;
 		// 判断错误
 		AGVerifyError *error;
-		if ( [verifier respondsToSelector:@selector(verifyObj:)] )
-			error = [verifier verifyObj:obj];
+		if ( [verifier respondsToSelector:@selector(ag_verifyObj:)] )
+			error = [verifier ag_verifyObj:obj];
 		
 		if ( error ) {
 			// 有错
@@ -66,18 +51,18 @@
 	};
 }
 
-- (AGVerifyManagerVerifyObjMsgBlock)verify_Obj_Msg
+- (AGVerifyManagerVerifyObjMsgBlock)verifyObjMsg
 {
-    // 无循环引用问题, 此处只是为了解决警告问题。
     __weak typeof(self) weakSelf = self;
-	return ^AGVerifyManager *(id<AGVerifyManagerInjectVerifiable> verifier,
+	return ^AGVerifyManager *(id<AGVerifyManagerVerifiable> verifier,
 							  id obj,
 							  NSString *msg) {
+        
 		__strong typeof(weakSelf) self = weakSelf;
 		// 判断错误
 		AGVerifyError *error;
-		if ( [verifier respondsToSelector:@selector(verifyObj:)] )
-			error = [verifier verifyObj:obj];
+		if ( [verifier respondsToSelector:@selector(ag_verifyObj:)] )
+			error = [verifier ag_verifyObj:obj];
 		
 		if ( error ) {
 			// 有错
@@ -92,12 +77,28 @@
 	};
 }
 
-- (AGVerifyManager *)verified:(AGVerifyManagerVerifiedBlock)verifiedBlock
+- (void)ag_executeVerify:(NS_NOESCAPE AGVerifyManagerVerifyingBlock)verifyBlock
+              completion:(NS_NOESCAPE AGVerifyManagerCompletionBlock)completionBlock
 {
-    verifiedBlock ? verifiedBlock(self.firstError, [self.errorsM copy]) : nil;
+    verifyBlock ? verifyBlock(self) : nil;
+    completionBlock ? completionBlock(self.firstError, [self.errorsM copy]) : nil;
     self.firstError = nil;
     self.errorsM = nil;
-    return self;
+}
+
+- (void)ag_prepareVerify:(AGVerifyManagerVerifyingBlock)verifyBlock
+              completion:(AGVerifyManagerCompletionBlock)completionBlock
+{
+    self.verifyBlock = verifyBlock ?: nil;
+    self.completionBlock = completionBlock ?: nil;
+}
+
+- (void)ag_executeVerify
+{
+    _verifyBlock ? _verifyBlock(self) : nil;
+    _completionBlock ? _completionBlock(self.firstError, [self.errorsM copy]) : nil;
+    self.firstError = nil;
+    self.errorsM = nil;
 }
 
 #pragma mark - ----------- Getter Methods ----------

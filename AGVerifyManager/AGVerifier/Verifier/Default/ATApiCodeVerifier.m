@@ -10,9 +10,9 @@
 
 @implementation ATApiCodeVerifier
 
-- (AGVerifyError *)verify
+- (AGVerifyError *)ag_verifyObj:(id)obj
 {
-    NSInteger code = self.verifyString.integerValue;
+    NSInteger code = [obj integerValue];
     
     AGVerifyError *error = [AGVerifyError new];
     NSString *msg;

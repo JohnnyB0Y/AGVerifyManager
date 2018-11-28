@@ -9,7 +9,7 @@
 #import "UIView+AGViewModel.h"
 #import <objc/runtime.h>
 
-static void *kAGViewModelProperty;
+static void *kAGViewModelProperty = &kAGViewModelProperty;
 
 @implementation UIView (AGViewModel)
 
@@ -33,12 +33,12 @@ static void *kAGViewModelProperty;
 #pragma mark - ----------- Getter Setter Methods ----------
 - (void)setViewModel:(AGViewModel *)viewModel
 {
-    objc_setAssociatedObject(self, &kAGViewModelProperty, viewModel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kAGViewModelProperty, viewModel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (AGViewModel *)viewModel
 {
-    return objc_getAssociatedObject(self, &kAGViewModelProperty);
+    return objc_getAssociatedObject(self, kAGViewModelProperty);
 }
 
 @end

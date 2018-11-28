@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "AGVerifyManager.h"
 
-@interface ATWhiteSpaceVerifier : NSObject <AGVerifyManagerInjectVerifiable>
+@interface ATWhiteSpaceVerifier : NSObject <AGVerifyManagerVerifiable>
 
 @end
