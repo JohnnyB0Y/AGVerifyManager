@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		265521C4BB20FF8C77193ABB /* libPods-AGVerifyManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA2A7EFDC9069A6A7A3C254 /* libPods-AGVerifyManager.a */; };
+		3A9A174321D7F4BE00C4502F /* ATBusyVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A174221D7F4BE00C4502F /* ATBusyVerifier.m */; };
 		3AE410DE1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE410DD1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m */; };
 		3AF1F0FD1F37329E00902E85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F0FC1F37329E00902E85 /* main.m */; };
 		3AF1F1001F37329E00902E85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F0FF1F37329E00902E85 /* AppDelegate.m */; };
@@ -17,14 +18,14 @@
 		3AF1F10B1F37329E00902E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF1F1091F37329E00902E85 /* LaunchScreen.storyboard */; };
 		3AF1F1341F37338500902E85 /* AGBaseVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1141F37338500902E85 /* AGBaseVerifier.m */; };
 		3AF1F1351F37338500902E85 /* AGVerifyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1171F37338500902E85 /* AGVerifyManager.m */; };
-		3AF1F13A1F37338500902E85 /* ATApiCodeVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1241F37338500902E85 /* ATApiCodeVerifier.m */; };
-		3AF1F13B1F37338500902E85 /* ATApiStatusVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1261F37338500902E85 /* ATApiStatusVerifier.m */; };
 		3AF1F13E1F37338500902E85 /* ATTextLimitVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F12C1F37338500902E85 /* ATTextLimitVerifier.m */; };
 		3AF1F1411F37338500902E85 /* ATUsernameVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1331F37338500902E85 /* ATUsernameVerifier.m */; };
 		3AF1F1451F3742B000902E85 /* ATEmojiVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1441F3742B000902E85 /* ATEmojiVerifier.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A9A174121D7F4BE00C4502F /* ATBusyVerifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATBusyVerifier.h; sourceTree = "<group>"; };
+		3A9A174221D7F4BE00C4502F /* ATBusyVerifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATBusyVerifier.m; sourceTree = "<group>"; };
 		3AE410DC1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATWhiteSpaceVerifier.h; sourceTree = "<group>"; };
 		3AE410DD1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATWhiteSpaceVerifier.m; sourceTree = "<group>"; };
 		3AF1F0F81F37329E00902E85 /* AGVerifyManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGVerifyManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,10 +42,6 @@
 		3AF1F1141F37338500902E85 /* AGBaseVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGBaseVerifier.m; sourceTree = "<group>"; };
 		3AF1F1161F37338500902E85 /* AGVerifyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGVerifyManager.h; sourceTree = "<group>"; };
 		3AF1F1171F37338500902E85 /* AGVerifyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGVerifyManager.m; sourceTree = "<group>"; };
-		3AF1F1231F37338500902E85 /* ATApiCodeVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATApiCodeVerifier.h; sourceTree = "<group>"; };
-		3AF1F1241F37338500902E85 /* ATApiCodeVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATApiCodeVerifier.m; sourceTree = "<group>"; };
-		3AF1F1251F37338500902E85 /* ATApiStatusVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATApiStatusVerifier.h; sourceTree = "<group>"; };
-		3AF1F1261F37338500902E85 /* ATApiStatusVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATApiStatusVerifier.m; sourceTree = "<group>"; };
 		3AF1F12B1F37338500902E85 /* ATTextLimitVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTextLimitVerifier.h; sourceTree = "<group>"; };
 		3AF1F12C1F37338500902E85 /* ATTextLimitVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTextLimitVerifier.m; sourceTree = "<group>"; };
 		3AF1F1321F37338500902E85 /* ATUsernameVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATUsernameVerifier.h; sourceTree = "<group>"; };
@@ -152,16 +149,14 @@
 		3AF1F1221F37338500902E85 /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				3AF1F1231F37338500902E85 /* ATApiCodeVerifier.h */,
-				3AF1F1241F37338500902E85 /* ATApiCodeVerifier.m */,
-				3AF1F1251F37338500902E85 /* ATApiStatusVerifier.h */,
-				3AF1F1261F37338500902E85 /* ATApiStatusVerifier.m */,
 				3AF1F12B1F37338500902E85 /* ATTextLimitVerifier.h */,
 				3AF1F12C1F37338500902E85 /* ATTextLimitVerifier.m */,
 				3AF1F1431F3742B000902E85 /* ATEmojiVerifier.h */,
 				3AF1F1441F3742B000902E85 /* ATEmojiVerifier.m */,
 				3AE410DC1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.h */,
 				3AE410DD1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m */,
+				3A9A174121D7F4BE00C4502F /* ATBusyVerifier.h */,
+				3A9A174221D7F4BE00C4502F /* ATBusyVerifier.m */,
 			);
 			path = Default;
 			sourceTree = "<group>";
@@ -289,13 +284,12 @@
 				3AF1F1001F37329E00902E85 /* AppDelegate.m in Sources */,
 				3AF1F1341F37338500902E85 /* AGBaseVerifier.m in Sources */,
 				3AE410DE1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m in Sources */,
-				3AF1F13A1F37338500902E85 /* ATApiCodeVerifier.m in Sources */,
 				3AF1F1411F37338500902E85 /* ATUsernameVerifier.m in Sources */,
 				3AF1F1451F3742B000902E85 /* ATEmojiVerifier.m in Sources */,
 				3AF1F13E1F37338500902E85 /* ATTextLimitVerifier.m in Sources */,
-				3AF1F13B1F37338500902E85 /* ATApiStatusVerifier.m in Sources */,
 				3AF1F0FD1F37329E00902E85 /* main.m in Sources */,
 				3AF1F1351F37338500902E85 /* AGVerifyManager.m in Sources */,
+				3A9A174321D7F4BE00C4502F /* ATBusyVerifier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

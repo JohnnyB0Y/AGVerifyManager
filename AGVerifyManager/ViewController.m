@@ -11,6 +11,7 @@
 #import "ATTextLimitVerifier.h"
 #import "ATEmojiVerifier.h"
 #import "ATWhiteSpaceVerifier.h"
+#import "ATBusyVerifier.h"
 #import <AGViewModel/AGVMKit.h>
 
 @interface ViewController ()
@@ -21,6 +22,9 @@
 
 /** Manager */
 @property (nonatomic, strong) AGVerifyManager *verifyManager;
+
+/** background manager */
+@property (nonatomic, strong) AGVerifyManager *verifyManager2;
 
 - (IBAction)verifyBtnClick:(UIButton *)sender;
 
@@ -54,16 +58,20 @@
     
     // 4. 准备验证
     __weak typeof(self) weakSelf = self;
-    [self.verifyManager ag_prepareVerify:^(id<AGVerifyManagerVerifying>  _Nonnull start) {
+    [self.verifyManager ag_addVerifyForKey:@"key" verifying:^(id<AGVerifyManagerVerifying> start) {
         
         __strong typeof(weakSelf) self = weakSelf;
-        start
-        .verifyObj(usernameVerifier, self.nameTextField.text) // 用法一：传入验证器和需要验证的数据
-        .verifyObj(emojiVerifier, self.nameTextField.text)
-        .verifyObjMsg(whiteSpaceVerifier, self.nameTextField.text, @"文字不能包含空格！") // 用法二：传入验证器、数据、提示的内容
-        .verifyObj(self, self.nameTextField); // 文本框闪烁
         
-    } completion:^(AGVerifyError * _Nullable firstError, NSArray<AGVerifyError *> * _Nullable errors) {
+        start
+        // 用法一：传入验证器和需要验证的数据
+        .verifyObj(usernameVerifier, self.nameTextField.text)
+        .verifyObj(emojiVerifier, self.nameTextField.text)
+        // 用法二：传入验证器、数据、提示的内容
+        .verifyObjMsg(whiteSpaceVerifier, self.nameTextField.text, @"文字不能包含空格！")
+        // 文本框闪烁
+        .verifyObj(self, self.nameTextField);
+        
+    } completion:^(AGVerifyError * firstError, NSArray<AGVerifyError *> * errors) {
         
         __strong typeof(weakSelf) self = weakSelf;
         if ( firstError ) {
@@ -72,7 +80,7 @@
             self.resultLabel.text = firstError.msg;
             
             // 文本框闪烁
-            [errors enumerateObjectsUsingBlock:^(AGVerifyError * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [errors enumerateObjectsUsingBlock:^(AGVerifyError * obj, NSUInteger idx, BOOL * stop) {
                 
                 // 根据你自身业务来处理
                 if ( obj.verifyObj == self.nameTextField ) {
@@ -104,6 +112,42 @@
         
     }];
     
+    
+    // 测试耗时验证
+    ATBusyVerifier *busy = [ATBusyVerifier new];
+    self.verifyManager2 = ag_newAGVerifyManager();
+    
+    // 这里是为了测试才使用了 dispatch_group_t
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    
+    for (int i = 0; i<24; i++) {
+        
+        NSString *intStr = [NSNumber numberWithInt:i].stringValue;
+        dispatch_group_async(group, queue, ^{
+            [self.verifyManager2 ag_addVerifyForKey:intStr verifying:^(id<AGVerifyManagerVerifying>  _Nonnull start) {
+                
+                // 耗时验证
+                start
+                .verifyObj(busy, intStr)
+                .verifyObj(busy, intStr);
+                
+            } completion:^(AGVerifyError * _Nullable firstError, NSArray<AGVerifyError *> * _Nullable errors) {
+                
+                NSLog(@"耗时验证完成----------- %@", intStr);
+                [errors enumerateObjectsUsingBlock:^(AGVerifyError * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    NSLog(@"%@", obj.msg);
+                }];
+                NSLog(@"-");
+            }];
+            
+        });
+    }
+    
+    // 这里是为了测试才使用了 dispatch_group_t
+    dispatch_group_notify(group, queue, ^{
+        [self.verifyManager2 ag_executeAllVerifyBlocksInBackground];
+    });
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -122,8 +166,7 @@
 - (IBAction)verifyBtnClick:(UIButton *)sender {
 	
     // 5. 执行验证
-    [self.verifyManager ag_executeVerify];
-    
+    [self.verifyManager ag_executeAllVerifyBlocks];
 }
 
 #pragma mark - ----------- AGVerifyManagerVerifiable ----------

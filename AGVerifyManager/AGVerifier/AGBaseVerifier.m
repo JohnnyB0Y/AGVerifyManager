@@ -8,17 +8,7 @@
 
 #import "AGBaseVerifier.h"
 
-
 @implementation AGBaseVerifier
-
-
-+ (instancetype)verifier:(NSString *)verifyString
-{
-    AGBaseVerifier *verifier = [self new];
-    verifier.verifyString = verifyString;
-    return verifier;
-}
-
 
 #pragma mark - Base Verifier Methods
 - (BOOL) minText:(NSString *)text limit:(NSUInteger)length

@@ -39,16 +39,20 @@ end
     
     // 4. 准备验证
     __weak typeof(self) weakSelf = self;
-    [self.verifyManager ag_prepareVerify:^(id<AGVerifyManagerVerifying>  _Nonnull start) {
+    [self.verifyManager ag_addVerifyForKey:@"k" verifying:^(id<AGVerifyManagerVerifying> start) {
         
         __strong typeof(weakSelf) self = weakSelf;
-        start
-        .verifyObj(usernameVerifier, self.nameTextField.text) // 用法一：传入验证器和需要验证的数据
-        .verifyObj(emojiVerifier, self.nameTextField.text)
-        .verifyObjMsg(whiteSpaceVerifier, self.nameTextField.text, @"文字不能包含空格！") // 用法二：传入验证器、数据、提示的内容
-        .verifyObj(self, self.nameTextField); // 文本框闪烁
         
-    } completion:^(AGVerifyError * _Nullable firstError, NSArray<AGVerifyError *> * _Nullable errors) {
+        start
+        // 用法一：传入验证器和需要验证的数据
+        .verifyObj(usernameVerifier, self.nameTextField.text)
+        .verifyObj(emojiVerifier, self.nameTextField.text)
+        // 用法二：传入验证器、数据、提示的内容
+        .verifyObjMsg(whiteSpaceVerifier, self.nameTextField.text, @"文字不能包含空格！")
+        // 文本框闪烁
+        .verifyObj(self, self.nameTextField); 
+        
+    } completion:^(AGVerifyError *firstError, NSArray<AGVerifyError *> *errors) {
         
         __strong typeof(weakSelf) self = weakSelf;
         if ( firstError ) {
@@ -57,7 +61,7 @@ end
             self.resultLabel.text = firstError.msg;
             
             // 文本框闪烁
-            [errors enumerateObjectsUsingBlock:^(AGVerifyError * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [errors enumerateObjectsUsingBlock:^(AGVerifyError *obj, NSUInteger idx, BOOL *stop) {
                 
                 // 根据你自身业务来处理
                 if ( obj.verifyObj == self.nameTextField ) {
@@ -91,7 +95,38 @@ end
     
     
     // 5. 执行验证
-    [self.verifyManager ag_executeVerify];
+    [self.verifyManager ag_executeAllVerifyBlocks];
+
+```
+
+#### 执行耗时验证
+```objective-c
+ATBusyVerifier *busy = [ATBusyVerifier new];
+self.verifyManager = ag_newAGVerifyManager();
+for (int i = 0; i<24; i++) {
+    NSString *intStr = [NSNumber numberWithInt:i].stringValue;
+    [self.verifyManager ag_addVerifyForKey:intStr verifying:^(id<AGVerifyManagerVerifying> start) {
+    
+        // 耗时验证
+        start
+        .verifyObj(busy, intStr)
+        .verifyObj(busy, intStr);
+        
+    } completion:^(AGVerifyError *firstError, NSArray<AGVerifyError *> *errors) {
+    
+        NSLog(@"耗时验证完成----------- %@", intStr);
+    }
+}
+
+/** 多线程执行验证Blocks，verifyingBlock 在其他线程下执行；completionBlock 回到主线程执行。*/
+[self.verifyManager ag_executeAllVerifyBlocksInBackground];
+
+```
+
+#### 直接执行验证
+```objective-c
+- (void) ag_executeVerifying:(NS_NOESCAPE AGVerifyManagerVerifyingBlock)verifyingBlock
+                  completion:(NS_NOESCAPE AGVerifyManagerCompletionBlock)completionBlock;
 
 ```
 

@@ -9,17 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "AGVerifyManager.h"
 
-
-
 @interface AGBaseVerifier : NSObject
 
-/** 要验证的字符串 */
-@property (nonatomic, copy) NSString *verifyString;
 /** 错误信息 */
 @property (nonatomic, copy) NSString *errorMsg;
-
-+ (instancetype) verifier:(NSString *)verifyString;
-
 
 #pragma mark - Base Verifier Methods
 /** text 字符数 少于 length */

@@ -13,14 +13,14 @@
 - (AGVerifyError *)ag_verifyObj:(id)obj
 {
     AGVerifyError *error;
-    self.verifyString = obj;
-    if ( [self minText:self.verifyString limit:self.minLimit] ) {
+    NSString *verifyString = obj;
+    if ( [self minText:verifyString limit:self.minLimit] ) {
         // 字数过少
         error = [AGVerifyError new];
         error.code = 3301;
         error.msg = self.minLimitMsg ?: [NSString stringWithFormat:@"字数不能少于%@字！", @(self.minLimit)];
     }
-    else if ( [self maxText:self.verifyString limit:self.maxLimit] ) {
+    else if ( [self maxText:verifyString limit:self.maxLimit] ) {
         // 字数超出
         error = [AGVerifyError new];
         error.code = 3302;
