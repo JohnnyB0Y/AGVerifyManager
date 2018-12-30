@@ -10,16 +10,16 @@
 
 @implementation ATWhiteSpaceVerifier
 
-- (AGVerifyError *)ag_verifyObj:(NSString *)obj
+- (AGVerifyError *)ag_verifyData:(NSString *)data
 {
 	AGVerifyError *error = [AGVerifyError new];
-	if ( obj && ![obj isKindOfClass:[NSString class]] ) {
+	if ( data && ![data isKindOfClass:[NSString class]] ) {
 		error.code = 400;
 		error.msg = @"输入内容格式错误！";
 		return error;
 	}
 	
-	NSRange range = [obj rangeOfString:@" "];
+	NSRange range = [data rangeOfString:@" "];
 	if (range.location != NSNotFound) {
 		//有空格
 		error.code = 401;

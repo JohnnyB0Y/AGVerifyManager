@@ -10,7 +10,7 @@
 
 @implementation ATBusyVerifier
 
-- (AGVerifyError *)ag_verifyObj:(id)obj
+- (AGVerifyError *)ag_verifyData:(id)data
 {
     int sum = 0;
     int count = 18000;
@@ -21,11 +21,11 @@
         sum -= count;
     }
     
-    if ( [obj respondsToSelector:@selector(intValue)] ) {
+    if ( [data respondsToSelector:@selector(intValue)] ) {
         
-        if ( [obj intValue] % 2 == 0 ) {
+        if ( [data intValue] % 2 == 0 ) {
             AGVerifyError *error = [AGVerifyError new];
-            error.msg = [NSString stringWithFormat:@"==> %@ %@", obj, [NSThread currentThread]];
+            error.msg = [NSString stringWithFormat:@"==> %@ %@", data, [NSThread currentThread]];
             error.code = 1024;
             return error;
         }

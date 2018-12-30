@@ -36,49 +36,51 @@ static NSString * const kAGVerifyManagerCompletionBlock = @"kAGVerifyManagerCom
     if ( ! self ) return nil;
     
     _lock = [NSLock new];
-    _executeDictM = [NSMutableDictionary dictionaryWithCapacity:5];
     
     return self;
 }
 
 #pragma mark - ---------- AGVerifyManagerVerifying ----------
-- (AGVerifyManagerVerifyObjBlock)verifyObj
+- (AGVerifyManagerVerifyDataBlock)verifyData
 {
-	return ^AGVerifyManager *(id<AGVerifyManagerVerifiable> verifier, id obj) {
-		// 判断错误
-		AGVerifyError *error;
-		if ( [verifier respondsToSelector:@selector(ag_verifyObj:)] )
-			error = [verifier ag_verifyObj:obj];
-		
-		if ( error ) {
-			// 有错
-			self.firstError = self.firstError ?: error;
-			
-			// 打包错误
-			[self.errorsM addObject:error];
-		}
-		return self;
+	return ^AGVerifyManager *(id<AGVerifyManagerVerifiable> verifier, id data) {
+		return self.verifyDataWithMsgWithContext(verifier, data, nil, nil);
 	};
 }
 
-- (AGVerifyManagerVerifyObjMsgBlock)verifyObjMsg
+- (AGVerifyManagerVerifyDataWithContextBlock)verifyDataWithContext
 {
-	return ^AGVerifyManager *(id<AGVerifyManagerVerifiable> verifier, id obj, NSString *msg) {
-		// 判断错误
-		AGVerifyError *error;
-		if ( [verifier respondsToSelector:@selector(ag_verifyObj:)] )
-			error = [verifier ag_verifyObj:obj];
-		
-		if ( error ) {
-			// 有错
-			error.msg = msg ?: error.msg;
-			self.firstError = self.firstError ?: error;
-			
-			// 打包错误
-			[self.errorsM addObject:error];
-		}
-		return self;
+    return ^AGVerifyManager *(id<AGVerifyManagerVerifiable> verifier, id data, id context) {
+        return self.verifyDataWithMsgWithContext(verifier, data, nil, context);
+    };
+}
+
+- (AGVerifyManagerVerifyDataWithMsgBlock)verifyDataWithMsg
+{
+	return ^AGVerifyManager *(id<AGVerifyManagerVerifiable> verifier, id data, NSString *msg) {
+		return self.verifyDataWithMsgWithContext(verifier, data, msg, nil);
 	};
+}
+
+- (AGVerifyManagerVerifyDataWithMsgWithContextBlock)verifyDataWithMsgWithContext
+{
+    return ^AGVerifyManager *(id<AGVerifyManagerVerifiable> verifier, id data, NSString *msg, id context) {
+        // 判断错误
+        AGVerifyError *error;
+        if ( [verifier respondsToSelector:@selector(ag_verifyData:)] )
+            error = [verifier ag_verifyData:data];
+        
+        if ( error ) {
+            // 有错
+            error.context = context;
+            error.msg = msg ?: error.msg;
+            self.firstError = self.firstError ?: error;
+            
+            // 打包错误
+            [self.errorsM addObject:error];
+        }
+        return self;
+    };
 }
 
 #pragma mark - ---------- Public Methods ----------
@@ -102,6 +104,34 @@ static NSString * const kAGVerifyManagerCompletionBlock = @"kAGVerifyManagerCom
     
     [self.lock lock];
     [self.executeDictM setObject:dictM forKey:key];
+    [self.lock unlock];
+}
+
+- (void) ag_setVerifyForKey:(NSString *)key
+                  verifying:(AGVerifyManagerVerifyingBlock)verifyingBlock
+{
+    NSParameterAssert(key);
+    NSParameterAssert(verifyingBlock);
+    [self.lock lock];
+    NSMutableDictionary *dictM = [self.executeDictM objectForKey:key];
+    if ( dictM == nil ) {
+        dictM = [NSMutableDictionary dictionaryWithCapacity:2];
+    }
+    dictM[kAGVerifyManagerVerifyingBlock] = [verifyingBlock copy];
+    [self.lock unlock];
+}
+
+- (void) ag_setVerifyForKey:(NSString *)key
+                 completion:(AGVerifyManagerCompletionBlock)completionBlock
+{
+    NSParameterAssert(key);
+    NSParameterAssert(completionBlock);
+    [self.lock lock];
+    NSMutableDictionary *dictM = [self.executeDictM objectForKey:key];
+    if ( dictM == nil ) {
+        dictM = [NSMutableDictionary dictionaryWithCapacity:2];
+    }
+    dictM[kAGVerifyManagerCompletionBlock] = [completionBlock copy];
     [self.lock unlock];
 }
 
@@ -160,13 +190,13 @@ static NSString * const kAGVerifyManagerCompletionBlock = @"kAGVerifyManagerCom
                     verifying:(NS_NOESCAPE AGVerifyManagerVerifyingBlock)verifyingBlock
                    completion:(NS_NOESCAPE AGVerifyManagerCompletionBlock)completionBlock
 {
-    manager->_firstError = nil;
-    [manager->_errorsM removeAllObjects];
-    
     verifyingBlock ? verifyingBlock(manager) : nil;
     dispatch_async(dispatch_get_main_queue(), ^{
         completionBlock ? completionBlock(manager->_firstError, manager->_errorsM) : nil;
     });
+    // 清空数据
+    manager->_firstError = nil;
+    [manager->_errorsM removeAllObjects];
 }
 
 #pragma mark - ----------- Getter Methods ----------
@@ -176,6 +206,14 @@ static NSString * const kAGVerifyManagerCompletionBlock = @"kAGVerifyManagerCom
         _errorsM = [NSMutableArray arrayWithCapacity:5];
     }
     return _errorsM;
+}
+
+- (NSMutableDictionary<NSString *,NSMutableDictionary *> *)executeDictM
+{
+    if (_executeDictM == nil) {
+        _executeDictM = [NSMutableDictionary dictionaryWithCapacity:5];
+    }
+    return _executeDictM;
 }
 
 @end
@@ -208,4 +246,14 @@ static NSString * const kAGVerifyManagerCompletionBlock = @"kAGVerifyManagerCom
 AGVerifyManager * ag_newAGVerifyManager(void)
 {
     return [AGVerifyManager new];
+}
+
+AGVerifyManagerVerifyingBlock ag_verifyManagerCopyVerifyingBlock(AGVerifyManagerVerifyingBlock block)
+{
+    return [block copy];
+}
+
+AGVerifyManagerCompletionBlock ag_verifyManagerCopyCompletionBlock(AGVerifyManagerCompletionBlock block)
+{
+    return [block copy];
 }

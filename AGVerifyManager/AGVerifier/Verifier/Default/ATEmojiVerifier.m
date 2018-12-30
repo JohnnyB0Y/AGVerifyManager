@@ -11,11 +11,11 @@
 
 @implementation ATEmojiVerifier
 
-- (AGVerifyError *)ag_verifyObj:(id)obj
+- (AGVerifyError *)ag_verifyData:(id)data
 {
     AGVerifyError *error;
-    if ( [obj isKindOfClass:[NSString class]] ) {
-        NSString *string = (NSString *)obj;
+    if ( [data isKindOfClass:[NSString class]] ) {
+        NSString *string = (NSString *)data;
         if ( [string ag_containsEmojiCharacter] ) {
             error = [AGVerifyError new];
             error.msg = @"输入不能包含表情字符！";

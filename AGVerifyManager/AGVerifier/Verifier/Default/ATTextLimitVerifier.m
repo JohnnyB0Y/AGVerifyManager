@@ -11,10 +11,10 @@
 
 @implementation ATTextLimitVerifier
 
-- (AGVerifyError *)ag_verifyObj:(id)obj
+- (AGVerifyError *)ag_verifyData:(id)data
 {
     AGVerifyError *error;
-    NSString *verifyString = obj;
+    NSString *verifyString = data;
     NSUInteger strLen = [verifyString ag_lengthOfCharacter];
     if ( strLen < self.minLimit ) {
         // 字数过少

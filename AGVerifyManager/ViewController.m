@@ -13,6 +13,7 @@
 #import "ATWhiteSpaceVerifier.h"
 #import "ATBusyVerifier.h"
 #import <AGViewModel/AGVMKit.h>
+#import <AGCategories/NSString+AGJudge.h>
 
 @interface ViewController ()
 <AGVerifyManagerVerifiable>
@@ -62,13 +63,13 @@
         __strong typeof(weakSelf) self = weakSelf;
         
         start
-        // 用法一：传入验证器和需要验证的数据
-        .verifyObj(usernameVerifier, self.nameTextField.text)
-        .verifyObj(emojiVerifier, self.nameTextField.text)
-        // 用法二：传入验证器、数据、提示的内容
-        .verifyObjMsg(whiteSpaceVerifier, self.nameTextField.text, @"文字不能包含空格！")
-        // 文本框闪烁
-        .verifyObj(self, self.nameTextField);
+        // 用法一：传入验证器和需要验证的数据；
+        .verifyData(usernameVerifier, self.nameTextField.text)
+        .verifyData(emojiVerifier, self.nameTextField.text)
+        // 用法二：传入验证器、数据、提示的内容；
+        .verifyDataWithMsg(whiteSpaceVerifier, self.nameTextField.text, @"文字不能包含空格！")
+        // 用法三：传入验证器、数据、你想传递的对象；文本框闪烁
+        .verifyDataWithContext(self, self.nameTextField.text, self.nameTextField);
         
     } completion:^(AGVerifyError * firstError, NSArray<AGVerifyError *> * errors) {
         
@@ -81,8 +82,8 @@
             // 文本框闪烁
             [errors enumerateObjectsUsingBlock:^(AGVerifyError * obj, NSUInteger idx, BOOL * stop) {
                 
-                // 根据你自身业务来处理
-                if ( obj.verifyObj == self.nameTextField ) {
+                // 取出传递的对象，根据自身业务处理。
+                if ( obj.context == self.nameTextField ) {
                     // 取色
                     UIColor *color;
                     if ( obj.code == 100 ) {
@@ -128,8 +129,8 @@
                 
                 // 耗时验证
                 start
-                .verifyObj(busy, intStr)
-                .verifyObj(busy, intStr);
+                .verifyData(busy, intStr)
+                .verifyData(busy, intStr);
                 
             } completion:^(AGVerifyError * _Nullable firstError, NSArray<AGVerifyError *> * _Nullable errors) {
                 
@@ -170,14 +171,15 @@
 
 #pragma mark - ----------- AGVerifyManagerVerifiable ----------
 /** 验证 示例 - 文字 < 2 闪红色，输入 > 7 闪紫色。由 code 控制 */
-- (AGVerifyError *)ag_verifyObj:(UITextField *)obj
+- (AGVerifyError *)ag_verifyData:(NSString *)data
 {
     AGVerifyError *error = [AGVerifyError new];
-    error.verifyObj = obj;
-    if ( obj.text.length < 2 ) {
+    NSUInteger strLen = [data ag_lengthOfCharacter];
+    
+    if ( strLen < 2 ) {
         error.code = 100;
     }
-    else if ( obj.text.length > 7 ) {
+    else if ( strLen > 7 ) {
         error.code = 200;
     }
     else {

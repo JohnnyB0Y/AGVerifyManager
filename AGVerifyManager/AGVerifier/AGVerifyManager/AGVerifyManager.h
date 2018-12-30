@@ -18,13 +18,22 @@ typedef void(^AGVerifyManagerVerifyingBlock)(id<AGVerifyManagerVerifying> start)
 typedef void(^AGVerifyManagerCompletionBlock)(AGVerifyError * _Nullable firstError,
                                               NSArray<AGVerifyError *> * _Nullable errors);
 
-typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyObjBlock)(id<AGVerifyManagerVerifiable> verifier,
-                                                                               id obj);
 
-typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyObjMsgBlock)(id<AGVerifyManagerVerifiable> verifier,
-                                                                                  id obj,
-                                                                                  NSString * _Nullable msg);
+typedef id<AGVerifyManagerVerifying> (^AGVerifyManagerVerifyDataBlock)(id<AGVerifyManagerVerifiable> verifier,
+                                                                       id data);
 
+typedef id<AGVerifyManagerVerifying> (^AGVerifyManagerVerifyDataWithContextBlock)(id<AGVerifyManagerVerifiable> verifier,
+                                                                                  id data,
+                                                                                  id _Nullable context);
+
+typedef id<AGVerifyManagerVerifying> (^AGVerifyManagerVerifyDataWithMsgBlock)(id<AGVerifyManagerVerifiable> verifier,
+                                                                              id data,
+                                                                              NSString * _Nullable msg);
+
+typedef id<AGVerifyManagerVerifying> (^AGVerifyManagerVerifyDataWithMsgWithContextBlock)(id<AGVerifyManagerVerifiable> verifier,
+                                                                                         id data,
+                                                                                         NSString * _Nullable msg,
+                                                                                         id _Nullable context);
 
 @interface AGVerifyManager : NSObject
 
@@ -36,6 +45,13 @@ typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyObjMsgBlock
 #pragma mark 添加验证Block。
 - (void) ag_addVerifyForKey:(NSString *)key
                   verifying:(AGVerifyManagerVerifyingBlock)verifyingBlock
+                 completion:(AGVerifyManagerCompletionBlock)completionBlock;
+
+#pragma mark 更改验证Block。
+- (void) ag_setVerifyForKey:(NSString *)key
+                  verifying:(AGVerifyManagerVerifyingBlock)verifyingBlock;
+
+- (void) ag_setVerifyForKey:(NSString *)key
                  completion:(AGVerifyManagerCompletionBlock)completionBlock;
 
 #pragma mark 移除验证Block。
@@ -56,11 +72,17 @@ typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyObjMsgBlock
 #pragma mark - AGVerifyManagerVerifying
 @protocol AGVerifyManagerVerifying <NSObject>
 
-/** 验证数据，直接传入验证器、数据 */
-@property (nonatomic, copy, readonly) AGVerifyManagerVerifyObjBlock verifyObj;
+/** 验证数据，传入验证器、数据 */
+@property (nonatomic, copy, readonly) AGVerifyManagerVerifyDataBlock verifyData;
 
-/** 验证数据，直接传入验证器、数据、错误提示信息 */
-@property (nonatomic, copy, readonly) AGVerifyManagerVerifyObjMsgBlock verifyObjMsg;
+/** 验证数据，传入验证器、数据、你想传递的对象（由AGVerifyError对象持有） */
+@property (nonatomic, copy, readonly) AGVerifyManagerVerifyDataWithContextBlock verifyDataWithContext;
+
+/** 验证数据，直传入验证器、数据、错误提示信息 */
+@property (nonatomic, copy, readonly) AGVerifyManagerVerifyDataWithMsgBlock verifyDataWithMsg;
+
+/** 验证数据，传入验证器、数据、错误提示信息、你想传递的对象（由AGVerifyError对象持有） */
+@property (nonatomic, copy, readonly) AGVerifyManagerVerifyDataWithMsgWithContextBlock verifyDataWithMsgWithContext;
 
 @end
 
@@ -69,7 +91,7 @@ typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyObjMsgBlock
 @protocol AGVerifyManagerVerifiable <NSObject>
 
 /** 验证数据，数据直接参数传入 */
-- (nullable AGVerifyError *) ag_verifyObj:(id)obj;
+- (nullable AGVerifyError *) ag_verifyData:(id)data;
 
 @end
 
@@ -86,13 +108,17 @@ typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyObjMsgBlock
 /** 错误代码 */
 @property (nonatomic, assign) NSInteger code;
 
-/** 被验证的对象 （传递出去，可以做特殊业务） */
-@property (nonatomic, strong, nullable) id verifyObj;
+/** 由调用方传入的对象，起对象传递作用。*/
+@property (nonatomic, strong, nullable) id context;
 
 @end
 
 
 // 快捷构建方法
 AGVerifyManager * ag_newAGVerifyManager(void);
+
+AGVerifyManagerVerifyingBlock ag_verifyManagerCopyVerifyingBlock(AGVerifyManagerVerifyingBlock block);
+
+AGVerifyManagerCompletionBlock ag_verifyManagerCopyCompletionBlock(AGVerifyManagerCompletionBlock block);
 
 NS_ASSUME_NONNULL_END
