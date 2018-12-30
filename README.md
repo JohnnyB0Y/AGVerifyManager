@@ -1,6 +1,6 @@
 # AGVerifyManager
 ### 思路描述
-- 参考了 Masonry 的链式语法，链式语法的优雅非常适合连续验证多个数据。
+- 参考了 Masonry 的链式语法，链式语法的优雅非常适合用来连续验证多个数据。
 - 因为用户需要验证的数据是变化且各不相同的，所以把变化隔离开来，独立封装。
 - 验证的时候需要集中处理，所以用代码块统一了起来。
 
@@ -28,7 +28,7 @@ end
 ```
 
 #### 通过Key 执行验证
-```
+```objective-c
 // 1. 判断用户输入文字限制
 ATTextLimitVerifier *usernameVerifier = [ATTextLimitVerifier new];
 usernameVerifier.minLimit = 2;
