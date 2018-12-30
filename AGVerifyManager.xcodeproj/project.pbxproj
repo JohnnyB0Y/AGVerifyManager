@@ -16,7 +16,6 @@
 		3AF1F1061F37329E00902E85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF1F1041F37329E00902E85 /* Main.storyboard */; };
 		3AF1F1081F37329E00902E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF1F1071F37329E00902E85 /* Assets.xcassets */; };
 		3AF1F10B1F37329E00902E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF1F1091F37329E00902E85 /* LaunchScreen.storyboard */; };
-		3AF1F1341F37338500902E85 /* AGBaseVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1141F37338500902E85 /* AGBaseVerifier.m */; };
 		3AF1F1351F37338500902E85 /* AGVerifyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1171F37338500902E85 /* AGVerifyManager.m */; };
 		3AF1F13E1F37338500902E85 /* ATTextLimitVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F12C1F37338500902E85 /* ATTextLimitVerifier.m */; };
 		3AF1F1411F37338500902E85 /* ATUsernameVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F1331F37338500902E85 /* ATUsernameVerifier.m */; };
@@ -38,8 +37,6 @@
 		3AF1F1071F37329E00902E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AF1F10A1F37329E00902E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AF1F10C1F37329E00902E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AF1F1131F37338500902E85 /* AGBaseVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGBaseVerifier.h; sourceTree = "<group>"; };
-		3AF1F1141F37338500902E85 /* AGBaseVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGBaseVerifier.m; sourceTree = "<group>"; };
 		3AF1F1161F37338500902E85 /* AGVerifyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGVerifyManager.h; sourceTree = "<group>"; };
 		3AF1F1171F37338500902E85 /* AGVerifyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGVerifyManager.m; sourceTree = "<group>"; };
 		3AF1F12B1F37338500902E85 /* ATTextLimitVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTextLimitVerifier.h; sourceTree = "<group>"; };
@@ -120,8 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				3AF1F1421F3733F600902E85 /* Category */,
-				3AF1F1131F37338500902E85 /* AGBaseVerifier.h */,
-				3AF1F1141F37338500902E85 /* AGBaseVerifier.m */,
 				3AF1F1151F37338500902E85 /* AGVerifyManager */,
 				3AF1F1181F37338500902E85 /* Verifier */,
 			);
@@ -282,7 +277,6 @@
 			files = (
 				3AF1F1031F37329E00902E85 /* ViewController.m in Sources */,
 				3AF1F1001F37329E00902E85 /* AppDelegate.m in Sources */,
-				3AF1F1341F37338500902E85 /* AGBaseVerifier.m in Sources */,
 				3AE410DE1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m in Sources */,
 				3AF1F1411F37338500902E85 /* ATUsernameVerifier.m in Sources */,
 				3AF1F1451F3742B000902E85 /* ATEmojiVerifier.m in Sources */,

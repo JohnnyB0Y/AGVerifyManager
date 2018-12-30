@@ -7,6 +7,7 @@
 //  文字限制验证器
 
 #import "ATTextLimitVerifier.h"
+#import <AGCategories/NSString+AGJudge.h>
 
 @implementation ATTextLimitVerifier
 
@@ -14,13 +15,14 @@
 {
     AGVerifyError *error;
     NSString *verifyString = obj;
-    if ( [self minText:verifyString limit:self.minLimit] ) {
+    NSUInteger strLen = [verifyString ag_lengthOfCharacter];
+    if ( strLen < self.minLimit ) {
         // 字数过少
         error = [AGVerifyError new];
         error.code = 3301;
         error.msg = self.minLimitMsg ?: [NSString stringWithFormat:@"字数不能少于%@字！", @(self.minLimit)];
     }
-    else if ( [self maxText:verifyString limit:self.maxLimit] ) {
+    else if ( strLen > self.maxLimit ) {
         // 字数超出
         error = [AGVerifyError new];
         error.code = 3302;

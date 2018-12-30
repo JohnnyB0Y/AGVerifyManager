@@ -7,6 +7,7 @@
 //
 
 #import "ATEmojiVerifier.h"
+#import <AGCategories/NSString+AGJudge.h>
 
 @implementation ATEmojiVerifier
 
@@ -14,9 +15,10 @@
 {
     AGVerifyError *error;
     if ( [obj isKindOfClass:[NSString class]] ) {
-        if ( [self isContainsEmoji:(NSString *)obj] ) {
+        NSString *string = (NSString *)obj;
+        if ( [string ag_containsEmojiCharacter] ) {
             error = [AGVerifyError new];
-            error.msg = self.errorMsg ?: @"输入不能包含表情字符！";
+            error.msg = @"输入不能包含表情字符！";
         }
     }
     else {

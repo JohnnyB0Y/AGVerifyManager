@@ -138,14 +138,20 @@ static NSString * const kAGVerifyManagerCompletionBlock = @"kAGVerifyManagerCom
     }
 }
 
+- (void) ag_executeVerifyBlockInBackgroundForKey:(NSString *)key
+{
+    NSParameterAssert(key);
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        @autoreleasepool {
+            [self ag_executeVerifyBlockForKey:key];
+        }
+    });
+}
+
 - (void) ag_executeAllVerifyBlocksInBackground
 {
     for (NSString *key in self.executeDictM.allKeys) {
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            @autoreleasepool {
-                [self ag_executeVerifyBlockForKey:key];
-            }
-        });
+        [self ag_executeVerifyBlockInBackgroundForKey:key];
     }
 }
 

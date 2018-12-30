@@ -51,7 +51,6 @@
     
     // 2. 判断文字是否包含 emoji 😈
     ATEmojiVerifier *emojiVerifier = [ATEmojiVerifier new];
-    emojiVerifier.errorMsg = @"请输入非表情字符！";
     
     // 3. 判断文字是否包含空格
     ATWhiteSpaceVerifier *whiteSpaceVerifier = [ATWhiteSpaceVerifier new];
@@ -166,7 +165,7 @@
 - (IBAction)verifyBtnClick:(UIButton *)sender {
 	
     // 5. 执行验证
-    [self.verifyManager ag_executeAllVerifyBlocks];
+    [self.verifyManager ag_executeVerifyBlockForKey:@"key"];
 }
 
 #pragma mark - ----------- AGVerifyManagerVerifiable ----------

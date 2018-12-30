@@ -6,9 +6,9 @@
 //  Copyright © 2017年 JohnnyB0Y. All rights reserved.
 //
 
-#import "AGBaseVerifier.h"
+#import "AGVerifyManager.h"
 
-@interface ATUsernameVerifier : AGBaseVerifier
+@interface ATUsernameVerifier : NSObject
 <AGVerifyManagerVerifiable>
 
 @end

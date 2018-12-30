@@ -46,7 +46,8 @@ typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyObjMsgBlock
 - (void) ag_executeVerifyBlockForKey:(NSString *)key;
 - (void) ag_executeAllVerifyBlocks;
 
-/** 多线程执行验证Blocks，verifyingBlock 在其他线程下执行；completionBlock 回到主线程执行。*/
+/** 多线程执行验证Block，verifyingBlock 在其他线程下执行；completionBlock 回到主线程执行。*/
+- (void) ag_executeVerifyBlockInBackgroundForKey:(NSString *)key;
 - (void) ag_executeAllVerifyBlocksInBackground;
 
 @end
