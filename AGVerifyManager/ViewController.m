@@ -12,8 +12,8 @@
 #import "ATEmojiVerifier.h"
 #import "ATWhiteSpaceVerifier.h"
 #import "ATBusyVerifier.h"
-#import <AGViewModel/AGVMKit.h>
 #import <AGCategories/NSString+AGJudge.h>
+#import "Demo/List/Controllers/AGListViewController.h"
 
 @interface ViewController ()
 <AGVerifyManagerVerifiable>
@@ -36,11 +36,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"列表测试" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonItemClick:)];
+    
+    
     /**
-     - 创建遵守<AGVerifyManagerVerifiable>协议的验证器类
-     - 实现<AGVerifyManagerVerifiable>协议方法
+     - 创建遵守并实现<AGVerifyManagerVerifiable>协议的验证器类；
+     - 如：Emoji表情验证器、手机号码验证器 ...
+     - 使用 AGVerifyManager 搭配相应的验证器对数据进行验证和结果回调。
+     -
+     - AGVerifyManager 可以直接执行验证，然后释放Block；
+     - 也可以保存Block，通过Key个别进行验证，重复进行验证，或者在后台线程进行验证。
+     -
      - 具体可参考 Demo
-     - 下面是使用过程
+     - 下面是代码片段
      */
     
     // 1. 判断用户输入文字限制
@@ -167,6 +175,12 @@
 	
     // 5. 执行验证
     [self.verifyManager ag_executeVerifyBlockForKey:@"key"];
+}
+
+- (void) rightBarButtonItemClick:(id)sender
+{
+    AGListViewController *vc = [[AGListViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - ----------- AGVerifyManagerVerifiable ----------

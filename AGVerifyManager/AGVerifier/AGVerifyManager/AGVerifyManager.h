@@ -13,6 +13,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+FOUNDATION_EXTERN NSString * const kAGVerifyManagerVerifyingBlock;
+FOUNDATION_EXTERN NSString * const kAGVerifyManagerCompletionBlock;
+
+
 typedef void(^AGVerifyManagerVerifyingBlock)(id<AGVerifyManagerVerifying> start);
 
 typedef void(^AGVerifyManagerCompletionBlock)(AGVerifyError * _Nullable firstError,

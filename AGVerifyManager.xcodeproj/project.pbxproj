@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		265521C4BB20FF8C77193ABB /* libPods-AGVerifyManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA2A7EFDC9069A6A7A3C254 /* libPods-AGVerifyManager.a */; };
+		3A89D44721D9910700B0779A /* AGListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A89D44621D9910700B0779A /* AGListViewController.m */; };
+		3A89D44F21D992E100B0779A /* AGListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A89D44D21D992E100B0779A /* AGListCell.m */; };
+		3A89D45021D992E100B0779A /* AGListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A89D44E21D992E100B0779A /* AGListCell.xib */; };
+		3A89D45B21D9AA0E00B0779A /* AGListVMG.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A89D45921D9AA0D00B0779A /* AGListVMG.m */; };
+		3A89D45E21D9AB5F00B0779A /* ATNumberVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A89D45D21D9AB5F00B0779A /* ATNumberVerifier.m */; };
+		3A89D46121D9ABE200B0779A /* ATEnglishVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A89D46021D9ABE200B0779A /* ATEnglishVerifier.m */; };
+		3A89D46421D9AC0200B0779A /* ATChineseVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A89D46321D9AC0200B0779A /* ATChineseVerifier.m */; };
 		3A9A174321D7F4BE00C4502F /* ATBusyVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A174221D7F4BE00C4502F /* ATBusyVerifier.m */; };
 		3AE410DE1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE410DD1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m */; };
 		3AF1F0FD1F37329E00902E85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1F0FC1F37329E00902E85 /* main.m */; };
@@ -22,6 +29,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A89D44521D9910700B0779A /* AGListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGListViewController.h; sourceTree = "<group>"; };
+		3A89D44621D9910700B0779A /* AGListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGListViewController.m; sourceTree = "<group>"; };
+		3A89D44C21D992E100B0779A /* AGListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGListCell.h; sourceTree = "<group>"; };
+		3A89D44D21D992E100B0779A /* AGListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGListCell.m; sourceTree = "<group>"; };
+		3A89D44E21D992E100B0779A /* AGListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AGListCell.xib; sourceTree = "<group>"; };
+		3A89D45921D9AA0D00B0779A /* AGListVMG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGListVMG.m; sourceTree = "<group>"; };
+		3A89D45A21D9AA0E00B0779A /* AGListVMG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGListVMG.h; sourceTree = "<group>"; };
+		3A89D45C21D9AB5F00B0779A /* ATNumberVerifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATNumberVerifier.h; sourceTree = "<group>"; };
+		3A89D45D21D9AB5F00B0779A /* ATNumberVerifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATNumberVerifier.m; sourceTree = "<group>"; };
+		3A89D45F21D9ABE200B0779A /* ATEnglishVerifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATEnglishVerifier.h; sourceTree = "<group>"; };
+		3A89D46021D9ABE200B0779A /* ATEnglishVerifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATEnglishVerifier.m; sourceTree = "<group>"; };
+		3A89D46221D9AC0200B0779A /* ATChineseVerifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATChineseVerifier.h; sourceTree = "<group>"; };
+		3A89D46321D9AC0200B0779A /* ATChineseVerifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATChineseVerifier.m; sourceTree = "<group>"; };
 		3A9A174121D7F4BE00C4502F /* ATBusyVerifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATBusyVerifier.h; sourceTree = "<group>"; };
 		3A9A174221D7F4BE00C4502F /* ATBusyVerifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATBusyVerifier.m; sourceTree = "<group>"; };
 		3AE410DC1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATWhiteSpaceVerifier.h; sourceTree = "<group>"; };
@@ -67,6 +87,52 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3A89D44121D990E500B0779A /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				3A89D44221D990E500B0779A /* List */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		3A89D44221D990E500B0779A /* List */ = {
+			isa = PBXGroup;
+			children = (
+				3A89D45821D9AA0D00B0779A /* Services */,
+				3A89D44B21D992C200B0779A /* Views */,
+				3A89D44421D990E500B0779A /* Controllers */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		3A89D44421D990E500B0779A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A89D44521D9910700B0779A /* AGListViewController.h */,
+				3A89D44621D9910700B0779A /* AGListViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3A89D44B21D992C200B0779A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A89D44C21D992E100B0779A /* AGListCell.h */,
+				3A89D44D21D992E100B0779A /* AGListCell.m */,
+				3A89D44E21D992E100B0779A /* AGListCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A89D45821D9AA0D00B0779A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3A89D45A21D9AA0E00B0779A /* AGListVMG.h */,
+				3A89D45921D9AA0D00B0779A /* AGListVMG.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		3AF1F0EF1F37329E00902E85 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				3AF1F1121F37338500902E85 /* AGVerifier */,
+				3A89D44121D990E500B0779A /* Demo */,
 				3AF1F0FE1F37329E00902E85 /* AppDelegate.h */,
 				3AF1F0FF1F37329E00902E85 /* AppDelegate.m */,
 				3AF1F1011F37329E00902E85 /* ViewController.h */,
@@ -148,6 +215,12 @@
 				3AE410DD1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m */,
 				3A9A174121D7F4BE00C4502F /* ATBusyVerifier.h */,
 				3A9A174221D7F4BE00C4502F /* ATBusyVerifier.m */,
+				3A89D45C21D9AB5F00B0779A /* ATNumberVerifier.h */,
+				3A89D45D21D9AB5F00B0779A /* ATNumberVerifier.m */,
+				3A89D45F21D9ABE200B0779A /* ATEnglishVerifier.h */,
+				3A89D46021D9ABE200B0779A /* ATEnglishVerifier.m */,
+				3A89D46221D9AC0200B0779A /* ATChineseVerifier.h */,
+				3A89D46321D9AC0200B0779A /* ATChineseVerifier.m */,
 			);
 			path = Default;
 			sourceTree = "<group>";
@@ -179,6 +252,7 @@
 				3AF1F0F41F37329E00902E85 /* Sources */,
 				3AF1F0F51F37329E00902E85 /* Frameworks */,
 				3AF1F0F61F37329E00902E85 /* Resources */,
+				FDE66E5EE34AFB19BA319679 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +305,7 @@
 				3AF1F10B1F37329E00902E85 /* LaunchScreen.storyboard in Resources */,
 				3AF1F1081F37329E00902E85 /* Assets.xcassets in Resources */,
 				3AF1F1061F37329E00902E85 /* Main.storyboard in Resources */,
+				3A89D45021D992E100B0779A /* AGListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +330,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FDE66E5EE34AFB19BA319679 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AGVerifyManager/Pods-AGVerifyManager-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AGVerifyManager/Pods-AGVerifyManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -264,8 +361,14 @@
 			files = (
 				3AF1F1031F37329E00902E85 /* ViewController.m in Sources */,
 				3AF1F1001F37329E00902E85 /* AppDelegate.m in Sources */,
+				3A89D44F21D992E100B0779A /* AGListCell.m in Sources */,
+				3A89D45E21D9AB5F00B0779A /* ATNumberVerifier.m in Sources */,
 				3AE410DE1FCD0C8E00A4825A /* ATWhiteSpaceVerifier.m in Sources */,
+				3A89D45B21D9AA0E00B0779A /* AGListVMG.m in Sources */,
 				3AF1F1451F3742B000902E85 /* ATEmojiVerifier.m in Sources */,
+				3A89D46121D9ABE200B0779A /* ATEnglishVerifier.m in Sources */,
+				3A89D46421D9AC0200B0779A /* ATChineseVerifier.m in Sources */,
+				3A89D44721D9910700B0779A /* AGListViewController.m in Sources */,
 				3AF1F13E1F37338500902E85 /* ATTextLimitVerifier.m in Sources */,
 				3AF1F0FD1F37329E00902E85 /* main.m in Sources */,
 				3AF1F1351F37338500902E85 /* AGVerifyManager.m in Sources */,

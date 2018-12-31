@@ -9,8 +9,8 @@
 #import "AGVerifyManager.h"
 #import <objc/runtime.h>
 
-static NSString * const kAGVerifyManagerVerifyingBlock = @"kAGVerifyManagerVerifyingBlock";
-static NSString * const kAGVerifyManagerCompletionBlock = @"kAGVerifyManagerCompletionBlock";
+NSString * const kAGVerifyManagerVerifyingBlock = @"kAGVerifyManagerVerifyingBlock";
+NSString * const kAGVerifyManagerCompletionBlock = @"kAGVerifyManagerCompletionBlock";
 
 @interface AGVerifyManager ()
 <AGVerifyManagerVerifying>
@@ -193,10 +193,10 @@ static NSString * const kAGVerifyManagerCompletionBlock = @"kAGVerifyManagerCom
     verifyingBlock ? verifyingBlock(manager) : nil;
     dispatch_async(dispatch_get_main_queue(), ^{
         completionBlock ? completionBlock(manager->_firstError, manager->_errorsM) : nil;
+        // 清空数据
+        manager->_firstError = nil;
+        [manager->_errorsM removeAllObjects];
     });
-    // 清空数据
-    manager->_firstError = nil;
-    [manager->_errorsM removeAllObjects];
 }
 
 #pragma mark - ----------- Getter Methods ----------

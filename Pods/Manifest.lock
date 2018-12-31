@@ -1,20 +1,24 @@
 PODS:
   - AGCategories (0.1.6)
-  - AGViewModel (0.6.1)
+  - AGViewModel (0.6.2)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AGCategories (~> 0.1.6)
-  - AGViewModel (~> 0.6.1)
+  - AGViewModel (~> 0.6.2)
+  - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AGCategories
     - AGViewModel
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   AGCategories: 1dd0221e4af54fb61834237982d81037c40e4d0f
-  AGViewModel: 9ed2354cbf5bd369db9e53d62196e8cab595022d
+  AGViewModel: 3d3c994627b4ccc94ca6d3e26b299cfa7258065e
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 66065bba587ed403144c85f652958de100a11e53
+PODFILE CHECKSUM: 472201abc535cd6428f295cf26dc4af348dd2520
 
 COCOAPODS: 1.5.3
