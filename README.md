@@ -47,7 +47,7 @@ ATWhiteSpaceVerifier *whiteSpaceVerifier = [ATWhiteSpaceVerifier new];
     
 // 4. 准备验证
 __weak typeof(self) weakSelf = self;
-[self.verifyManager ag_addVerifyForKey:@"k" verifying:^(id<AGVerifyManagerVerifying> start) {
+[self.verifyManager ag_addVerifyForKey:@"Key" verifying:^(id<AGVerifyManagerVerifying> start) {
         
     __strong typeof(weakSelf) self = weakSelf;
         
@@ -99,7 +99,7 @@ __weak typeof(self) weakSelf = self;
 }];
 
 // 5. 执行验证
-[self.verifyManager ag_executeVerifyBlockForKey:@"K"];
+[self.verifyManager ag_executeVerifyBlockForKey:@"Key"];
 
 ```
 
