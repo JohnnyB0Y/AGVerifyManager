@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <AGViewModel/AGVMKit.h>
 
-#define k
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AGListCell : UITableViewCell

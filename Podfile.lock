@@ -1,11 +1,11 @@
 PODS:
-  - AGCategories (0.1.6)
-  - AGViewModel (0.6.2)
+  - AGCategories (0.1.8)
+  - AGViewModel (0.6.15)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - AGCategories (~> 0.1.6)
-  - AGViewModel (~> 0.6.2)
+  - AGCategories (~> 0.1.8)
+  - AGViewModel (~> 0.6.15)
   - SVProgressHUD
 
 SPEC REPOS:
@@ -15,10 +15,10 @@ SPEC REPOS:
     - SVProgressHUD
 
 SPEC CHECKSUMS:
-  AGCategories: 1dd0221e4af54fb61834237982d81037c40e4d0f
-  AGViewModel: 3d3c994627b4ccc94ca6d3e26b299cfa7258065e
+  AGCategories: 1fcd073caad1c6f369521234cff7abf095e21c29
+  AGViewModel: c651f601bf201ca6b7ce991d50debcd1532df3d5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 472201abc535cd6428f295cf26dc4af348dd2520
+PODFILE CHECKSUM: 0fabe9814ec11d2260ada9073bd17ee71ff405dc
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

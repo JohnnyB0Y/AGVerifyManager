@@ -29,14 +29,14 @@
         
         [_itemVMM ag_packageSection:^(AGVMSection * _Nonnull vms) {
             
-            [vms ag_packageItemMergeData:^(NSMutableDictionary * _Nonnull package) {
+            [vms ag_packageItemMergeData:^(AGViewModel * _Nonnull package) {
                 package[kAGVMViewClass] = AGListCell.class;
                 package[kAGVMViewH] = @(178);
             }];
             
             // 验证 Emoji
             AGViewModel *vm1 =
-            [vms ag_packageItemData:^(NSMutableDictionary * _Nonnull package) {
+            [vms ag_packageItemData:^(AGViewModel * _Nonnull package) {
                 
                 package[kAGVMTitleText] = @"Emoji表情检测！";
                 package[kAGVMDetailText] = @"1024";
@@ -53,7 +53,7 @@
             
             // 验证 数字
             AGViewModel *vm2 =
-            [vms ag_packageItemData:^(NSMutableDictionary * _Nonnull package) {
+            [vms ag_packageItemData:^(AGViewModel * _Nonnull package) {
                 
                 package[kAGVMTitleText] = @"数字字符检测！";
                 package[kAGVMDetailText] = @"😁24🍄";
@@ -70,7 +70,7 @@
             
             // 验证 英文
             AGViewModel *vm3 =
-            [vms ag_packageItemData:^(NSMutableDictionary * _Nonnull package) {
+            [vms ag_packageItemData:^(AGViewModel * _Nonnull package) {
                 
                 package[kAGVMTitleText] = @"英文字符检测！";
                 package[kAGVMDetailText] = @"😁🍄";
@@ -87,7 +87,7 @@
             
             // 验证 中文
             AGViewModel *vm4 =
-            [vms ag_packageItemData:^(NSMutableDictionary * _Nonnull package) {
+            [vms ag_packageItemData:^(AGViewModel * _Nonnull package) {
                 
                 package[kAGVMTitleText] = @"中文字符检测！";
                 package[kAGVMDetailText] = @"哈哈";
@@ -103,7 +103,7 @@
             }];
             
             // common vm
-            [vms ag_packageCommonData:^(NSMutableDictionary * _Nonnull package) {
+            [vms ag_packageCommonData:^(AGViewModel * _Nonnull package) {
                 
                 // 检测所有数据 block，在AGListViewController 使用。
                 package[kAGVerifyManagerVerifyingBlock]

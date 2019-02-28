@@ -21,7 +21,7 @@
 @end
 
 @implementation AGListCell
-
+#pragma mark - ----------- Life Cycle ----------
 - (void)awakeFromNib {
     [super awakeFromNib];
     
