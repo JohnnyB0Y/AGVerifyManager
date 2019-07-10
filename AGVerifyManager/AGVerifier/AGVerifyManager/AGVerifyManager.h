@@ -24,21 +24,21 @@ typedef void(^AGVerifyManagerCompletionBlock)(AGVerifyError * _Nullable firstErr
                                               NSArray<AGVerifyError *> * _Nullable errors);
 
 
-typedef id<AGVerifyManagerVerifying> (^AGVerifyManagerVerifyDataBlock)(id<AGVerifyManagerVerifiable> verifier,
-                                                                       id data);
+typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyDataBlock)(id<AGVerifyManagerVerifiable> verifier,
+                                                                                id data);
 
-typedef id<AGVerifyManagerVerifying> (^AGVerifyManagerVerifyDataWithContextBlock)(id<AGVerifyManagerVerifiable> verifier,
-                                                                                  id data,
-                                                                                  id _Nullable context);
+typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyDataWithContextBlock)(id<AGVerifyManagerVerifiable> verifier,
+                                                                                           id data,
+                                                                                           id _Nullable context);
 
-typedef id<AGVerifyManagerVerifying> (^AGVerifyManagerVerifyDataWithMsgBlock)(id<AGVerifyManagerVerifiable> verifier,
-                                                                              id data,
-                                                                              NSString * _Nullable msg);
+typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyDataWithMsgBlock)(id<AGVerifyManagerVerifiable> verifier,
+                                                                                       id data,
+                                                                                       NSString * _Nullable msg);
 
-typedef id<AGVerifyManagerVerifying> (^AGVerifyManagerVerifyDataWithMsgWithContextBlock)(id<AGVerifyManagerVerifiable> verifier,
-                                                                                         id data,
-                                                                                         NSString * _Nullable msg,
-                                                                                         id _Nullable context);
+typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyDataWithMsgWithContextBlock)(id<AGVerifyManagerVerifiable> verifier,
+                                                                                                  id data,
+                                                                                                  NSString * _Nullable msg,
+                                                                                                  id _Nullable context);
 
 @interface AGVerifyManager : NSObject
 
