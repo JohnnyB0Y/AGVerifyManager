@@ -10,7 +10,7 @@
 #define AGVMProtocol_h
 
 #import <UIKit/UIKit.h>
-@class AGViewModel, AGVMSection;
+@class AGViewModel, AGVMSection, AGVMCommand;
 @protocol AGVMResponsive;
 
 
@@ -27,23 +27,22 @@ typedef NS_ENUM(NSUInteger, AGResourceFileType) {
 #pragma mark quick block
 typedef void (^AGVMTargetVCBlock)
 (
-     UIViewController * _Nullable targetVC,
-     AGViewModel * _Nullable vm
+    UIViewController * _Nullable targetVC,
+    AGViewModel * _Nullable viewModel
 );
 
 
 #pragma mark viewModel block
 typedef void(^AGVMConfigDataBlock)
 (
-    AGViewModel *vm,
-    UIView<AGVMResponsive> *bv,
-    NSMutableDictionary *bm
+    AGViewModel *viewModel,
+    UIView<AGVMResponsive> *bv
 );
 
 
 typedef void(^AGVMUpdateModelBlock)
 (
-    NSMutableDictionary *bm
+    AGViewModel *viewModel
 );
 
 
@@ -57,29 +56,29 @@ typedef void (^AGVMNotificationBlock)
 
 typedef void (^AGVMSafeSetHandleBlock)
 (
-	 _Nullable id value, // 数据
-	 BOOL safe // 数据是否类型安全
+    _Nullable id value, // 数据
+    BOOL safe // 数据是否类型安全
 );
 
 
 typedef _Nullable id (^AGVMSafeGetHandleBlock)
 (
-	 _Nullable id value, // 数据
-	 BOOL safe // 数据是否类型安全
+    _Nullable id value, // 数据
+    BOOL safe // 数据是否类型安全
 );
 
 
 typedef NSNumber * _Nullable (^AGVMSafeGetNumberHandleBlock)
 (
-	 _Nullable id value, // 数据
-	 BOOL safe // 数据是否类型安全
+    _Nullable id value, // 数据
+    BOOL safe // 数据是否类型安全
 );
 
 #pragma mark JSON transform block
 typedef id _Nullable (^AGVMJSONTransformBlock)
 (
-	 _Nullable id obj, // 数据对象
-	 BOOL *useDefault // 是否跳过block处理，使用默认处理方式：*useDefault = YES;
+    _Nullable id obj, // 数据对象
+    BOOL *useDefault // 是否跳过block处理，使用默认处理方式：*useDefault = YES;
 );
 
 #pragma mark viewModelManager block
@@ -108,10 +107,33 @@ typedef void (^AGVMPackageDatasBlock)
     NSInteger idx
 );
 
+typedef id _Nullable (^AGVMCommandBlock)
+(
+    AGVMCommand *command,
+    _Nullable id obj
+);
+
+typedef id _Nullable (^AGVMCommandExecutableBlock)
+(
+    AGVMCommand *command,
+    AGViewModel *viewModel
+);
+
+typedef AGViewModel * _Nonnull (^AGVMSetObjectForKeyBlock)
+(
+    _Nullable id object,
+    NSString *key
+);
+
+typedef AGViewModel * _Nonnull (^AGVMRemoveObjectForKeyBlock)
+(
+    NSString *key
+);
+
 #pragma mark map、filter、reduce
-typedef void (^AGVMMapBlock)(AGViewModel *vm);
-typedef BOOL (^AGVMFilterBlock)(AGViewModel *vm);
-typedef void (^AGVMReduceBlock)(AGViewModel *vm, NSInteger idx);
+typedef void (^AGVMMapBlock)(AGViewModel *viewModel);
+typedef BOOL (^AGVMFilterBlock)(AGViewModel *viewModel);
+typedef void (^AGVMReduceBlock)(AGViewModel *viewModel, NSInteger idx);
 
 #pragma mark - ------------- ViewModel 相关协议 --------------
 #pragma mark AGViewReusable Protocol
@@ -698,6 +720,36 @@ typedef void (^AGVMReduceBlock)(AGViewModel *vm, NSInteger idx);
  @return JSON字符串
  */
 - (nullable NSString *) ag_toJSONString;
+
+@end
+
+
+#pragma mark - AGVMCommand Protocol
+@protocol AGVMCommandExecutable <NSObject>
+
+@property (nonatomic, assign, getter=isExecutable) BOOL executable; ///< 可执行？
+- (nullable id)ag_execute:(nullable id)obj; ///< 执行
+
+@end
+
+@protocol AGVMCommandNextExecutable <NSObject>
+
+@property (nonatomic, strong) AGVMCommand *next; ///< 下一个命令
+- (nullable id)ag_executeNext:(nullable id)obj; ///< 执行下一个命令
+
+@end
+
+@protocol AGVMCommandUndoable <NSObject>
+
+@property (nonatomic, assign, getter=isUndoable) BOOL undoable; ///< 可回滚？
+- (nullable id)ag_undo:(nullable id)obj; ///< 回滚
+
+@end
+
+@protocol AGVMCommandPrevUndoable <NSObject>
+
+@property (nonatomic, strong) AGVMCommand *prev; ///< 上一个命令
+- (nullable id)ag_undoPrev:(nullable id)obj; ///< 回滚上一个命令
 
 @end
 

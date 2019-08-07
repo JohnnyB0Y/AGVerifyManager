@@ -7,71 +7,77 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0102AC60B7FD01287C95291B018CCB5B /* AGCategories-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4894E40FDAA4D8200E748CF29EC07F4A /* AGCategories-dummy.m */; };
-		04C41A13E91EB2E05D50F99D6AF1438B /* NSString+AGJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = DE60030A47E786D354EFD3AEE60DEB08 /* NSString+AGJudge.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		04EEB1AEAB0A59621B40FAE399ECF6F8 /* NSString+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E40C3EA51B8C34D8515E02B411513A /* NSString+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0763D311EA2469425865413C0320416D /* AGVMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 879714E7663A05D19859FB126A098791 /* AGVMManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		09AC271A2799B0915411EF3A66F9CB96 /* NSString+AGJudge.h in Headers */ = {isa = PBXBuildFile; fileRef = C34751F47D2D55F2373746F6997C179B /* NSString+AGJudge.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0AC8390941C4D5B4130B00ABE0CB51DF /* UICollectionViewCell+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CCA772DFB820AD16EA3AF50D94270B19 /* UICollectionViewCell+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0C664DFF954E648E94193E7CCFE4CA7A /* UIViewController+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93526CF1960A5D106E15915BC13A9D6B /* UIViewController+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		100D7451C4D610B16A5D45C7B3F94597 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D937A15FC7159E8ABE45D17FCCA2540F /* SVRadialGradientLayer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1225BC3D79F7316C325F7D8044A42C5D /* AGVMNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC29871290DF79A8C7D77286450583D /* AGVMNotifier.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		17DEE7F14E88316DD6B5B10094879DB6 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 327B8B88973D9C1EF81223E09D96AFF2 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		18D634215ECC4CF5EA942ABF71AA0F2E /* NSFileManager+AGFolderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4539F3DCE6C6A6F0EB237F332DBA6A3 /* NSFileManager+AGFolderOperation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1C96CCA7599AE17410655ADD556431AB /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A906D78146DF4FCB64ACB86EF15FB85 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		216C88BAEA0E32A8CFDDB32C95BA17C8 /* UITableView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C91F32A81EB801DE18BF8C83AB576E0 /* UITableView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		25C52D3CF792BC01DFCFF239C44E977D /* UIImage+AGTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 87590313E3ECEE429C8C0D43DE6EFF73 /* UIImage+AGTransform.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2933AD9615B1BA9DC6E879BD4A9D628A /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E56ACC4BD00A09549D4F6701E0FFBD /* SVProgressAnimatedView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2F303F02C31F9A631237E976589970CA /* NSBundle+AGSupportCocoapods.h in Headers */ = {isa = PBXBuildFile; fileRef = 598EC6F611C5C75C59FE030D9942DC4A /* NSBundle+AGSupportCocoapods.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		35025E05DCBF0F36EC93DB992758DD40 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B983905EDE9B3AA7E4787F64931F6D1 /* SVProgressHUD-dummy.m */; };
-		36315A137931653FE914EADEBF41F310 /* NSString+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2860312D38FE8B084905A82D2419B8A9 /* NSString+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		373FC46DDACF21D58A9EBE03BB506737 /* UIView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1299F36B7B6F5DE533EAF2A246A959BA /* UIView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3997A31F56247BE41FF8B8296274E01D /* NSBundle+AGSupportCocoapods.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CA6AE2BDA426172533691F141E9147 /* NSBundle+AGSupportCocoapods.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		3A5867750C3F27A804345E9C790A15AC /* AGVMPackager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC88FDD6AFD2B46560C3515E3C15B457 /* AGVMPackager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		3BDB4BAB5AE6B00F96E2C94E2EE36959 /* NSFileManager+AGFolderPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D8EA9CA05D9741FE88C56B169C4A2D /* NSFileManager+AGFolderPath.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		3C69274FCB58ADE729E4ACF2B7CE0600 /* AGVMKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = 75F15945A1B056652AC012CFB5708C98 /* AGVMKeys.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3D553119A2CC2B212B2CEA2FECD5C0E0 /* NSDate+AGGenerate.h in Headers */ = {isa = PBXBuildFile; fileRef = D2C28EFFCA2F3A0351CEE1701F9A1843 /* NSDate+AGGenerate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		413E3CB4158CE6FDC77A9AA17C42918E /* UITableView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2365658833CDD425107CE0BE816F446 /* UITableView+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		490D9D68471CDB65821E6CF279ED330E /* AGVMFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E116BAF3DC631BD3618C4AB27052F5BC /* AGVMFunction.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		50C3512B8799ADC253BE7A66E755A675 /* AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BC4DFC757AA419C5F0171712F4F04 /* AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		53C8C62CA2D86B41F2B23ED8C98726FD /* AGVMKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC8411027352E026B9726553AD06F9F /* AGVMKeys.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		001B04A25717BCF1A11A4DDFB06FE2DD /* AGVMSection.h in Headers */ = {isa = PBXBuildFile; fileRef = FC610B6D5F164E6BC7A5DE9EE3D1C309 /* AGVMSection.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0102AC60B7FD01287C95291B018CCB5B /* AGCategories-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F66C4403D3D015087852BDAAFEEAA3E9 /* AGCategories-dummy.m */; };
+		04C41A13E91EB2E05D50F99D6AF1438B /* NSString+AGJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7EE41140C3944A9C60AB6943DEFB6A /* NSString+AGJudge.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		09AC271A2799B0915411EF3A66F9CB96 /* NSString+AGJudge.h in Headers */ = {isa = PBXBuildFile; fileRef = 46A62CBC068661733B2AC5941EE727AA /* NSString+AGJudge.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0F2337F9AC759951AA9F0CF5DAD7246F /* AGVMSharedPackager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0BB4F2FBDC40A8B98EB56AA401DACB /* AGVMSharedPackager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		100D7451C4D610B16A5D45C7B3F94597 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BCCD6F4FD9AFD09B6F5A6447CFBF8A /* SVRadialGradientLayer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		10D7C51AB6D1A1B8EF9108AE061F30EE /* UICollectionReusableView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F186007C6A52C30B129A6ADD6D028AB /* UICollectionReusableView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		14B6DE4B059E6A98E3C4288231865BA6 /* UIView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 61D867DE1B47853A1F98A9193C347E29 /* UIView+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		17DEE7F14E88316DD6B5B10094879DB6 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = F438FFB6FE1CD82E6A23FB16C29C51BD /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		18D634215ECC4CF5EA942ABF71AA0F2E /* NSFileManager+AGFolderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2627650DEA3ED2DE399A7DDBFE0D0DC3 /* NSFileManager+AGFolderOperation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		197FF790EB5B9FC276E2F52F2A17A51C /* AGVMKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = B777F982CE5F65EE30B16F88994EFA61 /* AGVMKeys.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1C96CCA7599AE17410655ADD556431AB /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A28ECA70117A4B5844C3E25C9FBCE05 /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1CE583D546FFCE5477A9EB939643CE0A /* AGVMKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = C49253957C8630F13B3727168ACF7E75 /* AGVMKeys.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1EED8FDFE54A670FD90B770DA627E19C /* AGVMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C8F8B024B75DDDFB5C4C2477539F3FDC /* AGVMKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		21A7B4701985091A7989C1F02232A482 /* UIView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D6B3059020A1BA168844CD791F55571E /* UIView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		25C52D3CF792BC01DFCFF239C44E977D /* UIImage+AGTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A3250A9F9755AD48972B8C06DC5C253 /* UIImage+AGTransform.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		276EE159C1CE6570DF2A929A2B96BA4C /* NSArray+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 27A7BB4DF0D90B15D1AB2AE79B3DE10F /* NSArray+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2933AD9615B1BA9DC6E879BD4A9D628A /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C72A3B195298DBE8E9E6427FE8C7B0 /* SVProgressAnimatedView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2E3A4052FB266CFAB2E3EC6B33E56ED7 /* AGVMManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 32628C03BF3974F99F81F8BD775358AA /* AGVMManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2F303F02C31F9A631237E976589970CA /* NSBundle+AGSupportCocoapods.h in Headers */ = {isa = PBXBuildFile; fileRef = A12474BC3223251C6F517BCB85ABA902 /* NSBundle+AGSupportCocoapods.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		35025E05DCBF0F36EC93DB992758DD40 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFCAB6E7931110DAF2084CDB85CCA8A /* SVProgressHUD-dummy.m */; };
+		3997A31F56247BE41FF8B8296274E01D /* NSBundle+AGSupportCocoapods.m in Sources */ = {isa = PBXBuildFile; fileRef = EF96303AF0545D7B87D3C8AC7C929B34 /* NSBundle+AGSupportCocoapods.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3B3B4BCD3230C1EFB24BEBE597499863 /* UITableViewHeaderFooterView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D901BF3D197EFB106DCAE597DB24070 /* UITableViewHeaderFooterView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3BDB4BAB5AE6B00F96E2C94E2EE36959 /* NSFileManager+AGFolderPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 61027B114A05F3527C8597A0591239E8 /* NSFileManager+AGFolderPath.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3D553119A2CC2B212B2CEA2FECD5C0E0 /* NSDate+AGGenerate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8194CDE33ACDB3DF12E58CEEED61B0A6 /* NSDate+AGGenerate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4114634F43E5E317BA640DE6D5BA671D /* AGVMProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 47954F7A4D2D86EB6979D70865152284 /* AGVMProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4E0FB621EED13FF7DF2C75A39576FA94 /* UITableViewHeaderFooterView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 459A09F876B39A9A951A8C5B68FDA2E1 /* UITableViewHeaderFooterView+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		52A9E8F638B9EC934733FFEDAA862413 /* AGVMNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = B2E103254A690B2D4F8C1004025A5008 /* AGVMNotifier.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5487374EB665362AE2488078C8BB91E5 /* Pods-AGVerifyManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E89F72DE2C99B0DE018CB5C880855A2 /* Pods-AGVerifyManager-dummy.m */; };
-		5D871A5E68445CDFF34BC7E236F209F6 /* AGVMSection.m in Sources */ = {isa = PBXBuildFile; fileRef = A520112FC0B117A5AEB980B8422E4FE4 /* AGVMSection.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		5E8C65759193AA936BFB250154406505 /* NSFileManager+AGFolderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = A02A492730B41186263ABB596903F9DD /* NSFileManager+AGFolderOperation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5EE5A98D7AC9D4AD4FC878F1C59EB508 /* AGVMManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 932C4B2E8061930BC86665266641ED91 /* AGVMManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		67E4D9D5BCAC13B7408AABF6092A9840 /* UICollectionView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 622864B247D1ED6E0B29DC7B40F84EF1 /* UICollectionView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6DC39F6AC67AAF5F3A4D33445230E02F /* NSFileManager+AGFolderPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 85F2C542FBD364FECDE64C00A9FB24DC /* NSFileManager+AGFolderPath.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6F1FF27E2D5D35975A5D395BD7FEBE43 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD635C80EC0F423839A619697E3C4F2 /* SVIndefiniteAnimatedView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		71836400C6EF7EDF5DB4D0F458A66E61 /* UIImage+AGGenerate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92799FF24ECDD9FA71488AA47B0FD83D /* UIImage+AGGenerate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		725CB7628449487E4B74E2512FE9FB04 /* AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = FA8EA4B97461BBB19D2A5D793AE0D8DB /* AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		73E4A69C9F315CF30F135BD955943FE6 /* UIViewController+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 43447E281CD30C8DEEFF8C3281242D65 /* UIViewController+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		76E23B381D2E5B8BD9BBAB19FD7E340B /* UICollectionView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3039D52F4FE05C6462D33524437D6F15 /* UICollectionView+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		786E48C49B1C3A115E371DC8F1E8D99F /* AGCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = 13BC8DB5AE950BD096752BA415EC651A /* AGCategories.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		82392AFA0357643E68699D994215EDA2 /* UIScreen+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = EC8F5494ED15FC05FEB1DC68193E24E7 /* UIScreen+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8D59440F3DFC6105B584276BF82F7D95 /* AGVMPackager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A98C58876978AA6765C01B1F6F693C2 /* AGVMPackager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9091B55C28A138E324D2B460083699C0 /* AGViewModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDC76DD52A82C094B8EE0FCFC82F0F6 /* AGViewModel-dummy.m */; };
-		9D9C69AEFC515F3ED105DA45F624BE4E /* NSDate+AGGenerate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13EC4D4FD59C2813F79D0F917748AEE8 /* NSDate+AGGenerate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		9FE308FA152A1FEBDF540C27B2B65BF9 /* UITableViewHeaderFooterView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC69CC9DDF005DD6145966A17F6B947A /* UITableViewHeaderFooterView+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		A5FF6057D4BD853FC42CEEC9BC0BB6F6 /* AGVMSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 005AAA3A01F95047359A080C769973EC /* AGVMSection.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B43C4C8BC327DF0E2378CFE55132984F /* UICollectionReusableView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0852299F41DD2712E20409AE25909AC2 /* UICollectionReusableView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B51A646E9E671921747E88B242283D79 /* AGVMFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = E391A6C3B83CC3444786A3A1A4745BE7 /* AGVMFunction.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B5AD6BE8795F173155975A04D3A7BD0C /* UIColor+AGExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05303E7F2B886D9FFDCD8F033CF2E39C /* UIColor+AGExtensions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B5DFA33CB54D76DA4FD6D364812D0862 /* AGVMProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C4C184237376E7E4CA6B97FF5CD8B8A /* AGVMProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B62F79A47F0546D8E26C31C3DEB715FC /* UICollectionViewCell+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B078D6C9270124E77CA1E5333C9F0A42 /* UICollectionViewCell+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		BB4B8D0E22DE9657CBC5A095E70DA9E0 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D1DF37B0A9E8A86C8FC7FE6548D06B /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		BC474F70264F66F5B3A14C77F7AFCBCA /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = C43AD9255292E194FFAB24B47D19B375 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C197ADD11E86F67DEF19B9C7D7125085 /* UITableViewCell+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = A15FE8FD9BB71B0EA2795B636D86CF6B /* UITableViewCell+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C42A7EB62C3056F12158617E9F6EFFDF /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A47D92A813FB25A1BF761BAFAA7FF9D /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C8DF6DC49E792AF944E8F0B40BD5F264 /* UIView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9701F6BE424D71FC600014E8A528A9 /* UIView+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		CF2E95BB99EE69CBA4753408E2CE7AF6 /* UIImage+AGGenerate.h in Headers */ = {isa = PBXBuildFile; fileRef = C8B9D4908CF4F370AA1596D2906DD36A /* UIImage+AGGenerate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CFAC94B49C34EC66AB3FA3818390E786 /* UITableViewCell+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF51CF1418119E6F2CCFF06BAB7FB435 /* UITableViewCell+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		D653E2E5051986C3DD78FB63D82BB2BB /* AGVMNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = AC4233A65A98E6634DE68355A410DB89 /* AGVMNotifier.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E64E7721F1C11A6498A7AFF5BFFDC854 /* UIColor+AGExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8722F71F871C27511C4CF1F24008FDB4 /* UIColor+AGExtensions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EC7D134AC0BC28423B60877ABD5D7066 /* AGVMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4841016366ABED1261D2BAF2F89345BD /* AGVMKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F1BDA98BD1A63B8E4EC68A7ABCA21F56 /* UIImage+AGTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E6D54D4AE79019D0E4E6174232B181 /* UIImage+AGTransform.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		F21E2D3B3796B41E8B8FC96F634F3A81 /* UICollectionReusableView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD161859EA41FFB5C0FB01C19160BC /* UICollectionReusableView+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		FBCA0E455560537CA4E36F9BA134B474 /* UITableViewHeaderFooterView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 80FC56AB287BD2B0384DFD157F15CCC4 /* UITableViewHeaderFooterView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FBEA4FDF515D155007119A84F6497254 /* UIScreen+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21040CC84D3FE2E38683EE5B0F697903 /* UIScreen+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5D8091CFAE00366B03E8CE3123DCFAFC /* NSArray+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45801AC497E7667610160A400CBE12F9 /* NSArray+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5E8C65759193AA936BFB250154406505 /* NSFileManager+AGFolderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EA094CC466EFF3D7D04D84CBB55A09C /* NSFileManager+AGFolderOperation.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		628D516B805B20C84E55C7A1B1894ADC /* AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 906ED8B40F0F6EC58BA409EB2E942701 /* AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6C5E8194F61C78D64E4D2B3D39C21801 /* UITableViewCell+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 162FF242A69682464FA49B897DCDD37F /* UITableViewCell+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6DC39F6AC67AAF5F3A4D33445230E02F /* NSFileManager+AGFolderPath.h in Headers */ = {isa = PBXBuildFile; fileRef = F1D3FA9661920C17200BC5D044542B19 /* NSFileManager+AGFolderPath.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6F1FF27E2D5D35975A5D395BD7FEBE43 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F82A167F548D5C56EB4658902C842C /* SVIndefiniteAnimatedView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7051CC23BF836F387145401E3DD5282C /* NSDictionary+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = B40E5F2A4170023875C42EDBC40CB1CD /* NSDictionary+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		71836400C6EF7EDF5DB4D0F458A66E61 /* UIImage+AGGenerate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F336BFE4DCC5F6F6FECDB358001D375 /* UIImage+AGGenerate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		786E48C49B1C3A115E371DC8F1E8D99F /* AGCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = D20D5B794D4126E55CB112A9331DDDEF /* AGCategories.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8735D06B2072D5D83F8754CE95A98C67 /* UICollectionViewCell+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4185D1D52B792EFB4B675FFC3B5338D /* UICollectionViewCell+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8AFFFF19D5624BC8AEE1CECD263ACF4B /* UIScreen+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BA97B8948B09A3CD215F29382BE2CE /* UIScreen+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8BC4E1D59387F6A09D2E5EE4425B54A0 /* AGVMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63668EE795E839B6462467B55DA3A399 /* AGVMManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8D828BEA28F308E27068B551B5416178 /* UITableViewCell+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FB7D733705B79084A1E1448FEDB8B18 /* UITableViewCell+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		901D03154A98DB95BC9451A9ABEA0AA5 /* NSString+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC9E7CECBCF34F5BE2C3665DAF5CD7A /* NSString+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		91EC8B31512C394393DD03CFFD81356F /* UITableView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C7ECEA088F78ED0EC6F45EB8A79D8E /* UITableView+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		986CE22FFCEEFC4F3207D9E8A80CCF95 /* UICollectionView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18E64C4218172B10E1AD4BC744871F /* UICollectionView+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9C2541F3D9F045F41F8DE8BE0293A5E1 /* UICollectionReusableView+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E77D8C8728A3E36492E8E3341C63B793 /* UICollectionReusableView+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9D9C69AEFC515F3ED105DA45F624BE4E /* NSDate+AGGenerate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3DA3DC3A05958A7C482A379C7C6A0D /* NSDate+AGGenerate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9D9E9AAC6ACC88E37E33CE07A58D4842 /* UIViewController+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 493469F0E5E91B85F4C2E06DA61B8F79 /* UIViewController+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A9548AE1C02AC6C7787EF5C7E709B9C7 /* UICollectionView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF59E48D1823847849AC45F7A55E1F1 /* UICollectionView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B4E72E3732E56329F788BF3CF871BD18 /* NSString+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A11D1B2E2D9CCF8C05D68330CE581FD /* NSString+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B5AD6BE8795F173155975A04D3A7BD0C /* UIColor+AGExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0078498B2EB6D465669D22EA7C1505BF /* UIColor+AGExtensions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BB4B8D0E22DE9657CBC5A095E70DA9E0 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B89E5CA6B689F7DC7D71A2772DA1617C /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BB76999D233CF1179A5915FFAB73AB2C /* UICollectionViewCell+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0932FE602E6F4D3E5C6A1D9C29143EEB /* UICollectionViewCell+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BC474F70264F66F5B3A14C77F7AFCBCA /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 98802463213CCCEE7E50348ABBD9E981 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C37F8C5B64F974EE207C52E980EBCE1E /* AGVMFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = FC422DECC58A326196E7658B7309E9E5 /* AGVMFunction.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C42A7EB62C3056F12158617E9F6EFFDF /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = BAE76EED892218C605E2469AB4E7A128 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C9C38391F4A8C2C8117637AC58D24137 /* UITableView+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 28C6D400D69C8731B7448638C556EB06 /* UITableView+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C9E4C30090C8820C455401B0EEBE588D /* NSDictionary+AGViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E489D336888C1E7B81774C77689505A3 /* NSDictionary+AGViewModel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CF2E95BB99EE69CBA4753408E2CE7AF6 /* UIImage+AGGenerate.h in Headers */ = {isa = PBXBuildFile; fileRef = ABF1C0A91419C8E345A7A6A540C84467 /* UIImage+AGGenerate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D0E01675AAA4F22C9F0332354563D778 /* UIScreen+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FDAE9E88BBE1E6C3869CF960310B798 /* UIScreen+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D9A5B75ECC381194F34A57550623D9DE /* AGViewModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F87FCCE85079C8738F5FB9E14E01E401 /* AGViewModel-dummy.m */; };
+		E2088CB1AF43E85F60961CA5C0DD3AEB /* AGVMCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 43922F9E27803C304EEC998E41A477F7 /* AGVMCommand.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E21FC89622300A71A522AC65B9A557EE /* AGVMFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 91CF7832E06664695FADFF9AE162F14D /* AGVMFunction.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E2FE2E727FD630ED95CAAE65C0C3F908 /* AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 223369B78FFCBE9CF23524CA68DFB4C5 /* AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E4FAB90415C2C90B132BC48656FD477E /* AGVMSection.m in Sources */ = {isa = PBXBuildFile; fileRef = D847FC35A637007C14D8EBE5D66FAE83 /* AGVMSection.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E64E7721F1C11A6498A7AFF5BFFDC854 /* UIColor+AGExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = A17FE4B6707E211247C868206BE236EA /* UIColor+AGExtensions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E7612FFB2940B7BA3273D653F240E73F /* AGVMSharedPackager.h in Headers */ = {isa = PBXBuildFile; fileRef = 77D7D90A04A1655B2BF20753503F1BBC /* AGVMSharedPackager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EDC4A25D5CF74B906F308A6F0808F8B3 /* AGVMNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = F049A97362B419E2D9674DBAA69F2E4E /* AGVMNotifier.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F1BDA98BD1A63B8E4EC68A7ABCA21F56 /* UIImage+AGTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC0E1D0E5DF2BC6333911B3FD54999A /* UIImage+AGTransform.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F2A7031245FAFBB5572AD8D314C95DDA /* UIViewController+AGViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F7564C7C49CF0546B83DDD247DD82698 /* UIViewController+AGViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FEF8455A644D31B4F5EABA9FDCC16B59 /* AGVMCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DCCA9C614787F4C9182075127958ECC /* AGVMCommand.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,98 +99,111 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5DF0945BE43EDB71689694650D74F14A;
+			remoteGlobalIDString = 5D7F9E6A999489EB9D66674D9A25CB87;
 			remoteInfo = AGViewModel;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		005AAA3A01F95047359A080C769973EC /* AGVMSection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMSection.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMSection.h; sourceTree = "<group>"; };
-		05303E7F2B886D9FFDCD8F033CF2E39C /* UIColor+AGExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+AGExtensions.m"; path = "AGCategories/Categories/UIColor/UIColor+AGExtensions.m"; sourceTree = "<group>"; };
-		0852299F41DD2712E20409AE25909AC2 /* UICollectionReusableView+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionReusableView+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionReusableView+AGViewModel.h"; sourceTree = "<group>"; };
-		0B4BC4DFC757AA419C5F0171712F4F04 /* AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGViewModel.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGViewModel.m; sourceTree = "<group>"; };
-		1299F36B7B6F5DE533EAF2A246A959BA /* UIView+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UIView+AGViewModel.h"; sourceTree = "<group>"; };
-		13BC8DB5AE950BD096752BA415EC651A /* AGCategories.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGCategories.h; path = AGCategories/Categories/AGCategories.h; sourceTree = "<group>"; };
-		13EC4D4FD59C2813F79D0F917748AEE8 /* NSDate+AGGenerate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+AGGenerate.m"; path = "AGCategories/Categories/NSDate/NSDate+AGGenerate.m"; sourceTree = "<group>"; };
-		169ECB97CD0EE0FA1922373DC2AE1FA7 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
-		1BF6985A51A0E9F5B5CD27771BEC6EE0 /* AGCategories-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AGCategories-prefix.pch"; sourceTree = "<group>"; };
-		21040CC84D3FE2E38683EE5B0F697903 /* UIScreen+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UIScreen+AGViewModel.m"; sourceTree = "<group>"; };
+		0078498B2EB6D465669D22EA7C1505BF /* UIColor+AGExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+AGExtensions.m"; path = "AGCategories/Categories/UIColor/UIColor+AGExtensions.m"; sourceTree = "<group>"; };
+		03E1ED28A57F66791776B14390EDA3B9 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		0932FE602E6F4D3E5C6A1D9C29143EEB /* UICollectionViewCell+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionViewCell+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionViewCell+AGViewModel.h"; sourceTree = "<group>"; };
+		0E7EE41140C3944A9C60AB6943DEFB6A /* NSString+AGJudge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+AGJudge.m"; path = "AGCategories/Categories/NSString/NSString+AGJudge.m"; sourceTree = "<group>"; };
+		0EC9E7CECBCF34F5BE2C3665DAF5CD7A /* NSString+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/NSString+AGViewModel.m"; sourceTree = "<group>"; };
+		0FB7D733705B79084A1E1448FEDB8B18 /* UITableViewCell+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableViewCell+AGViewModel.h"; sourceTree = "<group>"; };
+		162FF242A69682464FA49B897DCDD37F /* UITableViewCell+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableViewCell+AGViewModel.m"; sourceTree = "<group>"; };
+		1EA094CC466EFF3D7D04D84CBB55A09C /* NSFileManager+AGFolderOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+AGFolderOperation.h"; path = "AGCategories/Categories/NSFileManager/NSFileManager+AGFolderOperation.h"; sourceTree = "<group>"; };
 		221FDE52EA3F593102E826CABEC45F9D /* Pods-AGVerifyManager-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AGVerifyManager-acknowledgements.plist"; sourceTree = "<group>"; };
-		2860312D38FE8B084905A82D2419B8A9 /* NSString+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/NSString+AGViewModel.h"; sourceTree = "<group>"; };
-		2AA4A586831AC17CDEAA16BD28F29128 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		3039D52F4FE05C6462D33524437D6F15 /* UICollectionView+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionView+AGViewModel.m"; sourceTree = "<group>"; };
-		327B8B88973D9C1EF81223E09D96AFF2 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
-		3A98C58876978AA6765C01B1F6F693C2 /* AGVMPackager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMPackager.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMPackager.h; sourceTree = "<group>"; };
+		223369B78FFCBE9CF23524CA68DFB4C5 /* AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGViewModel.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGViewModel.h; sourceTree = "<group>"; };
+		2627650DEA3ED2DE399A7DDBFE0D0DC3 /* NSFileManager+AGFolderOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+AGFolderOperation.m"; path = "AGCategories/Categories/NSFileManager/NSFileManager+AGFolderOperation.m"; sourceTree = "<group>"; };
+		27A7BB4DF0D90B15D1AB2AE79B3DE10F /* NSArray+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/NSArray+AGViewModel.h"; sourceTree = "<group>"; };
+		28C6D400D69C8731B7448638C556EB06 /* UITableView+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableView+AGViewModel.h"; sourceTree = "<group>"; };
+		2EC0E1D0E5DF2BC6333911B3FD54999A /* UIImage+AGTransform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AGTransform.m"; path = "AGCategories/Categories/UIImage/UIImage+AGTransform.m"; sourceTree = "<group>"; };
+		32628C03BF3974F99F81F8BD775358AA /* AGVMManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMManager.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMManager.h; sourceTree = "<group>"; };
+		335E052C4506F55BEB50E2749E97C436 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		36C7ECEA088F78ED0EC6F45EB8A79D8E /* UITableView+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableView+AGViewModel.m"; sourceTree = "<group>"; };
+		3A28ECA70117A4B5844C3E25C9FBCE05 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		3B3DA3DC3A05958A7C482A379C7C6A0D /* NSDate+AGGenerate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+AGGenerate.m"; path = "AGCategories/Categories/NSDate/NSDate+AGGenerate.m"; sourceTree = "<group>"; };
 		3E89F72DE2C99B0DE018CB5C880855A2 /* Pods-AGVerifyManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AGVerifyManager-dummy.m"; sourceTree = "<group>"; };
-		43447E281CD30C8DEEFF8C3281242D65 /* UIViewController+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UIViewController+AGViewModel.h"; sourceTree = "<group>"; };
-		46D8EA9CA05D9741FE88C56B169C4A2D /* NSFileManager+AGFolderPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+AGFolderPath.m"; path = "AGCategories/Categories/NSFileManager/NSFileManager+AGFolderPath.m"; sourceTree = "<group>"; };
-		4841016366ABED1261D2BAF2F89345BD /* AGVMKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMKit.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMKit.h; sourceTree = "<group>"; };
-		4894E40FDAA4D8200E748CF29EC07F4A /* AGCategories-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AGCategories-dummy.m"; sourceTree = "<group>"; };
-		51B239F47912E368707F9E9833E1F4C8 /* AGViewModel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AGViewModel.xcconfig; sourceTree = "<group>"; };
-		55CA6AE2BDA426172533691F141E9147 /* NSBundle+AGSupportCocoapods.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+AGSupportCocoapods.m"; path = "AGCategories/Categories/NSBundle/NSBundle+AGSupportCocoapods.m"; sourceTree = "<group>"; };
+		3EFCAB6E7931110DAF2084CDB85CCA8A /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		43922F9E27803C304EEC998E41A477F7 /* AGVMCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMCommand.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMCommand.m; sourceTree = "<group>"; };
+		446D5188FEDEC36D4D45BAE1539804BE /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
+		45801AC497E7667610160A400CBE12F9 /* NSArray+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/NSArray+AGViewModel.m"; sourceTree = "<group>"; };
+		459A09F876B39A9A951A8C5B68FDA2E1 /* UITableViewHeaderFooterView+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewHeaderFooterView+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableViewHeaderFooterView+AGViewModel.m"; sourceTree = "<group>"; };
+		46A62CBC068661733B2AC5941EE727AA /* NSString+AGJudge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+AGJudge.h"; path = "AGCategories/Categories/NSString/NSString+AGJudge.h"; sourceTree = "<group>"; };
+		47954F7A4D2D86EB6979D70865152284 /* AGVMProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMProtocol.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMProtocol.h; sourceTree = "<group>"; };
+		493469F0E5E91B85F4C2E06DA61B8F79 /* UIViewController+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UIViewController+AGViewModel.m"; sourceTree = "<group>"; };
+		4B0BB4F2FBDC40A8B98EB56AA401DACB /* AGVMSharedPackager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMSharedPackager.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMSharedPackager.m; sourceTree = "<group>"; };
+		4F336BFE4DCC5F6F6FECDB358001D375 /* UIImage+AGGenerate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AGGenerate.m"; path = "AGCategories/Categories/UIImage/UIImage+AGGenerate.m"; sourceTree = "<group>"; };
+		4FDAE9E88BBE1E6C3869CF960310B798 /* UIScreen+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScreen+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UIScreen+AGViewModel.h"; sourceTree = "<group>"; };
 		57CD02E0BACF25999F963A526F10D471 /* Pods-AGVerifyManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AGVerifyManager.debug.xcconfig"; sourceTree = "<group>"; };
-		598EC6F611C5C75C59FE030D9942DC4A /* NSBundle+AGSupportCocoapods.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+AGSupportCocoapods.h"; path = "AGCategories/Categories/NSBundle/NSBundle+AGSupportCocoapods.h"; sourceTree = "<group>"; };
-		59D1DF37B0A9E8A86C8FC7FE6548D06B /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
-		5BD635C80EC0F423839A619697E3C4F2 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		5C4C184237376E7E4CA6B97FF5CD8B8A /* AGVMProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMProtocol.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMProtocol.h; sourceTree = "<group>"; };
-		5DDC76DD52A82C094B8EE0FCFC82F0F6 /* AGViewModel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AGViewModel-dummy.m"; sourceTree = "<group>"; };
-		622864B247D1ED6E0B29DC7B40F84EF1 /* UICollectionView+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionView+AGViewModel.h"; sourceTree = "<group>"; };
-		70E40C3EA51B8C34D8515E02B411513A /* NSString+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/NSString+AGViewModel.m"; sourceTree = "<group>"; };
-		70E56ACC4BD00A09549D4F6701E0FFBD /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
-		75F15945A1B056652AC012CFB5708C98 /* AGVMKeys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMKeys.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMKeys.h; sourceTree = "<group>"; };
-		7A906D78146DF4FCB64ACB86EF15FB85 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		80FC56AB287BD2B0384DFD157F15CCC4 /* UITableViewHeaderFooterView+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewHeaderFooterView+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableViewHeaderFooterView+AGViewModel.h"; sourceTree = "<group>"; };
+		5D901BF3D197EFB106DCAE597DB24070 /* UITableViewHeaderFooterView+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewHeaderFooterView+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableViewHeaderFooterView+AGViewModel.h"; sourceTree = "<group>"; };
+		5F186007C6A52C30B129A6ADD6D028AB /* UICollectionReusableView+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionReusableView+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionReusableView+AGViewModel.h"; sourceTree = "<group>"; };
+		61027B114A05F3527C8597A0591239E8 /* NSFileManager+AGFolderPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+AGFolderPath.m"; path = "AGCategories/Categories/NSFileManager/NSFileManager+AGFolderPath.m"; sourceTree = "<group>"; };
+		61D867DE1B47853A1F98A9193C347E29 /* UIView+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UIView+AGViewModel.m"; sourceTree = "<group>"; };
+		63668EE795E839B6462467B55DA3A399 /* AGVMManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMManager.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMManager.m; sourceTree = "<group>"; };
+		6A3250A9F9755AD48972B8C06DC5C253 /* UIImage+AGTransform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AGTransform.h"; path = "AGCategories/Categories/UIImage/UIImage+AGTransform.h"; sourceTree = "<group>"; };
+		77D7D90A04A1655B2BF20753503F1BBC /* AGVMSharedPackager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMSharedPackager.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMSharedPackager.h; sourceTree = "<group>"; };
+		7DCCA9C614787F4C9182075127958ECC /* AGVMCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMCommand.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMCommand.h; sourceTree = "<group>"; };
 		81572B48EFC53F05233B39E1BFDAC0D7 /* libAGCategories.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAGCategories.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		85F2C542FBD364FECDE64C00A9FB24DC /* NSFileManager+AGFolderPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+AGFolderPath.h"; path = "AGCategories/Categories/NSFileManager/NSFileManager+AGFolderPath.h"; sourceTree = "<group>"; };
-		86C7B818287345A1D96C7AEAE4EE5D8D /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
-		8722F71F871C27511C4CF1F24008FDB4 /* UIColor+AGExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+AGExtensions.h"; path = "AGCategories/Categories/UIColor/UIColor+AGExtensions.h"; sourceTree = "<group>"; };
-		87590313E3ECEE429C8C0D43DE6EFF73 /* UIImage+AGTransform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AGTransform.h"; path = "AGCategories/Categories/UIImage/UIImage+AGTransform.h"; sourceTree = "<group>"; };
-		879714E7663A05D19859FB126A098791 /* AGVMManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMManager.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMManager.m; sourceTree = "<group>"; };
+		8194CDE33ACDB3DF12E58CEEED61B0A6 /* NSDate+AGGenerate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+AGGenerate.h"; path = "AGCategories/Categories/NSDate/NSDate+AGGenerate.h"; sourceTree = "<group>"; };
+		86C72A3B195298DBE8E9E6427FE8C7B0 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
 		89B9F7A1A1121A2EB564E573E2E36DE7 /* Pods-AGVerifyManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AGVerifyManager.release.xcconfig"; sourceTree = "<group>"; };
-		8B983905EDE9B3AA7E4787F64931F6D1 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		92799FF24ECDD9FA71488AA47B0FD83D /* UIImage+AGGenerate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AGGenerate.m"; path = "AGCategories/Categories/UIImage/UIImage+AGGenerate.m"; sourceTree = "<group>"; };
-		932C4B2E8061930BC86665266641ED91 /* AGVMManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMManager.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMManager.h; sourceTree = "<group>"; };
-		93526CF1960A5D106E15915BC13A9D6B /* UIViewController+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UIViewController+AGViewModel.m"; sourceTree = "<group>"; };
-		95E6D54D4AE79019D0E4E6174232B181 /* UIImage+AGTransform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AGTransform.m"; path = "AGCategories/Categories/UIImage/UIImage+AGTransform.m"; sourceTree = "<group>"; };
-		9A47D92A813FB25A1BF761BAFAA7FF9D /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
-		9BAD161859EA41FFB5C0FB01C19160BC /* UICollectionReusableView+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionReusableView+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionReusableView+AGViewModel.m"; sourceTree = "<group>"; };
-		9C91F32A81EB801DE18BF8C83AB576E0 /* UITableView+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableView+AGViewModel.h"; sourceTree = "<group>"; };
+		8A11D1B2E2D9CCF8C05D68330CE581FD /* NSString+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/NSString+AGViewModel.h"; sourceTree = "<group>"; };
+		906ED8B40F0F6EC58BA409EB2E942701 /* AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGViewModel.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGViewModel.m; sourceTree = "<group>"; };
+		91355ED9B70098EB87AD6D60E02044FB /* AGViewModel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AGViewModel-prefix.pch"; sourceTree = "<group>"; };
+		91CF7832E06664695FADFF9AE162F14D /* AGVMFunction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMFunction.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMFunction.h; sourceTree = "<group>"; };
+		93BCCD6F4FD9AFD09B6F5A6447CFBF8A /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		98802463213CCCEE7E50348ABBD9E981 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		9CF59E48D1823847849AC45F7A55E1F1 /* UICollectionView+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionView+AGViewModel.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A02A492730B41186263ABB596903F9DD /* NSFileManager+AGFolderOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+AGFolderOperation.h"; path = "AGCategories/Categories/NSFileManager/NSFileManager+AGFolderOperation.h"; sourceTree = "<group>"; };
-		A15FE8FD9BB71B0EA2795B636D86CF6B /* UITableViewCell+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableViewCell+AGViewModel.h"; sourceTree = "<group>"; };
-		A520112FC0B117A5AEB980B8422E4FE4 /* AGVMSection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMSection.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMSection.m; sourceTree = "<group>"; };
-		AC4233A65A98E6634DE68355A410DB89 /* AGVMNotifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMNotifier.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMNotifier.h; sourceTree = "<group>"; };
-		AC69CC9DDF005DD6145966A17F6B947A /* UITableViewHeaderFooterView+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewHeaderFooterView+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableViewHeaderFooterView+AGViewModel.m"; sourceTree = "<group>"; };
-		B078D6C9270124E77CA1E5333C9F0A42 /* UICollectionViewCell+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionViewCell+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionViewCell+AGViewModel.m"; sourceTree = "<group>"; };
+		A12474BC3223251C6F517BCB85ABA902 /* NSBundle+AGSupportCocoapods.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+AGSupportCocoapods.h"; path = "AGCategories/Categories/NSBundle/NSBundle+AGSupportCocoapods.h"; sourceTree = "<group>"; };
+		A17FE4B6707E211247C868206BE236EA /* UIColor+AGExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+AGExtensions.h"; path = "AGCategories/Categories/UIColor/UIColor+AGExtensions.h"; sourceTree = "<group>"; };
+		A9DFF313685C56B4B72DC7BE3040BE5B /* AGViewModel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AGViewModel.xcconfig; sourceTree = "<group>"; };
+		ABF1C0A91419C8E345A7A6A540C84467 /* UIImage+AGGenerate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AGGenerate.h"; path = "AGCategories/Categories/UIImage/UIImage+AGGenerate.h"; sourceTree = "<group>"; };
+		B2E103254A690B2D4F8C1004025A5008 /* AGVMNotifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMNotifier.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMNotifier.h; sourceTree = "<group>"; };
+		B2F82A167F548D5C56EB4658902C842C /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		B40E5F2A4170023875C42EDBC40CB1CD /* NSDictionary+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/NSDictionary+AGViewModel.h"; sourceTree = "<group>"; };
+		B777F982CE5F65EE30B16F88994EFA61 /* AGVMKeys.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMKeys.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMKeys.m; sourceTree = "<group>"; };
+		B89E5CA6B689F7DC7D71A2772DA1617C /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		BAE76EED892218C605E2469AB4E7A128 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		BF18E64C4218172B10E1AD4BC744871F /* UICollectionView+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionView+AGViewModel.m"; sourceTree = "<group>"; };
 		C013833FD476B77546ECC5299572AB9D /* libAGViewModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAGViewModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C34751F47D2D55F2373746F6997C179B /* NSString+AGJudge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+AGJudge.h"; path = "AGCategories/Categories/NSString/NSString+AGJudge.h"; sourceTree = "<group>"; };
-		C43AD9255292E194FFAB24B47D19B375 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
-		C8B9D4908CF4F370AA1596D2906DD36A /* UIImage+AGGenerate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AGGenerate.h"; path = "AGCategories/Categories/UIImage/UIImage+AGGenerate.h"; sourceTree = "<group>"; };
-		CC2615E0BA883C47857F0967D705BF6C /* AGViewModel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AGViewModel-prefix.pch"; sourceTree = "<group>"; };
-		CC88FDD6AFD2B46560C3515E3C15B457 /* AGVMPackager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMPackager.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMPackager.m; sourceTree = "<group>"; };
-		CCA772DFB820AD16EA3AF50D94270B19 /* UICollectionViewCell+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionViewCell+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionViewCell+AGViewModel.h"; sourceTree = "<group>"; };
-		CF51CF1418119E6F2CCFF06BAB7FB435 /* UITableViewCell+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableViewCell+AGViewModel.m"; sourceTree = "<group>"; };
-		D115CDC12C40C5CF3FBBD8DEC5867098 /* AGCategories.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AGCategories.xcconfig; sourceTree = "<group>"; };
-		D2365658833CDD425107CE0BE816F446 /* UITableView+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UITableView+AGViewModel.m"; sourceTree = "<group>"; };
-		D2C28EFFCA2F3A0351CEE1701F9A1843 /* NSDate+AGGenerate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+AGGenerate.h"; path = "AGCategories/Categories/NSDate/NSDate+AGGenerate.h"; sourceTree = "<group>"; };
-		D4539F3DCE6C6A6F0EB237F332DBA6A3 /* NSFileManager+AGFolderOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+AGFolderOperation.m"; path = "AGCategories/Categories/NSFileManager/NSFileManager+AGFolderOperation.m"; sourceTree = "<group>"; };
+		C49253957C8630F13B3727168ACF7E75 /* AGVMKeys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMKeys.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMKeys.h; sourceTree = "<group>"; };
+		C8F8B024B75DDDFB5C4C2477539F3FDC /* AGVMKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMKit.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMKit.h; sourceTree = "<group>"; };
+		D20D5B794D4126E55CB112A9331DDDEF /* AGCategories.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGCategories.h; path = AGCategories/Categories/AGCategories.h; sourceTree = "<group>"; };
+		D6B3059020A1BA168844CD791F55571E /* UIView+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UIView+AGViewModel.h"; sourceTree = "<group>"; };
 		D83603F8B678858AC1A26CCE304A3836 /* libPods-AGVerifyManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AGVerifyManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D937A15FC7159E8ABE45D17FCCA2540F /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		D847FC35A637007C14D8EBE5D66FAE83 /* AGVMSection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMSection.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMSection.m; sourceTree = "<group>"; };
 		DBBF541884992951C4908F0E4AA23DFA /* Pods-AGVerifyManager-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AGVerifyManager-resources.sh"; sourceTree = "<group>"; };
-		DE60030A47E786D354EFD3AEE60DEB08 /* NSString+AGJudge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+AGJudge.m"; path = "AGCategories/Categories/NSString/NSString+AGJudge.m"; sourceTree = "<group>"; };
 		E0FC72E52DFDD041A48317DA3B41EE1B /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E116BAF3DC631BD3618C4AB27052F5BC /* AGVMFunction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMFunction.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMFunction.m; sourceTree = "<group>"; };
-		E391A6C3B83CC3444786A3A1A4745BE7 /* AGVMFunction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMFunction.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMFunction.h; sourceTree = "<group>"; };
-		EBC29871290DF79A8C7D77286450583D /* AGVMNotifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMNotifier.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMNotifier.m; sourceTree = "<group>"; };
-		EC8F5494ED15FC05FEB1DC68193E24E7 /* UIScreen+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScreen+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UIScreen+AGViewModel.h"; sourceTree = "<group>"; };
+		E1ACD96CBE47F09DB90E43BFB2D17F51 /* AGCategories-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AGCategories-prefix.pch"; sourceTree = "<group>"; };
+		E4185D1D52B792EFB4B675FFC3B5338D /* UICollectionViewCell+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionViewCell+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionViewCell+AGViewModel.m"; sourceTree = "<group>"; };
+		E489D336888C1E7B81774C77689505A3 /* NSDictionary+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/NSDictionary+AGViewModel.m"; sourceTree = "<group>"; };
+		E77D8C8728A3E36492E8E3341C63B793 /* UICollectionReusableView+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionReusableView+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UICollectionReusableView+AGViewModel.m"; sourceTree = "<group>"; };
 		EEB6CEDFDBEB2EC807CC9177459667DF /* Pods-AGVerifyManager-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AGVerifyManager-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EFC8411027352E026B9726553AD06F9F /* AGVMKeys.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMKeys.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMKeys.m; sourceTree = "<group>"; };
-		FA8EA4B97461BBB19D2A5D793AE0D8DB /* AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGViewModel.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGViewModel.h; sourceTree = "<group>"; };
-		FF9701F6BE424D71FC600014E8A528A9 /* UIView+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UIView+AGViewModel.m"; sourceTree = "<group>"; };
+		EF96303AF0545D7B87D3C8AC7C929B34 /* NSBundle+AGSupportCocoapods.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+AGSupportCocoapods.m"; path = "AGCategories/Categories/NSBundle/NSBundle+AGSupportCocoapods.m"; sourceTree = "<group>"; };
+		F049A97362B419E2D9674DBAA69F2E4E /* AGVMNotifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMNotifier.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMNotifier.m; sourceTree = "<group>"; };
+		F1D3FA9661920C17200BC5D044542B19 /* NSFileManager+AGFolderPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+AGFolderPath.h"; path = "AGCategories/Categories/NSFileManager/NSFileManager+AGFolderPath.h"; sourceTree = "<group>"; };
+		F438FFB6FE1CD82E6A23FB16C29C51BD /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		F5BA97B8948B09A3CD215F29382BE2CE /* UIScreen+AGViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+AGViewModel.m"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UIScreen+AGViewModel.m"; sourceTree = "<group>"; };
+		F66C4403D3D015087852BDAAFEEAA3E9 /* AGCategories-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AGCategories-dummy.m"; sourceTree = "<group>"; };
+		F7564C7C49CF0546B83DDD247DD82698 /* UIViewController+AGViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AGViewModel.h"; path = "AGViewModelDemo/__AppGlobalTool/AGViewModel/Category/UIViewController+AGViewModel.h"; sourceTree = "<group>"; };
+		F87FCCE85079C8738F5FB9E14E01E401 /* AGViewModel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AGViewModel-dummy.m"; sourceTree = "<group>"; };
+		FB2D323C06988998B287418759E918B3 /* AGCategories.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AGCategories.xcconfig; sourceTree = "<group>"; };
+		FC422DECC58A326196E7658B7309E9E5 /* AGVMFunction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AGVMFunction.m; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMFunction.m; sourceTree = "<group>"; };
+		FC610B6D5F164E6BC7A5DE9EE3D1C309 /* AGVMSection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGVMSection.h; path = AGViewModelDemo/__AppGlobalTool/AGViewModel/AGVMSection.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3231FEC7A8AE854EF814819B52B3BB87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		359C07EEEB6B0AD41EBA35752311FC11 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -205,78 +224,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ED02EBCCF09BC3ED0A3CBF96D0A43ECE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		018D04BEE52F4D07ACF075A6A9723236 /* Support Files */ = {
+		5469F96353CA600209D2EA412841D16A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				86C7B818287345A1D96C7AEAE4EE5D8D /* SVProgressHUD.xcconfig */,
-				8B983905EDE9B3AA7E4787F64931F6D1 /* SVProgressHUD-dummy.m */,
-				2AA4A586831AC17CDEAA16BD28F29128 /* SVProgressHUD-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SVProgressHUD";
-			sourceTree = "<group>";
-		};
-		2C336887B928989C1FCFC67DBDDD053F /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				7A906D78146DF4FCB64ACB86EF15FB85 /* SVIndefiniteAnimatedView.h */,
-				5BD635C80EC0F423839A619697E3C4F2 /* SVIndefiniteAnimatedView.m */,
-				327B8B88973D9C1EF81223E09D96AFF2 /* SVProgressAnimatedView.h */,
-				70E56ACC4BD00A09549D4F6701E0FFBD /* SVProgressAnimatedView.m */,
-				C43AD9255292E194FFAB24B47D19B375 /* SVProgressHUD.h */,
-				59D1DF37B0A9E8A86C8FC7FE6548D06B /* SVProgressHUD.m */,
-				9A47D92A813FB25A1BF761BAFAA7FF9D /* SVRadialGradientLayer.h */,
-				D937A15FC7159E8ABE45D17FCCA2540F /* SVRadialGradientLayer.m */,
-				D79B0B533C1EEAC07D422F16586622E3 /* Resources */,
-				018D04BEE52F4D07ACF075A6A9723236 /* Support Files */,
-			);
-			path = SVProgressHUD;
-			sourceTree = "<group>";
-		};
-		4BB1EB3935B5883D45482FC1DC5CC666 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				51B239F47912E368707F9E9833E1F4C8 /* AGViewModel.xcconfig */,
-				5DDC76DD52A82C094B8EE0FCFC82F0F6 /* AGViewModel-dummy.m */,
-				CC2615E0BA883C47857F0967D705BF6C /* AGViewModel-prefix.pch */,
+				A9DFF313685C56B4B72DC7BE3040BE5B /* AGViewModel.xcconfig */,
+				F87FCCE85079C8738F5FB9E14E01E401 /* AGViewModel-dummy.m */,
+				91355ED9B70098EB87AD6D60E02044FB /* AGViewModel-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/AGViewModel";
-			sourceTree = "<group>";
-		};
-		643D81FBCCEB305EC62757665948E1DE /* AGCategories */ = {
-			isa = PBXGroup;
-			children = (
-				13BC8DB5AE950BD096752BA415EC651A /* AGCategories.h */,
-				598EC6F611C5C75C59FE030D9942DC4A /* NSBundle+AGSupportCocoapods.h */,
-				55CA6AE2BDA426172533691F141E9147 /* NSBundle+AGSupportCocoapods.m */,
-				D2C28EFFCA2F3A0351CEE1701F9A1843 /* NSDate+AGGenerate.h */,
-				13EC4D4FD59C2813F79D0F917748AEE8 /* NSDate+AGGenerate.m */,
-				A02A492730B41186263ABB596903F9DD /* NSFileManager+AGFolderOperation.h */,
-				D4539F3DCE6C6A6F0EB237F332DBA6A3 /* NSFileManager+AGFolderOperation.m */,
-				85F2C542FBD364FECDE64C00A9FB24DC /* NSFileManager+AGFolderPath.h */,
-				46D8EA9CA05D9741FE88C56B169C4A2D /* NSFileManager+AGFolderPath.m */,
-				C34751F47D2D55F2373746F6997C179B /* NSString+AGJudge.h */,
-				DE60030A47E786D354EFD3AEE60DEB08 /* NSString+AGJudge.m */,
-				8722F71F871C27511C4CF1F24008FDB4 /* UIColor+AGExtensions.h */,
-				05303E7F2B886D9FFDCD8F033CF2E39C /* UIColor+AGExtensions.m */,
-				C8B9D4908CF4F370AA1596D2906DD36A /* UIImage+AGGenerate.h */,
-				92799FF24ECDD9FA71488AA47B0FD83D /* UIImage+AGGenerate.m */,
-				87590313E3ECEE429C8C0D43DE6EFF73 /* UIImage+AGTransform.h */,
-				95E6D54D4AE79019D0E4E6174232B181 /* UIImage+AGTransform.m */,
-				89077CD628AC987751FD204AF6963CA8 /* Support Files */,
-			);
-			path = AGCategories;
 			sourceTree = "<group>";
 		};
 		66C5EA2751DE125B1B0088D5B620E8A7 /* Products */ = {
@@ -290,15 +249,87 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		89077CD628AC987751FD204AF6963CA8 /* Support Files */ = {
+		66CBBFE41371DFF5F3FBD2A0B29D4D9C /* AGCategories */ = {
 			isa = PBXGroup;
 			children = (
-				D115CDC12C40C5CF3FBBD8DEC5867098 /* AGCategories.xcconfig */,
-				4894E40FDAA4D8200E748CF29EC07F4A /* AGCategories-dummy.m */,
-				1BF6985A51A0E9F5B5CD27771BEC6EE0 /* AGCategories-prefix.pch */,
+				D20D5B794D4126E55CB112A9331DDDEF /* AGCategories.h */,
+				A12474BC3223251C6F517BCB85ABA902 /* NSBundle+AGSupportCocoapods.h */,
+				EF96303AF0545D7B87D3C8AC7C929B34 /* NSBundle+AGSupportCocoapods.m */,
+				8194CDE33ACDB3DF12E58CEEED61B0A6 /* NSDate+AGGenerate.h */,
+				3B3DA3DC3A05958A7C482A379C7C6A0D /* NSDate+AGGenerate.m */,
+				1EA094CC466EFF3D7D04D84CBB55A09C /* NSFileManager+AGFolderOperation.h */,
+				2627650DEA3ED2DE399A7DDBFE0D0DC3 /* NSFileManager+AGFolderOperation.m */,
+				F1D3FA9661920C17200BC5D044542B19 /* NSFileManager+AGFolderPath.h */,
+				61027B114A05F3527C8597A0591239E8 /* NSFileManager+AGFolderPath.m */,
+				46A62CBC068661733B2AC5941EE727AA /* NSString+AGJudge.h */,
+				0E7EE41140C3944A9C60AB6943DEFB6A /* NSString+AGJudge.m */,
+				A17FE4B6707E211247C868206BE236EA /* UIColor+AGExtensions.h */,
+				0078498B2EB6D465669D22EA7C1505BF /* UIColor+AGExtensions.m */,
+				ABF1C0A91419C8E345A7A6A540C84467 /* UIImage+AGGenerate.h */,
+				4F336BFE4DCC5F6F6FECDB358001D375 /* UIImage+AGGenerate.m */,
+				6A3250A9F9755AD48972B8C06DC5C253 /* UIImage+AGTransform.h */,
+				2EC0E1D0E5DF2BC6333911B3FD54999A /* UIImage+AGTransform.m */,
+				AD0E53B5A608644778F29D9DE10E6D41 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/AGCategories";
+			path = AGCategories;
+			sourceTree = "<group>";
+		};
+		7D7367975201673ADB025B4B175AC19C /* AGViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				223369B78FFCBE9CF23524CA68DFB4C5 /* AGViewModel.h */,
+				906ED8B40F0F6EC58BA409EB2E942701 /* AGViewModel.m */,
+				7DCCA9C614787F4C9182075127958ECC /* AGVMCommand.h */,
+				43922F9E27803C304EEC998E41A477F7 /* AGVMCommand.m */,
+				91CF7832E06664695FADFF9AE162F14D /* AGVMFunction.h */,
+				FC422DECC58A326196E7658B7309E9E5 /* AGVMFunction.m */,
+				C49253957C8630F13B3727168ACF7E75 /* AGVMKeys.h */,
+				B777F982CE5F65EE30B16F88994EFA61 /* AGVMKeys.m */,
+				C8F8B024B75DDDFB5C4C2477539F3FDC /* AGVMKit.h */,
+				32628C03BF3974F99F81F8BD775358AA /* AGVMManager.h */,
+				63668EE795E839B6462467B55DA3A399 /* AGVMManager.m */,
+				B2E103254A690B2D4F8C1004025A5008 /* AGVMNotifier.h */,
+				F049A97362B419E2D9674DBAA69F2E4E /* AGVMNotifier.m */,
+				47954F7A4D2D86EB6979D70865152284 /* AGVMProtocol.h */,
+				FC610B6D5F164E6BC7A5DE9EE3D1C309 /* AGVMSection.h */,
+				D847FC35A637007C14D8EBE5D66FAE83 /* AGVMSection.m */,
+				77D7D90A04A1655B2BF20753503F1BBC /* AGVMSharedPackager.h */,
+				4B0BB4F2FBDC40A8B98EB56AA401DACB /* AGVMSharedPackager.m */,
+				27A7BB4DF0D90B15D1AB2AE79B3DE10F /* NSArray+AGViewModel.h */,
+				45801AC497E7667610160A400CBE12F9 /* NSArray+AGViewModel.m */,
+				B40E5F2A4170023875C42EDBC40CB1CD /* NSDictionary+AGViewModel.h */,
+				E489D336888C1E7B81774C77689505A3 /* NSDictionary+AGViewModel.m */,
+				8A11D1B2E2D9CCF8C05D68330CE581FD /* NSString+AGViewModel.h */,
+				0EC9E7CECBCF34F5BE2C3665DAF5CD7A /* NSString+AGViewModel.m */,
+				5F186007C6A52C30B129A6ADD6D028AB /* UICollectionReusableView+AGViewModel.h */,
+				E77D8C8728A3E36492E8E3341C63B793 /* UICollectionReusableView+AGViewModel.m */,
+				9CF59E48D1823847849AC45F7A55E1F1 /* UICollectionView+AGViewModel.h */,
+				BF18E64C4218172B10E1AD4BC744871F /* UICollectionView+AGViewModel.m */,
+				0932FE602E6F4D3E5C6A1D9C29143EEB /* UICollectionViewCell+AGViewModel.h */,
+				E4185D1D52B792EFB4B675FFC3B5338D /* UICollectionViewCell+AGViewModel.m */,
+				4FDAE9E88BBE1E6C3869CF960310B798 /* UIScreen+AGViewModel.h */,
+				F5BA97B8948B09A3CD215F29382BE2CE /* UIScreen+AGViewModel.m */,
+				28C6D400D69C8731B7448638C556EB06 /* UITableView+AGViewModel.h */,
+				36C7ECEA088F78ED0EC6F45EB8A79D8E /* UITableView+AGViewModel.m */,
+				0FB7D733705B79084A1E1448FEDB8B18 /* UITableViewCell+AGViewModel.h */,
+				162FF242A69682464FA49B897DCDD37F /* UITableViewCell+AGViewModel.m */,
+				5D901BF3D197EFB106DCAE597DB24070 /* UITableViewHeaderFooterView+AGViewModel.h */,
+				459A09F876B39A9A951A8C5B68FDA2E1 /* UITableViewHeaderFooterView+AGViewModel.m */,
+				D6B3059020A1BA168844CD791F55571E /* UIView+AGViewModel.h */,
+				61D867DE1B47853A1F98A9193C347E29 /* UIView+AGViewModel.m */,
+				F7564C7C49CF0546B83DDD247DD82698 /* UIViewController+AGViewModel.h */,
+				493469F0E5E91B85F4C2E06DA61B8F79 /* UIViewController+AGViewModel.m */,
+				5469F96353CA600209D2EA412841D16A /* Support Files */,
+			);
+			path = AGViewModel;
+			sourceTree = "<group>";
+		};
+		81E17029D77513BE6381807550C2F99D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				335E052C4506F55BEB50E2749E97C436 /* SVProgressHUD.bundle */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		98A305462C2A5D03A9D4ACF7D60FE570 /* Targets Support Files */ = {
@@ -309,56 +340,23 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B6B255BA3F4DF4E4C839EBF3F6EDE82E /* AGViewModel */ = {
+		AD0E53B5A608644778F29D9DE10E6D41 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FA8EA4B97461BBB19D2A5D793AE0D8DB /* AGViewModel.h */,
-				0B4BC4DFC757AA419C5F0171712F4F04 /* AGViewModel.m */,
-				E391A6C3B83CC3444786A3A1A4745BE7 /* AGVMFunction.h */,
-				E116BAF3DC631BD3618C4AB27052F5BC /* AGVMFunction.m */,
-				75F15945A1B056652AC012CFB5708C98 /* AGVMKeys.h */,
-				EFC8411027352E026B9726553AD06F9F /* AGVMKeys.m */,
-				4841016366ABED1261D2BAF2F89345BD /* AGVMKit.h */,
-				932C4B2E8061930BC86665266641ED91 /* AGVMManager.h */,
-				879714E7663A05D19859FB126A098791 /* AGVMManager.m */,
-				AC4233A65A98E6634DE68355A410DB89 /* AGVMNotifier.h */,
-				EBC29871290DF79A8C7D77286450583D /* AGVMNotifier.m */,
-				3A98C58876978AA6765C01B1F6F693C2 /* AGVMPackager.h */,
-				CC88FDD6AFD2B46560C3515E3C15B457 /* AGVMPackager.m */,
-				5C4C184237376E7E4CA6B97FF5CD8B8A /* AGVMProtocol.h */,
-				005AAA3A01F95047359A080C769973EC /* AGVMSection.h */,
-				A520112FC0B117A5AEB980B8422E4FE4 /* AGVMSection.m */,
-				2860312D38FE8B084905A82D2419B8A9 /* NSString+AGViewModel.h */,
-				70E40C3EA51B8C34D8515E02B411513A /* NSString+AGViewModel.m */,
-				0852299F41DD2712E20409AE25909AC2 /* UICollectionReusableView+AGViewModel.h */,
-				9BAD161859EA41FFB5C0FB01C19160BC /* UICollectionReusableView+AGViewModel.m */,
-				622864B247D1ED6E0B29DC7B40F84EF1 /* UICollectionView+AGViewModel.h */,
-				3039D52F4FE05C6462D33524437D6F15 /* UICollectionView+AGViewModel.m */,
-				CCA772DFB820AD16EA3AF50D94270B19 /* UICollectionViewCell+AGViewModel.h */,
-				B078D6C9270124E77CA1E5333C9F0A42 /* UICollectionViewCell+AGViewModel.m */,
-				EC8F5494ED15FC05FEB1DC68193E24E7 /* UIScreen+AGViewModel.h */,
-				21040CC84D3FE2E38683EE5B0F697903 /* UIScreen+AGViewModel.m */,
-				9C91F32A81EB801DE18BF8C83AB576E0 /* UITableView+AGViewModel.h */,
-				D2365658833CDD425107CE0BE816F446 /* UITableView+AGViewModel.m */,
-				A15FE8FD9BB71B0EA2795B636D86CF6B /* UITableViewCell+AGViewModel.h */,
-				CF51CF1418119E6F2CCFF06BAB7FB435 /* UITableViewCell+AGViewModel.m */,
-				80FC56AB287BD2B0384DFD157F15CCC4 /* UITableViewHeaderFooterView+AGViewModel.h */,
-				AC69CC9DDF005DD6145966A17F6B947A /* UITableViewHeaderFooterView+AGViewModel.m */,
-				1299F36B7B6F5DE533EAF2A246A959BA /* UIView+AGViewModel.h */,
-				FF9701F6BE424D71FC600014E8A528A9 /* UIView+AGViewModel.m */,
-				43447E281CD30C8DEEFF8C3281242D65 /* UIViewController+AGViewModel.h */,
-				93526CF1960A5D106E15915BC13A9D6B /* UIViewController+AGViewModel.m */,
-				4BB1EB3935B5883D45482FC1DC5CC666 /* Support Files */,
+				FB2D323C06988998B287418759E918B3 /* AGCategories.xcconfig */,
+				F66C4403D3D015087852BDAAFEEAA3E9 /* AGCategories-dummy.m */,
+				E1ACD96CBE47F09DB90E43BFB2D17F51 /* AGCategories-prefix.pch */,
 			);
-			path = AGViewModel;
+			name = "Support Files";
+			path = "../Target Support Files/AGCategories";
 			sourceTree = "<group>";
 		};
-		C45697F32610FC305E3224CA8138BB04 /* Pods */ = {
+		CA5BF76039C6B0D9EDD86D02732B5D42 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				643D81FBCCEB305EC62757665948E1DE /* AGCategories */,
-				B6B255BA3F4DF4E4C839EBF3F6EDE82E /* AGViewModel */,
-				2C336887B928989C1FCFC67DBDDD053F /* SVProgressHUD */,
+				66CBBFE41371DFF5F3FBD2A0B29D4D9C /* AGCategories */,
+				7D7367975201673ADB025B4B175AC19C /* AGViewModel */,
+				D4DAFB8D510C3CFCEA6003913FD782B9 /* SVProgressHUD */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -368,18 +366,27 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				C45697F32610FC305E3224CA8138BB04 /* Pods */,
+				CA5BF76039C6B0D9EDD86D02732B5D42 /* Pods */,
 				66C5EA2751DE125B1B0088D5B620E8A7 /* Products */,
 				98A305462C2A5D03A9D4ACF7D60FE570 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D79B0B533C1EEAC07D422F16586622E3 /* Resources */ = {
+		D4DAFB8D510C3CFCEA6003913FD782B9 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				169ECB97CD0EE0FA1922373DC2AE1FA7 /* SVProgressHUD.bundle */,
+				3A28ECA70117A4B5844C3E25C9FBCE05 /* SVIndefiniteAnimatedView.h */,
+				B2F82A167F548D5C56EB4658902C842C /* SVIndefiniteAnimatedView.m */,
+				F438FFB6FE1CD82E6A23FB16C29C51BD /* SVProgressAnimatedView.h */,
+				86C72A3B195298DBE8E9E6427FE8C7B0 /* SVProgressAnimatedView.m */,
+				98802463213CCCEE7E50348ABBD9E981 /* SVProgressHUD.h */,
+				B89E5CA6B689F7DC7D71A2772DA1617C /* SVProgressHUD.m */,
+				BAE76EED892218C605E2469AB4E7A128 /* SVRadialGradientLayer.h */,
+				93BCCD6F4FD9AFD09B6F5A6447CFBF8A /* SVRadialGradientLayer.m */,
+				81E17029D77513BE6381807550C2F99D /* Resources */,
+				F9E85B97B9317DAE417BCBA2AEF140C2 /* Support Files */,
 			);
-			name = Resources;
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
@@ -403,32 +410,46 @@
 			path = "Target Support Files/Pods-AGVerifyManager";
 			sourceTree = "<group>";
 		};
+		F9E85B97B9317DAE417BCBA2AEF140C2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				446D5188FEDEC36D4D45BAE1539804BE /* SVProgressHUD.xcconfig */,
+				3EFCAB6E7931110DAF2084CDB85CCA8A /* SVProgressHUD-dummy.m */,
+				03E1ED28A57F66791776B14390EDA3B9 /* SVProgressHUD-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		14D4F8A8689449F15384238AC40A430A /* Headers */ = {
+		0256FB1D9F35B6CA202C2DC0E3DD4530 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				725CB7628449487E4B74E2512FE9FB04 /* AGViewModel.h in Headers */,
-				B51A646E9E671921747E88B242283D79 /* AGVMFunction.h in Headers */,
-				3C69274FCB58ADE729E4ACF2B7CE0600 /* AGVMKeys.h in Headers */,
-				EC7D134AC0BC28423B60877ABD5D7066 /* AGVMKit.h in Headers */,
-				5EE5A98D7AC9D4AD4FC878F1C59EB508 /* AGVMManager.h in Headers */,
-				D653E2E5051986C3DD78FB63D82BB2BB /* AGVMNotifier.h in Headers */,
-				8D59440F3DFC6105B584276BF82F7D95 /* AGVMPackager.h in Headers */,
-				B5DFA33CB54D76DA4FD6D364812D0862 /* AGVMProtocol.h in Headers */,
-				A5FF6057D4BD853FC42CEEC9BC0BB6F6 /* AGVMSection.h in Headers */,
-				36315A137931653FE914EADEBF41F310 /* NSString+AGViewModel.h in Headers */,
-				B43C4C8BC327DF0E2378CFE55132984F /* UICollectionReusableView+AGViewModel.h in Headers */,
-				67E4D9D5BCAC13B7408AABF6092A9840 /* UICollectionView+AGViewModel.h in Headers */,
-				0AC8390941C4D5B4130B00ABE0CB51DF /* UICollectionViewCell+AGViewModel.h in Headers */,
-				82392AFA0357643E68699D994215EDA2 /* UIScreen+AGViewModel.h in Headers */,
-				216C88BAEA0E32A8CFDDB32C95BA17C8 /* UITableView+AGViewModel.h in Headers */,
-				C197ADD11E86F67DEF19B9C7D7125085 /* UITableViewCell+AGViewModel.h in Headers */,
-				FBCA0E455560537CA4E36F9BA134B474 /* UITableViewHeaderFooterView+AGViewModel.h in Headers */,
-				373FC46DDACF21D58A9EBE03BB506737 /* UIView+AGViewModel.h in Headers */,
-				73E4A69C9F315CF30F135BD955943FE6 /* UIViewController+AGViewModel.h in Headers */,
+				E2FE2E727FD630ED95CAAE65C0C3F908 /* AGViewModel.h in Headers */,
+				FEF8455A644D31B4F5EABA9FDCC16B59 /* AGVMCommand.h in Headers */,
+				E21FC89622300A71A522AC65B9A557EE /* AGVMFunction.h in Headers */,
+				1CE583D546FFCE5477A9EB939643CE0A /* AGVMKeys.h in Headers */,
+				1EED8FDFE54A670FD90B770DA627E19C /* AGVMKit.h in Headers */,
+				2E3A4052FB266CFAB2E3EC6B33E56ED7 /* AGVMManager.h in Headers */,
+				52A9E8F638B9EC934733FFEDAA862413 /* AGVMNotifier.h in Headers */,
+				4114634F43E5E317BA640DE6D5BA671D /* AGVMProtocol.h in Headers */,
+				001B04A25717BCF1A11A4DDFB06FE2DD /* AGVMSection.h in Headers */,
+				E7612FFB2940B7BA3273D653F240E73F /* AGVMSharedPackager.h in Headers */,
+				276EE159C1CE6570DF2A929A2B96BA4C /* NSArray+AGViewModel.h in Headers */,
+				7051CC23BF836F387145401E3DD5282C /* NSDictionary+AGViewModel.h in Headers */,
+				B4E72E3732E56329F788BF3CF871BD18 /* NSString+AGViewModel.h in Headers */,
+				10D7C51AB6D1A1B8EF9108AE061F30EE /* UICollectionReusableView+AGViewModel.h in Headers */,
+				A9548AE1C02AC6C7787EF5C7E709B9C7 /* UICollectionView+AGViewModel.h in Headers */,
+				BB76999D233CF1179A5915FFAB73AB2C /* UICollectionViewCell+AGViewModel.h in Headers */,
+				D0E01675AAA4F22C9F0332354563D778 /* UIScreen+AGViewModel.h in Headers */,
+				C9C38391F4A8C2C8117637AC58D24137 /* UITableView+AGViewModel.h in Headers */,
+				8D828BEA28F308E27068B551B5416178 /* UITableViewCell+AGViewModel.h in Headers */,
+				3B3B4BCD3230C1EFB24BEBE597499863 /* UITableViewHeaderFooterView+AGViewModel.h in Headers */,
+				21A7B4701985091A7989C1F02232A482 /* UIView+AGViewModel.h in Headers */,
+				F2A7031245FAFBB5572AD8D314C95DDA /* UIViewController+AGViewModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,13 +527,13 @@
 			productReference = 81572B48EFC53F05233B39E1BFDAC0D7 /* libAGCategories.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		5DF0945BE43EDB71689694650D74F14A /* AGViewModel */ = {
+		5D7F9E6A999489EB9D66674D9A25CB87 /* AGViewModel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F2C67D15DD7DE934AB8F6D0917F3063 /* Build configuration list for PBXNativeTarget "AGViewModel" */;
+			buildConfigurationList = 458DB5F505D5FFED8011500C9C1990BB /* Build configuration list for PBXNativeTarget "AGViewModel" */;
 			buildPhases = (
-				14D4F8A8689449F15384238AC40A430A /* Headers */,
-				6B5E4BFB4C47B7925A36C422B30CB8D1 /* Sources */,
-				ED02EBCCF09BC3ED0A3CBF96D0A43ECE /* Frameworks */,
+				0256FB1D9F35B6CA202C2DC0E3DD4530 /* Headers */,
+				82C35A6B9A8D4E235001E08513EADF18 /* Sources */,
+				359C07EEEB6B0AD41EBA35752311FC11 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -547,15 +568,15 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1030;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 66C5EA2751DE125B1B0088D5B620E8A7 /* Products */;
@@ -563,7 +584,7 @@
 			projectRoot = "";
 			targets = (
 				4A6B3878A2274EEFC47284E7C875CAA4 /* AGCategories */,
-				5DF0945BE43EDB71689694650D74F14A /* AGViewModel */,
+				5D7F9E6A999489EB9D66674D9A25CB87 /* AGViewModel */,
 				03C30BA60556BE05D3249A23BD890E2D /* Pods-AGVerifyManager */,
 				A967B730E6A535F89F986C1CA7428362 /* SVProgressHUD */,
 			);
@@ -599,28 +620,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B5E4BFB4C47B7925A36C422B30CB8D1 /* Sources */ = {
+		82C35A6B9A8D4E235001E08513EADF18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9091B55C28A138E324D2B460083699C0 /* AGViewModel-dummy.m in Sources */,
-				50C3512B8799ADC253BE7A66E755A675 /* AGViewModel.m in Sources */,
-				490D9D68471CDB65821E6CF279ED330E /* AGVMFunction.m in Sources */,
-				53C8C62CA2D86B41F2B23ED8C98726FD /* AGVMKeys.m in Sources */,
-				0763D311EA2469425865413C0320416D /* AGVMManager.m in Sources */,
-				1225BC3D79F7316C325F7D8044A42C5D /* AGVMNotifier.m in Sources */,
-				3A5867750C3F27A804345E9C790A15AC /* AGVMPackager.m in Sources */,
-				5D871A5E68445CDFF34BC7E236F209F6 /* AGVMSection.m in Sources */,
-				04EEB1AEAB0A59621B40FAE399ECF6F8 /* NSString+AGViewModel.m in Sources */,
-				F21E2D3B3796B41E8B8FC96F634F3A81 /* UICollectionReusableView+AGViewModel.m in Sources */,
-				76E23B381D2E5B8BD9BBAB19FD7E340B /* UICollectionView+AGViewModel.m in Sources */,
-				B62F79A47F0546D8E26C31C3DEB715FC /* UICollectionViewCell+AGViewModel.m in Sources */,
-				FBEA4FDF515D155007119A84F6497254 /* UIScreen+AGViewModel.m in Sources */,
-				413E3CB4158CE6FDC77A9AA17C42918E /* UITableView+AGViewModel.m in Sources */,
-				CFAC94B49C34EC66AB3FA3818390E786 /* UITableViewCell+AGViewModel.m in Sources */,
-				9FE308FA152A1FEBDF540C27B2B65BF9 /* UITableViewHeaderFooterView+AGViewModel.m in Sources */,
-				C8DF6DC49E792AF944E8F0B40BD5F264 /* UIView+AGViewModel.m in Sources */,
-				0C664DFF954E648E94193E7CCFE4CA7A /* UIViewController+AGViewModel.m in Sources */,
+				D9A5B75ECC381194F34A57550623D9DE /* AGViewModel-dummy.m in Sources */,
+				628D516B805B20C84E55C7A1B1894ADC /* AGViewModel.m in Sources */,
+				E2088CB1AF43E85F60961CA5C0DD3AEB /* AGVMCommand.m in Sources */,
+				C37F8C5B64F974EE207C52E980EBCE1E /* AGVMFunction.m in Sources */,
+				197FF790EB5B9FC276E2F52F2A17A51C /* AGVMKeys.m in Sources */,
+				8BC4E1D59387F6A09D2E5EE4425B54A0 /* AGVMManager.m in Sources */,
+				EDC4A25D5CF74B906F308A6F0808F8B3 /* AGVMNotifier.m in Sources */,
+				E4FAB90415C2C90B132BC48656FD477E /* AGVMSection.m in Sources */,
+				0F2337F9AC759951AA9F0CF5DAD7246F /* AGVMSharedPackager.m in Sources */,
+				5D8091CFAE00366B03E8CE3123DCFAFC /* NSArray+AGViewModel.m in Sources */,
+				C9E4C30090C8820C455401B0EEBE588D /* NSDictionary+AGViewModel.m in Sources */,
+				901D03154A98DB95BC9451A9ABEA0AA5 /* NSString+AGViewModel.m in Sources */,
+				9C2541F3D9F045F41F8DE8BE0293A5E1 /* UICollectionReusableView+AGViewModel.m in Sources */,
+				986CE22FFCEEFC4F3207D9E8A80CCF95 /* UICollectionView+AGViewModel.m in Sources */,
+				8735D06B2072D5D83F8754CE95A98C67 /* UICollectionViewCell+AGViewModel.m in Sources */,
+				8AFFFF19D5624BC8AEE1CECD263ACF4B /* UIScreen+AGViewModel.m in Sources */,
+				91EC8B31512C394393DD03CFFD81356F /* UITableView+AGViewModel.m in Sources */,
+				6C5E8194F61C78D64E4D2B3D39C21801 /* UITableViewCell+AGViewModel.m in Sources */,
+				4E0FB621EED13FF7DF2C75A39576FA94 /* UITableViewHeaderFooterView+AGViewModel.m in Sources */,
+				14B6DE4B059E6A98E3C4288231865BA6 /* UIView+AGViewModel.m in Sources */,
+				9D9E9AAC6ACC88E37E33CE07A58D4842 /* UIViewController+AGViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +674,7 @@
 		C84F5E6292BBB9FC69FCF4BB6F138DA0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AGViewModel;
-			target = 5DF0945BE43EDB71689694650D74F14A /* AGViewModel */;
+			target = 5D7F9E6A999489EB9D66674D9A25CB87 /* AGViewModel */;
 			targetProxy = FCF3822EE9D28FBBEBB272F1828CC066 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -716,29 +740,6 @@
 			};
 			name = Release;
 		};
-		11EB21AF6578D515FC8D5913FA574691 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51B239F47912E368707F9E9833E1F4C8 /* AGViewModel.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/AGViewModel/AGViewModel-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = AGViewModel;
-				PRODUCT_NAME = AGViewModel;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		2C64AEAD593E1CF086FF36B72215A449 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 57CD02E0BACF25999F963A526F10D471 /* Pods-AGVerifyManager.debug.xcconfig */;
@@ -762,7 +763,7 @@
 		};
 		2D847949D270E27E34875442D04DF96E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86C7B818287345A1D96C7AEAE4EE5D8D /* SVProgressHUD.xcconfig */;
+			baseConfigurationReference = 446D5188FEDEC36D4D45BAE1539804BE /* SVProgressHUD.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -849,33 +850,9 @@
 			};
 			name = Debug;
 		};
-		72C17EEC39E3C941B6D193C84457830B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51B239F47912E368707F9E9833E1F4C8 /* AGViewModel.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/AGViewModel/AGViewModel-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = AGViewModel;
-				PRODUCT_NAME = AGViewModel;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		ACAD397A205263CA93312914E63337EB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86C7B818287345A1D96C7AEAE4EE5D8D /* SVProgressHUD.xcconfig */;
+			baseConfigurationReference = 446D5188FEDEC36D4D45BAE1539804BE /* SVProgressHUD.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -898,7 +875,7 @@
 		};
 		B320DB4620D2CA5AEB5453F72F384E71 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D115CDC12C40C5CF3FBBD8DEC5867098 /* AGCategories.xcconfig */;
+			baseConfigurationReference = FB2D323C06988998B287418759E918B3 /* AGCategories.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -944,7 +921,7 @@
 		};
 		E502608CA17B0021803D02B119E66959 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D115CDC12C40C5CF3FBBD8DEC5867098 /* AGCategories.xcconfig */;
+			baseConfigurationReference = FB2D323C06988998B287418759E918B3 /* AGCategories.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -965,14 +942,61 @@
 			};
 			name = Debug;
 		};
+		EFD542038B20C4EDC8C9695E0A9EFDF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9DFF313685C56B4B72DC7BE3040BE5B /* AGViewModel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/AGViewModel/AGViewModel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = AGViewModel;
+				PRODUCT_NAME = AGViewModel;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F45B43AC8F7A22D0B66F406E60A1A1DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9DFF313685C56B4B72DC7BE3040BE5B /* AGViewModel.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/AGViewModel/AGViewModel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = AGViewModel;
+				PRODUCT_NAME = AGViewModel;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2F2C67D15DD7DE934AB8F6D0917F3063 /* Build configuration list for PBXNativeTarget "AGViewModel" */ = {
+		458DB5F505D5FFED8011500C9C1990BB /* Build configuration list for PBXNativeTarget "AGViewModel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				11EB21AF6578D515FC8D5913FA574691 /* Debug */,
-				72C17EEC39E3C941B6D193C84457830B /* Release */,
+				EFD542038B20C4EDC8C9695E0A9EFDF9 /* Debug */,
+				F45B43AC8F7A22D0B66F406E60A1A1DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		265521C4BB20FF8C77193ABB /* libPods-AGVerifyManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA2A7EFDC9069A6A7A3C254 /* libPods-AGVerifyManager.a */; };
+		3A42236F22FB20B0001D12C2 /* AGBaseVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A42236E22FB20B0001D12C2 /* AGBaseVerifier.m */; };
 		3A89D44721D9910700B0779A /* AGListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A89D44621D9910700B0779A /* AGListViewController.m */; };
 		3A89D44F21D992E100B0779A /* AGListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A89D44D21D992E100B0779A /* AGListCell.m */; };
 		3A89D45021D992E100B0779A /* AGListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A89D44E21D992E100B0779A /* AGListCell.xib */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A42236D22FB20B0001D12C2 /* AGBaseVerifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGBaseVerifier.h; sourceTree = "<group>"; };
+		3A42236E22FB20B0001D12C2 /* AGBaseVerifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGBaseVerifier.m; sourceTree = "<group>"; };
 		3A89D44521D9910700B0779A /* AGListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGListViewController.h; sourceTree = "<group>"; };
 		3A89D44621D9910700B0779A /* AGListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGListViewController.m; sourceTree = "<group>"; };
 		3A89D44C21D992E100B0779A /* AGListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGListCell.h; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 			children = (
 				3AF1F1161F37338500902E85 /* AGVerifyManager.h */,
 				3AF1F1171F37338500902E85 /* AGVerifyManager.m */,
+				3A42236D22FB20B0001D12C2 /* AGBaseVerifier.h */,
+				3A42236E22FB20B0001D12C2 /* AGBaseVerifier.m */,
 			);
 			path = AGVerifyManager;
 			sourceTree = "<group>";
@@ -281,10 +286,9 @@
 			};
 			buildConfigurationList = 3AF1F0F31F37329E00902E85 /* Build configuration list for PBXProject "AGVerifyManager" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -360,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A42236F22FB20B0001D12C2 /* AGBaseVerifier.m in Sources */,
 				3AF1F1031F37329E00902E85 /* ViewController.m in Sources */,
 				3AF1F1001F37329E00902E85 /* AppDelegate.m in Sources */,
 				3A89D44F21D992E100B0779A /* AGListCell.m in Sources */,

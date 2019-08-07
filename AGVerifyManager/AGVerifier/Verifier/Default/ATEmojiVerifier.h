@@ -6,8 +6,8 @@
 //  Copyright © 2017年 JohnnyB0Y. All rights reserved.
 //
 
-#import "AGVerifyManager.h"
+#import "AGBaseVerifier.h"
 
-@interface ATEmojiVerifier : NSObject <AGVerifyManagerVerifiable>
+@interface ATEmojiVerifier : AGBaseVerifier
 
 @end

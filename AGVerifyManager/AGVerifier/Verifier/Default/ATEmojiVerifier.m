@@ -13,20 +13,17 @@
 
 - (AGVerifyError *)ag_verifyData:(id)data
 {
-    AGVerifyError *error;
     if ( [data isKindOfClass:[NSString class]] ) {
         NSString *string = (NSString *)data;
         if ( [string ag_containsEmojiCharacter] ) {
-            error = [AGVerifyError new];
-            error.msg = @"输入不能包含表情字符！";
+            self.error.msg = @"输入不能包含表情字符！";
         }
     }
     else {
-        error = [AGVerifyError new];
-        error.msg = @"类型错误";
+        self.error.msg = @"类型错误";
     }
     
-    return error;
+    return [super ag_verifyData:data];
 }
 
 @end

@@ -78,16 +78,16 @@ typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyDataWithMsg
 @protocol AGVerifyManagerVerifying <NSObject>
 
 /** 验证数据，传入验证器、数据 */
-@property (nonatomic, copy, readonly) AGVerifyManagerVerifyDataBlock verifyData;
+@property (readonly) AGVerifyManagerVerifyDataBlock verifyData;
 
 /** 验证数据，传入验证器、数据、你想传递的对象（由AGVerifyError对象持有） */
-@property (nonatomic, copy, readonly) AGVerifyManagerVerifyDataWithContextBlock verifyDataWithContext;
+@property (readonly) AGVerifyManagerVerifyDataWithContextBlock verifyDataWithContext;
 
 /** 验证数据，直传入验证器、数据、错误提示信息 */
-@property (nonatomic, copy, readonly) AGVerifyManagerVerifyDataWithMsgBlock verifyDataWithMsg;
+@property (readonly) AGVerifyManagerVerifyDataWithMsgBlock verifyDataWithMsg;
 
 /** 验证数据，传入验证器、数据、错误提示信息、你想传递的对象（由AGVerifyError对象持有） */
-@property (nonatomic, copy, readonly) AGVerifyManagerVerifyDataWithMsgWithContextBlock verifyDataWithMsgWithContext;
+@property (readonly) AGVerifyManagerVerifyDataWithMsgWithContextBlock verifyDataWithMsgWithContext;
 
 @end
 

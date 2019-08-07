@@ -6,13 +6,11 @@
 //  Copyright © 2018 JohnnyB0Y. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "AGVerifyManager.h"
+#import "AGBaseVerifier.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ATEnglishVerifier : NSObject
-<AGVerifyManagerVerifiable>
+@interface ATEnglishVerifier : AGBaseVerifier
 
 @end
 
