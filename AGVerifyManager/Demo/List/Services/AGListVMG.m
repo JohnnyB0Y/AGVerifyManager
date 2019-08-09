@@ -23,9 +23,9 @@
         _itemVMM = ag_newAGVMManager(1);
         
         ATChineseVerifier *chinese = [ATChineseVerifier new];
-        ATEnglishVerifier *english = [ATEnglishVerifier new];
+        AGBaseVerifier *english = ATEnglishVerifier.defaultInstance;
         ATNumberVerifier *number = [ATNumberVerifier new];
-        ATEmojiVerifier *emoji = [ATEmojiVerifier new];
+        AGBaseVerifier *emoji = ATEmojiVerifier.defaultInstance;
         
         [_itemVMM ag_packageSection:^(AGVMSection * _Nonnull vms) {
             

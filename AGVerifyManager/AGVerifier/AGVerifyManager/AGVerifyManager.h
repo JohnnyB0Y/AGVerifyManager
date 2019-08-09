@@ -42,6 +42,9 @@ typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyDataWithMsg
 
 @interface AGVerifyManager : NSObject
 
+@property (class, readonly) AGVerifyManager *defaultInstance;
+
+
 #pragma mark 直接执行验证Block，不保留Block引用。
 - (void) ag_executeVerifying:(NS_NOESCAPE AGVerifyManagerVerifyingBlock)verifyingBlock
                   completion:(NS_NOESCAPE AGVerifyManagerCompletionBlock)completionBlock;
@@ -116,14 +119,21 @@ typedef id<AGVerifyManagerVerifying> _Nonnull (^AGVerifyManagerVerifyDataWithMsg
 /** 由调用方传入的对象，起对象传递作用。*/
 @property (nonatomic, strong, nullable) id context;
 
+@property (class, readonly) AGVerifyError *defaultInstance;
+
+@property (readonly) AGVerifyError *(^setMsg)(NSString *x);
+@property (readonly) AGVerifyError *(^setCode)(NSInteger x);
+@property (readonly) AGVerifyError *(^setUserInfo)(NSDictionary *x);
+@property (readonly) AGVerifyError *(^setContext)(id x);
+
 @end
 
 
 // 快捷构建方法
-AGVerifyManager * ag_newAGVerifyManager(void);
+FOUNDATION_EXTERN AGVerifyManager * ag_newAGVerifyManager(void);
 
-AGVerifyManagerVerifyingBlock ag_verifyManagerCopyVerifyingBlock(AGVerifyManagerVerifyingBlock block);
+FOUNDATION_EXTERN AGVerifyManagerVerifyingBlock ag_verifyManagerCopyVerifyingBlock(AGVerifyManagerVerifyingBlock block);
 
-AGVerifyManagerCompletionBlock ag_verifyManagerCopyCompletionBlock(AGVerifyManagerCompletionBlock block);
+FOUNDATION_EXTERN AGVerifyManagerCompletionBlock ag_verifyManagerCopyCompletionBlock(AGVerifyManagerCompletionBlock block);
 
 NS_ASSUME_NONNULL_END

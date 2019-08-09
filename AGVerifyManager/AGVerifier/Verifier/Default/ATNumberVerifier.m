@@ -17,13 +17,11 @@
     if ( [data isKindOfClass:[NSString class]] ) {
         NSString *string = (NSString *)data;
         if ( [string ag_containsNumberCharacter] ) {
-            error = [AGVerifyError new];
-            error.msg = @"输入不能包含数字字符！";
+            error = AGVerifyError.defaultInstance.setMsg(@"输入不能包含数字字符！");
         }
     }
     else {
-        error = [AGVerifyError new];
-        error.msg = @"类型错误";
+        error = AGVerifyError.defaultInstance.setMsg(@"类型错误");
     }
     
     return error;

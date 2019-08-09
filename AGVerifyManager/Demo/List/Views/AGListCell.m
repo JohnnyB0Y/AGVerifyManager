@@ -76,7 +76,7 @@
 - (AGVerifyManager *)verifyManager
 {
     if (_verifyManager == nil) {
-        _verifyManager = ag_newAGVerifyManager();
+        _verifyManager = AGVerifyManager.defaultInstance;
     }
     return _verifyManager;
 }

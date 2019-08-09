@@ -64,6 +64,13 @@
     return [vm[kAGVMViewH] floatValue];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+}
+
 #pragma mark - ---------- Event Methods ----------
 - (void) rightBarButtonItemClick:(id)sender
 {
@@ -72,8 +79,7 @@
     // 检测所有数据 (block 在 AGListVMG 类中封装)
     AGVerifyManagerVerifyingBlock block = self.listVMG.itemVMM.fs.cvm[kAGVerifyManagerVerifyingBlock];
     
-    AGVerifyManager *manager = ag_newAGVerifyManager();
-    [manager ag_executeVerifying:block completion:^(AGVerifyError * _Nullable firstError, NSArray<AGVerifyError *> * _Nullable errors) {
+    [AGVerifyManager.defaultInstance ag_executeVerifying:block completion:^(AGVerifyError * _Nullable firstError, NSArray<AGVerifyError *> * _Nullable errors) {
         
         if ( firstError ) {
             

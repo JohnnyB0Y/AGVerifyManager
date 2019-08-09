@@ -12,6 +12,11 @@
     AGVerifyError *_error;
 }
 
++ (AGBaseVerifier *)defaultInstance
+{
+    return [[self alloc] init];
+}
+
 - (AGVerifyError *)ag_verifyData:(id)data
 {
     AGVerifyError *error = _error;

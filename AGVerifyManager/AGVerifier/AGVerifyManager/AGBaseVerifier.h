@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AGBaseVerifier : NSObject
 <AGVerifyManagerVerifiable>
 
+@property (class, readonly) AGBaseVerifier *defaultInstance;
+
 /** 懒加载属性（是为了方便子类直接使用，而不用每次初始化） */
 @property (nonatomic, strong, readonly, nullable) AGVerifyError *error;
 
